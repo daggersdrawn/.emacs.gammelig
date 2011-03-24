@@ -1,0 +1,51 @@
+[submodule "vendor/python-mode"]
+	path = vendor/python-mode
+	url = git://github.com/emacsmirror/python-mode.git
+[submodule "emacsmirror/yasnippet"]
+	path = emacsmirror/yasnippet
+	url = git://github.com/emacsmirror/yasnippet.git
+[submodule "emacsmirror/twittering-mode"]
+	path = emacsmirror/twittering-mode
+	url = git://github.com/emacsmirror/twittering-mode.git
+[submodule "emacsmirror/autopair"]
+	path = emacsmirror/autopair
+	url = git://github.com/emacsmirror/autopair.git
+[submodule "vendor/color-theme-sanityinc"]
+	path = vendor/color-theme-sanityinc
+	url = git://github.com/emacsmirror/color-theme-sanityinc.git
+[submodule "vendor/color-dired"]
+	path = vendor/color-dired
+	url = git://github.com/emacsmirror/color-dired.git
+[submodule "vendor/magit"]
+	path = vendor/magit
+	url = git://github.com/emacsmirror/magit.git
+[submodule "vendor/virtualenv"]
+	path = vendor/virtualenv
+	url = git://github.com/emacsmirror/virtualenv.git
+[submodule "vendor/slime"]
+	path = vendor/slime
+	url = git://github.com/emacsmirror/slime.git
+[submodule "vendor/rainbow-mode"]
+	path = vendor/rainbow-mode
+	url = git://github.com/emacsmirror/rainbow-mode.git
+[submodule "vendor/auto-complete"]
+	path = vendor/auto-complete
+	url = git://github.com/emacsmirror/auto-complete.git
+[submodule "vendor/python-extras"]
+	path = vendor/python-extras
+	url = git://github.com/emacsmirror/python-extras.git
+[submodule "vendor/nose"]
+	path = vendor/nose
+	url = git://github.com/emacsmirror/nose.git
+[submodule "vendor/multi-project"]
+	path = vendor/multi-project
+	url = git://github.com/emacsmirror/multi-project.git
+[submodule "vendor/haddoc"]
+	path = vendor/haddoc
+	url = git://github.com/emacsmirror/haddoc.git
+[submodule "vendor/dpastede"]
+	path = vendor/dpastede
+	url = git://github.com/emacsmirror/dpastede.git
+[submodule "vendor/anything-ipython"]
+	path = vendor/anything-ipython
+	url = git://github.com/emacsmirror/anything-ipython.git
