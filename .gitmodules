@@ -1,6 +1,3 @@
-[submodule "src/python-mode"]
-	path = src/python-mode
-	url = git://github.com/emacsmirror/python-mode.git
 [submodule "src/color-theme-sanityinc"]
 	path = src/color-theme-sanityinc
 	url = git://github.com/emacsmirror/color-theme-sanityinc.git
@@ -49,3 +46,6 @@
 [submodule "src/twittering-mode"]
 	path = src/twittering-mode
 	url = git://github.com/emacsmirror/twittering-mode.git
+[submodule "src/zenburn"]
+	path = src/zenburn
+	url = git://github.com/emacsmirror/zenburn.git
