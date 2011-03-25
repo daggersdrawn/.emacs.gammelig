@@ -1,15 +1,6 @@
 [submodule "vendor/python-mode"]
 	path = vendor/python-mode
 	url = git://github.com/emacsmirror/python-mode.git
-[submodule "emacsmirror/yasnippet"]
-	path = emacsmirror/yasnippet
-	url = git://github.com/emacsmirror/yasnippet.git
-[submodule "emacsmirror/twittering-mode"]
-	path = emacsmirror/twittering-mode
-	url = git://github.com/emacsmirror/twittering-mode.git
-[submodule "emacsmirror/autopair"]
-	path = emacsmirror/autopair
-	url = git://github.com/emacsmirror/autopair.git
 [submodule "vendor/color-theme-sanityinc"]
 	path = vendor/color-theme-sanityinc
 	url = git://github.com/emacsmirror/color-theme-sanityinc.git
@@ -49,3 +40,12 @@
 [submodule "vendor/anything-ipython"]
 	path = vendor/anything-ipython
 	url = git://github.com/emacsmirror/anything-ipython.git
+[submodule "vendor/yasnippet"]
+	path = vendor/yasnippet
+	url = git://github.com/emacsmirror/yasnippet.git
+[submodule "vendor/autopair"]
+	path = vendor/autopair
+	url = git://github.com/emacsmirror/autopair.git
+[submodule "vendor/twittering-mode"]
+	path = vendor/twittering-mode
+	url = git://github.com/emacsmirror/twittering-mode.git
