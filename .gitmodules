@@ -1,51 +1,51 @@
-[submodule "vendor/python-mode"]
-	path = vendor/python-mode
+[submodule "src/python-mode"]
+	path = src/python-mode
 	url = git://github.com/emacsmirror/python-mode.git
-[submodule "vendor/color-theme-sanityinc"]
-	path = vendor/color-theme-sanityinc
+[submodule "src/color-theme-sanityinc"]
+	path = src/color-theme-sanityinc
 	url = git://github.com/emacsmirror/color-theme-sanityinc.git
-[submodule "vendor/color-dired"]
-	path = vendor/color-dired
+[submodule "src/color-dired"]
+	path = src/color-dired
 	url = git://github.com/emacsmirror/color-dired.git
-[submodule "vendor/magit"]
-	path = vendor/magit
+[submodule "src/magit"]
+	path = src/magit
 	url = git://github.com/emacsmirror/magit.git
-[submodule "vendor/virtualenv"]
-	path = vendor/virtualenv
+[submodule "src/virtualenv"]
+	path = src/virtualenv
 	url = git://github.com/emacsmirror/virtualenv.git
-[submodule "vendor/slime"]
-	path = vendor/slime
+[submodule "src/slime"]
+	path = src/slime
 	url = git://github.com/emacsmirror/slime.git
-[submodule "vendor/rainbow-mode"]
-	path = vendor/rainbow-mode
+[submodule "src/rainbow-mode"]
+	path = src/rainbow-mode
 	url = git://github.com/emacsmirror/rainbow-mode.git
-[submodule "vendor/auto-complete"]
-	path = vendor/auto-complete
+[submodule "src/auto-complete"]
+	path = src/auto-complete
 	url = git://github.com/emacsmirror/auto-complete.git
-[submodule "vendor/python-extras"]
-	path = vendor/python-extras
+[submodule "src/python-extras"]
+	path = src/python-extras
 	url = git://github.com/emacsmirror/python-extras.git
-[submodule "vendor/nose"]
-	path = vendor/nose
+[submodule "src/nose"]
+	path = src/nose
 	url = git://github.com/emacsmirror/nose.git
-[submodule "vendor/multi-project"]
-	path = vendor/multi-project
+[submodule "src/multi-project"]
+	path = src/multi-project
 	url = git://github.com/emacsmirror/multi-project.git
-[submodule "vendor/haddoc"]
-	path = vendor/haddoc
+[submodule "src/haddoc"]
+	path = src/haddoc
 	url = git://github.com/emacsmirror/haddoc.git
-[submodule "vendor/dpastede"]
-	path = vendor/dpastede
+[submodule "src/dpastede"]
+	path = src/dpastede
 	url = git://github.com/emacsmirror/dpastede.git
-[submodule "vendor/anything-ipython"]
-	path = vendor/anything-ipython
+[submodule "src/anything-ipython"]
+	path = src/anything-ipython
 	url = git://github.com/emacsmirror/anything-ipython.git
-[submodule "vendor/yasnippet"]
-	path = vendor/yasnippet
+[submodule "src/yasnippet"]
+	path = src/yasnippet
 	url = git://github.com/emacsmirror/yasnippet.git
-[submodule "vendor/autopair"]
-	path = vendor/autopair
+[submodule "src/autopair"]
+	path = src/autopair
 	url = git://github.com/emacsmirror/autopair.git
-[submodule "vendor/twittering-mode"]
-	path = vendor/twittering-mode
+[submodule "src/twittering-mode"]
+	path = src/twittering-mode
 	url = git://github.com/emacsmirror/twittering-mode.git
