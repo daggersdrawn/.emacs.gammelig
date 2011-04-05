@@ -52,3 +52,12 @@
 [submodule "src/auctex"]
 	path = src/auctex
 	url = git://github.com/eschulte/auctex.git
+[submodule "src/almost-monokai"]
+	path = src/almost-monokai
+	url = git://github.com/lut4rp/almost-monokai.git
+[submodule "src/zen-and-art"]
+	path = src/zen-and-art
+	url = git://github.com/irfn/zen-and-art.git
+[submodule "src/keywiz"]
+	path = src/keywiz
+	url = git://github.com/emacsmirror/keywiz.git
