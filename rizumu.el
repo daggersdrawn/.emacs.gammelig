@@ -1,10 +1,10 @@
 ;; Using Emacs as a Server
-(server-start)
+(if (eq window-system 'x) server-start)
 
 ;; ========== Apperance ==========
 
 ;; Fonts
-(set-face-attribute 'default nil :font "Inconsolata 12")
+(set-face-attribute 'default nil :family "Inconsolata" :height 140)
 
 ;; Color Theme 
 (require 'color-theme) 
