@@ -88,7 +88,7 @@
 
 (yas/load-directory (expand-file-name "snippets" dotfiles-dir))
 
-;;(starter-kit-load "starter-kit-org.org")
+(starter-kit-load "starter-kit-org.org")
 
 (starter-kit-load "starter-kit-eshell.org")
 
@@ -102,7 +102,7 @@
 
 (starter-kit-load "starter-kit-perl.org")
 
-;;(starter-kit-load "starter-kit-python.org")
+(starter-kit-load "starter-kit-python.org")
 
 ;;(starter-kit-load "starter-kit-latex.org")
 
