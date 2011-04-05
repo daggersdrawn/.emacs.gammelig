@@ -1,41 +1,51 @@
 ;; Using Emacs as a Server
-(if (eq window-system 'x) server-start)
-
-;; ========== Apperance ==========
+(if (eq window-system 'x) (server-start))
 
 ;; Fonts
-(set-face-attribute 'default nil :family "Inconsolata" :height 140)
+(set-face-attribute 'default nil
+                    :family "Inconsolata" :height 140)
+
+;(set-face-attribute 'font-lock-comment-face nil
+;                    :family "Optima" :height 140 :slant 'italic
+;                    :foreground "#000000" :background "ddddee")
+;(set-face-attribute 'font-lock-string-face nil
+;                    :family "Anonymous Pro" :height 130 :weight 'bold
+;                    :foreground "black" :background 'unspecified)
 
 ;; Color Theme 
-(require 'color-theme) 
-(color-theme-initialize)
 (load-file "~/.emacs.d/src/color-theme-sanityinc/color-theme-sanityinc.el")
+;(color-theme-sanityinc)
 (load-file "~/.emacs.d/src/zenburn/zenburn.el")
-
-;;(color-theme-sanityinc)
-(color-theme-zenburn)
-
-;; ========== Place Backup Files in Specific Directory ==========
+;(color-theme-zenburn)
+(load-file "~/.emacs.d/src/almost-monokai/color-theme-almost-monokai.el")
+;;(color-theme-almost-monokai)
+(load-file "~/.emacs.d/src/zen-and-art/zen-and-art.el")
+(color-theme-zen-and-art)
 
 ;; Enable backup files.
 (setq make-backup-files t)
-
 ;; Enable versioning with default values (keep five last versions, I think!)
 (setq version-control t)
-
 ;; Save all backup file in this directory.
 (setq backup-directory-alist (quote ((".*" . "~/.emacs_backups/"))))
+;; Delete unnecesary auto-save files (ex. #%*mail*#')
+(setq delete-auto-save-files t)
 
-;; ========== Enable Line and Column Numbering ==========
+;; Column and line numbers
+(setq-default column-number-mode t)
+(setq-default line-number-mode t)
 
-;; Show line-number in the mode line
-(line-number-mode 1)
-
-;; Show column-number in the mode line
-(column-number-mode 1)
-
-;; ========== Whitespace =========
-
-(require 'whitespace)
-(setq standard-indent 4)
+;; Tabs
 (setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq standard-indent 4)
+(setq default-tab-width 4)
+
+;; Highlight +80 lines
+(setq whitespace-style '(lines))
+(setq whitespace-style '(empty tabs lines-tail trailing))
+(global-whitespace-mode t)
+
+;; Automatically re-visiting the file in current buffer when it was
+;; modified by an external program
+(global-auto-revert-mode 1)
