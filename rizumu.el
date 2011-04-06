@@ -3,7 +3,7 @@
 
 ;; Fonts
 (set-face-attribute 'default nil
-                    :family "Inconsolata" :height 140)
+                    :family "Inconsolata" :height 100)
 
 ;(set-face-attribute 'font-lock-comment-face nil
 ;                    :family "Optima" :height 140 :slant 'italic
@@ -16,11 +16,11 @@
 (load-file "~/.emacs.d/src/color-theme-sanityinc/color-theme-sanityinc.el")
 ;(color-theme-sanityinc)
 (load-file "~/.emacs.d/src/zenburn/zenburn.el")
-;(color-theme-zenburn)
+(color-theme-zenburn)
 (load-file "~/.emacs.d/src/almost-monokai/color-theme-almost-monokai.el")
 ;;(color-theme-almost-monokai)
 (load-file "~/.emacs.d/src/zen-and-art/zen-and-art.el")
-(color-theme-zen-and-art)
+;(color-theme-zen-and-art)
 
 ;; Enable backup files.
 (setq make-backup-files t)
