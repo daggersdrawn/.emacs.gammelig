@@ -22,12 +22,12 @@
 (load-file "~/.emacs.d/src/zen-and-art/zen-and-art.el")
 ;(color-theme-zen-and-art)
 
-;; Enable backup files.
-(setq make-backup-files t)
+;; Disable backup files.
+(setq make-backup-files nil)
 ;; Enable versioning with default values (keep five last versions, I think!)
-(setq version-control t)
-;; Save all backup file in this directory.
-(setq backup-directory-alist (quote ((".*" . "~/.emacs_backups/"))))
+;(setq version-control t)
+;; Save all backlkup file in this directory.
+;(setq backup-directory-alist (quote ((".*" . "~/.emacs_backups/"))))
 ;; Delete unnecesary auto-save files (ex. #%*mail*#')
 (setq delete-auto-save-files t)
 
