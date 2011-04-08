@@ -13,9 +13,6 @@
 [submodule "src/slime"]
 	path = src/slime
 	url = git://github.com/emacsmirror/slime.git
-[submodule "src/rainbow-mode"]
-	path = src/rainbow-mode
-	url = git://github.com/emacsmirror/rainbow-mode.git
 [submodule "src/auto-complete"]
 	path = src/auto-complete
 	url = git://github.com/emacsmirror/auto-complete.git
