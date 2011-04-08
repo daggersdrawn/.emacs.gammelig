@@ -45,6 +45,6 @@
 (global-auto-revert-mode 1)
 
 ;; anything
+(require 'anything-config)
 ;(require 'anything-startup)
-;(require 'anything-config)
 
