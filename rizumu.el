@@ -13,14 +13,8 @@
 ;                    :foreground "black" :background 'unspecified)
 
 ;; Color Theme 
-(load-file "~/.emacs.d/src/color-theme-sanityinc/color-theme-sanityinc.el")
-;(color-theme-sanityinc)
 (load-file "~/.emacs.d/elpa/zenburn-1.8/zenburn.el")
 (color-theme-zenburn)
-(load-file "~/.emacs.d/src/almost-monokai/color-theme-almost-monokai.el")
-;;(color-theme-almost-monokai)
-(load-file "~/.emacs.d/src/zen-and-art/zen-and-art.el")
-;(color-theme-zen-and-art)
 
 ;; Disable backup files.
 (setq make-backup-files nil)
@@ -51,5 +45,6 @@
 (global-auto-revert-mode 1)
 
 ;; anything
-(require 'anything-startup)
-(require 'anything-config)
+;(require 'anything-startup)
+;(require 'anything-config)
+
