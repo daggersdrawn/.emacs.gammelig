@@ -104,7 +104,7 @@
 
 (starter-kit-load "starter-kit-python.org")
 
-;;(starter-kit-load "starter-kit-latex.org")
+(starter-kit-load "starter-kit-latex.org")
 
 (load custom-file 'noerror)
 

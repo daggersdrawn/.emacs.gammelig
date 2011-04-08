@@ -15,7 +15,7 @@
 ;; Color Theme 
 (load-file "~/.emacs.d/src/color-theme-sanityinc/color-theme-sanityinc.el")
 ;(color-theme-sanityinc)
-(load-file "~/.emacs.d/src/zenburn/zenburn.el")
+(load-file "~/.emacs.d/elpa/zenburn-1.8/zenburn.el")
 (color-theme-zenburn)
 (load-file "~/.emacs.d/src/almost-monokai/color-theme-almost-monokai.el")
 ;;(color-theme-almost-monokai)
@@ -49,3 +49,7 @@
 ;; Automatically re-visiting the file in current buffer when it was
 ;; modified by an external program
 (global-auto-revert-mode 1)
+
+;; anything
+(require 'anything-startup)
+(require 'anything-config)

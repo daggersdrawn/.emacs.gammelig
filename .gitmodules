@@ -46,12 +46,6 @@
 [submodule "src/twittering-mode"]
 	path = src/twittering-mode
 	url = git://github.com/emacsmirror/twittering-mode.git
-[submodule "src/zenburn"]
-	path = src/zenburn
-	url = git://github.com/emacsmirror/zenburn.git
-[submodule "src/auctex"]
-	path = src/auctex
-	url = git://github.com/eschulte/auctex.git
 [submodule "src/almost-monokai"]
 	path = src/almost-monokai
 	url = git://github.com/lut4rp/almost-monokai.git
@@ -61,3 +55,12 @@
 [submodule "src/keywiz"]
 	path = src/keywiz
 	url = git://github.com/emacsmirror/keywiz.git
+[submodule "src/anything"]
+	path = src/anything
+	url = git://github.com/emacsmirror/anything.git
+[submodule "src/anything-dired-history"]
+	path = src/anything-dired-history
+	url = git://github.com/emacsmirror/anything-dired-history.git
+[submodule "src/anything-config"]
+	path = src/anything-config
+	url = git://repo.or.cz/anything-config.git
