@@ -1,6 +1,3 @@
-;; Using Emacs as a Server
-(if (eq window-system 'x) (server-start))
-
 ;; Fonts
 (set-face-attribute 'default nil
                     :family "Inconsolata" :height 100)
@@ -48,3 +45,18 @@
 (require 'anything-config)
 ;(require 'anything-startup)
 
+(defun ask-before-closing ()
+  "Ask whether or not to close, and then close if y was pressed"
+  (interactive)
+  (if (y-or-n-p (format "Are you sure you want to quit Emacs? "))
+      (if (< emacs-major-version 22)
+          (save-buffers-kill-terminal)
+          (save-buffers-kill-emacs))
+    (message "Canceled exit")))
+
+
+;; Using Emacs as a Server and prompt before quit. Only under X.
+(when (eq window-system 'x)
+    (global-set-key (kbd "C-x C-c") 'ask-before-closing)  
+    (global-set-key (kbd "C-z") 'ask-before-closing)
+    (eq window-system 'x) (server-start))
