@@ -1,4 +1,4 @@
-;;; starter-kit.el --- Saner defaults and goodies.
+;;; starter-kit-js.el --- Saner defaults and goodies for Javascript
 ;;
 ;; Copyright (c) 2008-2010 Phil Hagelberg and contributors
 ;;
@@ -16,8 +16,7 @@
 ;; and brighter; it simply makes everything else vanish."
 ;; -Neal Stephenson, "In the Beginning was the Command Line"
 
-;; This file just brings together other pieces of the starter kit plus
-;; user- and host-specific configs.
+;; This file contains tweaks specific to Javascript.
 
 ;;; License:
 
@@ -39,28 +38,22 @@
 ;;; Code:
 
 ;;;###autoload
-(progn
-  (add-to-list 'package-archives '("technomancy" . 
-                                   "http://repo.technomancy.us/emacs/") t)
-  ;; Turn off mouse interface early in startup to avoid momentary display
-  (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
-    (when (fboundp mode) (funcall mode -1)))
+(add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
 
-  (dolist (l '(uniquify starter-kit-defuns starter-kit-bindings
-                        starter-kit-misc starter-kit-eshell))
-    (require l))
+;;;###autoload
+(eval-after-load 'js
+  '(progn (define-key js-mode-map "{" 'paredit-open-curly)
+          (define-key js-mode-map "}" 'paredit-close-curly-and-newline)
+          (add-hook 'js-mode-hook 'esk-paredit-nonlisp)
+          (add-hook 'js-mode-hook 'run-coding-hook)
+          (setq js-indent-level 2)
+          ;; fixes problem with pretty function font-lock
+          (define-key js-mode-map (kbd ",") 'self-insert-command)
+          (font-lock-add-keywords
+           'js-mode `(("\\(function *\\)("
+                       (0 (progn (compose-region (match-beginning 1)
+                                                 (match-end 1) "ƒ")
+                                 nil)))))))
 
-  ;; You can keep system- or user-specific customizations here
-  (setq esk-system-config (concat user-emacs-directory system-name ".el")
-        esk-user-config (concat user-emacs-directory user-login-name ".el")
-        esk-user-dir (concat user-emacs-directory user-login-name))
-
-  (add-to-list 'load-path esk-user-dir)
-
-  (when (file-exists-p esk-system-config) (load esk-system-config))
-  (when (file-exists-p esk-user-config) (load esk-user-config))
-  (when (file-exists-p esk-user-dir)
-    (mapc 'load (directory-files esk-user-dir nil ".*el$"))))
-
-(provide 'starter-kit)
-;;; starter-kit.el ends here
+(provide 'starter-kit-js)
+;;; starter-kit-js.el ends here

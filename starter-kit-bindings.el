@@ -1,62 +1,106 @@
+;;; starter-kit-bindings.el --- Saner defaults and goodies: bindings
+;;
+;; Copyright (c) 2008-2010 Phil Hagelberg and contributors
+;;
+;; Author: Phil Hagelberg <technomancy@gmail.com>
+;; URL: http://www.emacswiki.org/cgi-bin/wiki/StarterKit
+;; Version: 2.0
+;; Keywords: convenience
 
+;; This file is not part of GNU Emacs.
+
+;;; Commentary:
+
+;; "Emacs outshines all other editing software in approximately the
+;; same way that the noonday sun does the stars. It is not just bigger
+;; and brighter; it simply makes everything else vanish."
+;; -Neal Stephenson, "In the Beginning was the Command Line"
+
+;; This file just contains key bindings.
+
+;;; License:
+
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License
+;; as published by the Free Software Foundation; either version 3
+;; of the License, or (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to the
+;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+;;; Code:
+
+;; You know, like Readline.
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
 
-(global-set-key (kbd "C-x \\") 'align-regexp)
-
+;; Completion that uses many different methods to find options.
 (global-set-key (kbd "M-/") 'hippie-expand)
 
-(global-set-key (kbd "C-c n") 'cleanup-buffer)
+;; Perform general cleanup.
+(global-set-key (kbd "C-c n") 'esk-cleanup-buffer)
 
-(global-set-key [f1] 'menu-bar-mode)
+;; Turn on the menu bar for exploring new modes
+(global-set-key (kbd "C-<f10>") 'menu-bar-mode)
 
+;; Font size
 (define-key global-map (kbd "C-+") 'text-scale-increase)
 (define-key global-map (kbd "C--") 'text-scale-decrease)
 
+;; Use regex searches by default.
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "\C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 
-(global-set-key (kbd "C-x C-i") 'ido-imenu)
+;; Jump to a definition in the current file. (Protip: this is awesome.)
+(global-set-key (kbd "C-x C-i") 'esk-ido-imenu)
 
+;; File finding
 (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
-(global-set-key (kbd "C-x C-M-f") 'find-file-in-project)
-(global-set-key (kbd "C-x f") 'recentf-ido-find-file)
-(global-set-key (kbd "C-x C-p") 'find-file-at-point)
+(global-set-key (kbd "C-x f") 'esk-recentf-ido-find-file)
 (global-set-key (kbd "C-c y") 'bury-buffer)
 (global-set-key (kbd "C-c r") 'revert-buffer)
-(global-set-key (kbd "M-`") 'file-cache-minibuffer-complete)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
 
+;; Window switching. (C-x o goes to the next window)
 (windmove-default-keybindings) ;; Shift+direction
 (global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ;; back one
 (global-set-key (kbd "C-x C-o") (lambda () (interactive) (other-window 2))) ;; forward two
 
-(global-set-key (kbd "C-x ^") 'join-line)
-
+;; Start eshell or switch to it if it's active.
 (global-set-key (kbd "C-x m") 'eshell)
 
+;; Start a new eshell even if one is active.
 (global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t)))
 
-(global-set-key (kbd "C-x M-m") 'shell)
+;; Start a regular shell if you prefer that.
+(global-set-key (kbd "C-x C-m") 'shell)
 
-(global-set-key (kbd "C-x C-m") 'execute-extended-command)
+;; If you want to be able to M-x without meta (phones, etc)
+(global-set-key (kbd "C-c C-x") 'execute-extended-command)
 
-(global-set-key (kbd "C-x h") 'view-url)
-
+;; Help should search more than just commands
 (global-set-key (kbd "C-h a") 'apropos)
 
-(global-set-key (kbd "C-c e") 'eval-and-replace)
+;; Should be able to eval-and-replace anywhere.
+(global-set-key (kbd "C-c e") 'esk-eval-and-replace)
 
-(global-set-key (kbd "C-c j") (lambda () (interactive) (switch-or-start 'jabber-connect "*-jabber-*")))
-(global-set-key (kbd "C-c g") (lambda () (interactive) (switch-or-start 'gnus "*Group*")))
-(global-set-key (kbd "C-c i") (lambda () (interactive) (switch-or-start (lambda ()
-                                                                     (rcirc-connect "irc.freenode.net"))
-                                                                   "*irc.freenode.net*")))
-(global-set-key (kbd "C-c J") 'jabber-send-presence)
-(global-set-key (kbd "C-c M-j") 'jabber-disconnect)
-(global-set-key (kbd "C-x g") 'magit-status)
+;; For debugging Emacs modes
+(global-set-key (kbd "C-c p") 'esk-message-point)
 
+;; M-S-6 is awkward
+(global-set-key (kbd "C-c q") 'join-line)
+
+;; So good!
+(global-set-key (kbd "C-c g") 'magit-status)
+
+;; This is a little hacky since VC doesn't support git add internally
 (eval-after-load 'vc
   (define-key vc-prefix-map "i" '(lambda () (interactive)
                                    (if (not (eq 'Git (vc-backend buffer-file-name)))
@@ -64,19 +108,15 @@
                                      (shell-command (format "git add %s" buffer-file-name))
                                      (message "Staged changes.")))))
 
+;; Activate occur easily inside isearch
 (define-key isearch-mode-map (kbd "C-o")
   (lambda () (interactive)
     (let ((case-fold-search isearch-case-fold-search))
       (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
 
-(provide 'starter-kit-bindings)
-;;; starter-kit-bindings.el ends here
-
+;; Org
+(define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 
-(define-key global-map "\C-cl" 'org-store-link)
-
-(require 'magit)
-(define-key global-map "\M-\C-g" 'magit-status)
-
-(define-key global-map "\C-x\C-r" 'rgrep)
+(provide 'starter-kit-bindings)
+;;; starter-kit-bindings.el ends here

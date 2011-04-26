@@ -10,7 +10,7 @@
 ;                    :foreground "black" :background 'unspecified)
 
 ;; Color Theme 
-(load-file "~/.emacs.d/elpa/zenburn-1.8/zenburn.el")
+(load-file "~/.emacs.d/elpa/zenburn-1.0/zenburn.el")
 (color-theme-zenburn)
 
 ;; Disable backup files.
@@ -42,7 +42,7 @@
 (global-auto-revert-mode 1)
 
 ;; anything
-(require 'anything-config)
+;(require 'anything-config)
 ;(require 'anything-startup)
 
 (defun ask-before-closing ()

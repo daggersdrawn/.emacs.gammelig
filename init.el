@@ -11,6 +11,13 @@
 
 (setq dotfiles-dir (file-name-directory (or load-file-name (buffer-file-name))))
 
+(require 'package)
+(add-to-list 'package-archives
+             '("technomancy" . "http://repo.technomancy.us/emacs/") t)
+
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t) 
+
 (add-to-list 'load-path (expand-file-name
                          "lisp" (expand-file-name
                                  "org" (expand-file-name
@@ -19,6 +26,6 @@
 (require 'org-install)
 
 ;; load up the main file
-(org-babel-load-file (expand-file-name "starter-kit.org" dotfiles-dir))
+;;(org-babel-load-file (expand-file-name "starter-kit.org" dotfiles-dir))
 
 ;;; init.el ends here
