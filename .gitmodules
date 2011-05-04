@@ -24,4 +24,4 @@
 	url = git://github.com/emacsmirror/anything-dired-history.git
 [submodule "src/django-mode"]
 	path = src/django-mode
-	url = git://github.com/myfreeweb/django-mode.git
+	url = git://github.com/rizumu/django-mode.git
