@@ -1,3 +1,18 @@
+;; load these config files
+(load-cfg-files '("yasnippet-cfg"
+                  "autopair-cfg"
+                  "html-cfg"
+                  "django-cfg"
+                  "python-cfg"
+                  ;"ropemacs-cfg"
+                  "linum-cfg"
+                  "pyflake-cfg"
+                  ;"org-cfg"
+                  "keybinding-cfg"
+                  ;"uniquify-cfg"
+                  ;"twittering-cfg"
+                  "color-theme-cfg"))
+
 ;; Fonts
 (set-face-attribute 'default nil
                     :family "Inconsolata" :height 100)
@@ -10,7 +25,6 @@
 ;                    :foreground "black" :background 'unspecified)
 
 ;; Color Theme 
-(load-file "~/.emacs.d/elpa/zenburn-1.0/zenburn.el")
 (color-theme-zenburn)
 
 ;; Disable backup files.
@@ -41,19 +55,14 @@
 ;; modified by an external program
 (global-auto-revert-mode 1)
 
-;; anything
-;(require 'anything-config)
-;(require 'anything-startup)
-
+;; Ask whether or not to close, and then close if y was pressed
 (defun ask-before-closing ()
-  "Ask whether or not to close, and then close if y was pressed"
   (interactive)
   (if (y-or-n-p (format "Are you sure you want to quit Emacs? "))
       (if (< emacs-major-version 22)
           (save-buffers-kill-terminal)
           (save-buffers-kill-emacs))
     (message "Canceled exit")))
-
 
 ;; Using Emacs as a Server and prompt before quit. Only under X.
 (when (eq window-system 'x)
