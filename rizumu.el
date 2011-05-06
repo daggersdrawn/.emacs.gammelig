@@ -39,6 +39,7 @@
 ;; Column and line numbers
 (setq-default column-number-mode t)
 (setq-default line-number-mode t)
+(global-linum-mode 1)
 
 ;; Tabs
 (setq-default indent-tabs-mode nil)
