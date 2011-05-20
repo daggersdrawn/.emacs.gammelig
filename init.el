@@ -63,5 +63,8 @@
             (message "Loaded config file: %s" filename))
        (message "Could not load file: %s" filename)))))
 
+;; flyspell
+(setq-default ispell-program-name "/usr/bin/aspell")
+
 ;;; init.el ends here
 
