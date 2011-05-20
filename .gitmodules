@@ -16,12 +16,15 @@
 [submodule "src/dpastede"]
 	path = src/dpastede
 	url = git://github.com/emacsmirror/dpastede.git
-[submodule "src/autopair"]
-	path = src/autopair
-	url = git://github.com/emacsmirror/autopair.git
 [submodule "src/anything-dired-history"]
 	path = src/anything-dired-history
 	url = git://github.com/emacsmirror/anything-dired-history.git
 [submodule "src/pony-mode"]
 	path = src/pony-mode
 	url = git://github.com/davidmiller/pony-mode.git
+[submodule "src/tea-time"]
+	path = src/tea-time
+	url = git://github.com/gabrielsaldana/tea-time.git
+[submodule "src/pomodoro.el"]
+	path = src/pomodoro.el
+	url = git://github.com/vderyagin/pomodoro.el.git
