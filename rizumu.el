@@ -1,18 +1,3 @@
-;; load these config files
-(load-cfg-files '("yasnippet-cfg"
-                  "autopair-cfg"
-                  "html-cfg"
-                  "django-cfg"
-                  "python-cfg"
-                  ;"ropemacs-cfg"
-                  "linum-cfg"
-                  "pyflake-cfg"
-                  ;"org-cfg"
-                  "keybinding-cfg"
-                  ;"uniquify-cfg"
-                  ;"twittering-cfg"
-                  "color-theme-cfg"))
-
 ;; Fonts
 (set-face-attribute 'default nil
                     :family "Inconsolata" :height 100)
@@ -70,3 +55,6 @@
     (global-set-key (kbd "C-x C-c") 'ask-before-closing)  
     (global-set-key (kbd "C-z") 'ask-before-closing)
     (eq window-system 'x) (server-start))
+
+;; Set flyspell binary
+(setq-default ispell-program-name "/usr/bin/aspell")

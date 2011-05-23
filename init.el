@@ -9,28 +9,15 @@
 ;; and brighter; it simply makes everything else vanish."
 ;; -Neal Stephenson, "In the Beginning was the Command Line"
 
-(setq dotfiles-dir (file-name-directory (or load-file-name (buffer-file-name))))
-
+;; Load up ELPA, the package manager:
 (require 'package)
 (dolist (source '(("technomancy" . "http://repo.technomancy.us/emacs/")
                   ("marmalade" . "http://marmalade-repo.org/packages/")
                   ("elpa" . "http://tromey.com/elpa/")))
   (add-to-list 'package-archives source t))
+(package-initialize)
 
-(add-to-list 'load-path (expand-file-name
-                         "lisp" (expand-file-name
-                                 "org" (expand-file-name
-                                        "src" dotfiles-dir))))
-;; Load up Org Mode and Babel
-(require 'org-install)
-
-;; load up the main file
-;;(org-babel-load-file (expand-file-name "starter-kit.org" dotfiles-dir))
-
-(setq load-path (cons "~/.emacs.d/configs/" load-path))
-(setq load-path (cons "~/.emacs.d/elpa/" load-path))
-(setq load-path (cons "~/.emacs.d/src/" load-path))
-
+;; Load up src packages:
 (defun get-subdirs (directory)
   "Get a list of subdirectories under a given directory"
   (apply 'nconc (mapcar (lambda (fa)
@@ -41,30 +28,36 @@
                          (list (car fa))))
                         (directory-files-and-attributes directory))))
 
-(defconst emacs-config-dir "~/.emacs.d/configs/")
-(defconst emacs-elpa-dir "~/.emacs.d/elpa/")
-(defconst emacs-src-dir "~/.emacs.d/src/")
 (defun add-dirs-to-loadpath (dir-name)
   "add subdirs of your src directory to the load path"
   (dolist (subdir (get-subdirs dir-name))
     (setq load-path (cons (concat dir-name subdir) load-path))
     (message "Added %s to load path" subdir)))
 
-(add-dirs-to-loadpath emacs-config-dir)
-(add-dirs-to-loadpath emacs-src-dir)
-(add-dirs-to-loadpath emacs-elpa-dir)
+(add-dirs-to-loadpath "~/.emacs.d/src/")
 
+;; Load up configuration files:
 (defun load-cfg-files (filelist)
   (dolist (file filelist)
-    (let ((filename (expand-file-name (concat emacs-config-dir file ".el"))))
+    (let ((filename (expand-file-name (concat "~/.emacs.d/configs/" file ".el"))))
       (if (file-exists-p filename)
           (progn
             (load (concat filename))
             (message "Loaded config file: %s" filename))
        (message "Could not load file: %s" filename)))))
 
-;; flyspell
-(setq-default ispell-program-name "/usr/bin/aspell")
+(load-cfg-files '("yasnippet-cfg"
+                  "autopair-cfg"
+                  "html-cfg"
+                  "pony-cfg"
+                  "python-cfg"
+                  ;"ropemacs-cfg"
+                  "linum-cfg"
+                  "pyflake-cfg"
+                  ;"org-cfg"
+                  "keybinding-cfg"
+                  ;"uniquify-cfg"
+                  ;"twittering-cfg"
+                  "color-theme-cfg"))
 
 ;;; init.el ends here
-
