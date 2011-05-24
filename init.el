@@ -47,6 +47,7 @@
        (message "Could not load file: %s" filename)))))
 
 (load-cfg-files '("cfg_autopair"
+                  "cfg_diredx"
                   "cfg_html"
                   "cfg_keybinding"
                   "cfg_org"
@@ -55,6 +56,7 @@
                   "cfg_pyflake"
                   "cfg_python"
                   "cfg_tea-time"
+                  "cfg_twitter"
                   "cfg_uniquify"
                   "cfg_yasnippet"))
 
