@@ -37,3 +37,9 @@
 [submodule "src/twittering-mode"]
 	path = src/twittering-mode
 	url = git://github.com/emacsmirror/twittering-mode.git
+[submodule "src/dired-details"]
+	path = src/dired-details
+	url = git://github.com/emacsmirror/dired-details.git
+[submodule "src/diredful"]
+	path = src/diredful
+	url = git://github.com/emacsmirror/diredful.git
