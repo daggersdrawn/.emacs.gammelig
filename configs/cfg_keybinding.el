@@ -1,5 +1,4 @@
 ; Key bindings
-;(global-set-key "\C-l" 'goto-line)
 ;(global-set-key [f2] 'save-buffer)
 ;(global-set-key [f3] 'shell)
 ;(global-set-key [f4] 'indent-region)
@@ -20,3 +19,4 @@
 ;; redo+
 ;(require 'redo+)
 (global-set-key (kbd "C-?") 'redo)
+(global-set-key "\C-xg" 'magit-status)
