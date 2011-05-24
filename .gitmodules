@@ -28,3 +28,9 @@
 [submodule "src/pomodoro.el"]
 	path = src/pomodoro.el
 	url = git://github.com/vderyagin/pomodoro.el.git
+[submodule "src/dired-details-plus"]
+	path = src/dired-details-plus
+	url = git://github.com/emacsmirror/dired-details-plus.git
+[submodule "src/zencoding"]
+	path = src/zencoding
+	url = git://github.com/emacsmirror/zencoding.git
