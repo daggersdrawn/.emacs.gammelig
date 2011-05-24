@@ -56,6 +56,7 @@
                   "cfg_pyflake"
                   "cfg_python"
                   "cfg_tea-time"
+                  "cfg_tramp"
                   "cfg_twitter"
                   "cfg_uniquify"
                   "cfg_yasnippet"))
