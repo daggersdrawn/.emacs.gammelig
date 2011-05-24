@@ -46,18 +46,16 @@
             (message "Loaded config file: %s" filename))
        (message "Could not load file: %s" filename)))))
 
-(load-cfg-files '("yasnippet-cfg"
-                  "autopair-cfg"
-                  "html-cfg"
-                  "pony-cfg"
-                  "python-cfg"
-                  ;"ropemacs-cfg"
-                  "linum-cfg"
-                  "pyflake-cfg"
-                  ;"org-cfg"
-                  "keybinding-cfg"
-                  ;"uniquify-cfg"
-                  ;"twittering-cfg"
-                  "color-theme-cfg"))
+(load-cfg-files '("cfg_autopair"
+                  "cfg_html"
+                  "cfg_keybinding"
+                  "cfg_org"
+                  "cfg_pomodoro"
+                  "cfg_pony"
+                  "cfg_pyflake"
+                  "cfg_python"
+                  "cfg_tea-time"
+                  "cfg_uniquify"
+                  "cfg_yasnippet"))
 
 ;;; init.el ends here

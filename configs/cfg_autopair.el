@@ -12,7 +12,7 @@
 (add-hook 'css-mode-hook 
            #'(lambda () (autopair-mode)))
 
-(add-hook 'django-html-mode-hook 
+(add-hook 'pony-mode-hook 
            #'(lambda () (autopair-mode)))
 
 (add-hook 'php-mode-hook 
