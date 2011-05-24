@@ -34,3 +34,6 @@
 [submodule "src/zencoding"]
 	path = src/zencoding
 	url = git://github.com/emacsmirror/zencoding.git
+[submodule "src/twittering-mode"]
+	path = src/twittering-mode
+	url = git://github.com/emacsmirror/twittering-mode.git
