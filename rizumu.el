@@ -58,3 +58,6 @@
 
 ;; Set flyspell binary
 (setq-default ispell-program-name "/usr/bin/aspell")
+
+;; Turns on flymake for all files which have a flymake mode
+(add-hook 'find-file-hook 'flymake-find-file-hook)

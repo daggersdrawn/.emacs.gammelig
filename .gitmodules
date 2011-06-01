@@ -43,3 +43,6 @@
 [submodule "src/diredful"]
 	path = src/diredful
 	url = git://github.com/emacsmirror/diredful.git
+[submodule "src/jshint-mode"]
+	path = src/jshint-mode
+	url = git://github.com/daleharvey/jshint-mode.git

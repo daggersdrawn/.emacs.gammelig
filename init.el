@@ -49,6 +49,7 @@
 (load-cfg-files '("cfg_autopair"
                   "cfg_diredx"
                   "cfg_html"
+                  "cfg_jshint"
                   "cfg_keybinding"
                   "cfg_org"
                   "cfg_pomodoro"
