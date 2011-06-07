@@ -50,11 +50,10 @@
           (save-buffers-kill-emacs))
     (message "Canceled exit")))
 
-;; Using Emacs as a Server and prompt before quit. Only under X.
+;; Prompt before quit. Only under X.
 (when (eq window-system 'x)
     (global-set-key (kbd "C-x C-c") 'ask-before-closing)  
-    (global-set-key (kbd "C-z") 'ask-before-closing)
-    (eq window-system 'x) (server-start))
+    (global-set-key (kbd "C-z") 'ask-before-closing))
 
 ;; Set flyspell binary
 (setq-default ispell-program-name "/usr/bin/aspell")
