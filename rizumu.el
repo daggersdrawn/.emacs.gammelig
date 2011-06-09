@@ -9,7 +9,7 @@
 ;                    :family "Anonymous Pro" :height 130 :weight 'bold
 ;                    :foreground "black" :background 'unspecified)
 
-;; Color Theme 
+;; Color Theme
 (color-theme-zenburn)
 
 ;; Disable backup files.
@@ -52,7 +52,7 @@
 
 ;; Prompt before quit. Only under X.
 (when (eq window-system 'x)
-    (global-set-key (kbd "C-x C-c") 'ask-before-closing)  
+    (global-set-key (kbd "C-x C-c") 'ask-before-closing)
     (global-set-key (kbd "C-z") 'ask-before-closing))
 
 ;; Set flyspell binary
@@ -60,3 +60,9 @@
 
 ;; Turns on flymake for all files which have a flymake mode
 (add-hook 'find-file-hook 'flymake-find-file-hook)
+
+;; Final newline
+(setq-default require-final-newline t)
+
+;; Delete trailing whitespace (on save)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
