@@ -12,7 +12,9 @@
       (rx (or (seq bol (? ".") "#") ;; emacs autosave files
               (seq "~" eol) ;; backup-files
               (seq bol "svn" eol) ;; svn dirs
-              (seq ".pyc" eol)
+              (seq ".pyc" eol) ;; python
+              (seq ".hi" eol) ;; haskell
+              (seq ".o" eol) ;; haskell
               (seq ".git" eol) ;; misc git files
               (seq ".gitignore" eol)
               )))
