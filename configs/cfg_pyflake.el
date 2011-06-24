@@ -1,5 +1,18 @@
-;; While visiting a Python file, run: 
-;; M-x python-check or 
-;; C-c C-v or 
-;; C-c C-w
-(setq python-check-command "pyflakes")
+;; configure flymake-python
+(when (load "flymake" t)
+  (defun flymake-pylint-init ()
+    (let* ((temp-file (flymake-init-create-temp-buffer-copy
+                       'flymake-create-temp-inplace))
+           (local-file (file-relative-name
+                        temp-file
+                        (file-name-directory buffer-file-name))))
+      (list "~/.emacs.d/src/flymake-python/pyflymake.py" (list local-file))))
+
+  (add-to-list 'flymake-allowed-file-name-masks
+               '("\\.py\\'" flymake-pylint-init)))
+
+;; activate flymake automatically
+(add-hook 'find-file-hook 'flymake-find-file-hook)
+
+;; disable flymake for html mode.
+(delete '("\\.html?\\'" flymake-xml-init) flymake-allowed-file-name-masks)
