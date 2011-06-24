@@ -64,5 +64,7 @@
 ;; Final newline
 (setq-default require-final-newline t)
 
-;; Delete trailing whitespace (on save)
+;; Show and delete trailing whitespace (on save)
+(setq-default show-trailing-whitespace t)
+(setq default-indicate-empty-lines t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
