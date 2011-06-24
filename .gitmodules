@@ -46,3 +46,6 @@
 [submodule "src/jshint-mode"]
 	path = src/jshint-mode
 	url = git://github.com/daleharvey/jshint-mode.git
+[submodule "src/flymake-python"]
+	path = src/flymake-python
+	url = git://github.com/akaihola/flymake-python.git
