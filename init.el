@@ -47,6 +47,7 @@
        (message "Could not load file: %s" filename)))))
 
 (load-cfg-files '("cfg_autopair"
+                  "cfg_buffer-move"
                   "cfg_diredx"
                   "cfg_html"
                   "cfg_jshint"
