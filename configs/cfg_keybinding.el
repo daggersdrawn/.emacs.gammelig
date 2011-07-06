@@ -28,3 +28,6 @@
 
 ;; anything
 (global-set-key (kbd "M-SPC") 'anything)
+
+;; buffer-move
+(global-set-key (kbd "C-x 4") 'win-swap)
