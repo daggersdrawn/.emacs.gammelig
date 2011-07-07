@@ -65,3 +65,10 @@
 (setq-default show-trailing-whitespace t)
 (setq default-indicate-empty-lines t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; Enable packages installed via ELPA
+
+;;  To use library Synonyms, you will need the Moby Thesaurus II file,
+;;  `mthesaur.txt', available here:
+;;    ftp://ibiblio.org/pub/docs/books/gutenberg/etext02/mthes10.zip
+(require 'synonyms)
