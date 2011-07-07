@@ -48,6 +48,7 @@
 
 (load-cfg-files '("cfg_autopair"
                   "cfg_buffer-move"
+                  "cfg_calfw"
                   "cfg_diredx"
                   "cfg_html"
                   "cfg_jshint"
@@ -61,6 +62,7 @@
                   "cfg_tramp"
                   "cfg_twitter"
                   "cfg_uniquify"
-                  "cfg_yasnippet"))
+                  "cfg_yasnippet"
+                  "cfg_zenburn"))
 
 ;;; init.el ends here

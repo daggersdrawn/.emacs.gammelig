@@ -9,9 +9,6 @@
 ;                    :family "Anonymous Pro" :height 130 :weight 'bold
 ;                    :foreground "black" :background 'unspecified)
 
-;; Color Theme
-(color-theme-zenburn)
-
 ;; Disable backup files.
 (setq make-backup-files nil)
 ;; Enable versioning with default values (keep five last versions, I think!)

@@ -49,3 +49,6 @@
 [submodule "src/flymake-python"]
 	path = src/flymake-python
 	url = git://github.com/akaihola/flymake-python.git
+[submodule "src/calfw"]
+	path = src/calfw
+	url = git://github.com/kiwanami/emacs-calfw.git
