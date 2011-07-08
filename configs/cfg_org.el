@@ -22,7 +22,7 @@
 ;; Set to the name of the file where new notes will be stored
 (setq org-mobile-inbox-for-pull "~/org/flagged.org")
 ;; Set to <your Dropbox root directory>/MobileOrg.
-(setq org-mobile-directory "~/Dropbox/mobileorg")
+(setq org-mobile-directory "~/Dropbox/MobileOrg")
 ;; Custom agenda view
 (setq org-mobile-force-id-on-agenda-items nil)
 ;; return activates a link
@@ -37,7 +37,7 @@
 
 (defun gtd ()
    (interactive)
-   (find-file "~/org/gtd/gtd.org")
+   (find-file "~/org/gtd.org")
  )
 
 ;; I use org's tag feature to implement contexts.
