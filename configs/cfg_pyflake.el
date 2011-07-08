@@ -1,4 +1,5 @@
 ;; configure flymake-python
+(require 'flymake-cursor)
 (when (load "flymake" t)
   (defun flymake-pylint-init ()
     (let* ((temp-file (flymake-init-create-temp-buffer-copy
