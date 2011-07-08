@@ -37,3 +37,7 @@
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
+
+;; Margin indent
+(global-set-key (kbd "M-]") 'increase-left-margin)
+(global-set-key (kbd "M-[") 'decrease-left-margin)
