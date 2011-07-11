@@ -53,6 +53,7 @@
                   "cfg_html"
                   "cfg_jshint"
                   "cfg_keybinding"
+                  "cfg_maxframe"
                   "cfg_org"
                   "cfg_pomodoro"
                   "cfg_pony"

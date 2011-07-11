@@ -78,9 +78,9 @@
 (defvar linux-p (string-match "gnu/linux" (symbol-name system-type)))
 
 ;; GNU/Linux systems only
-(when linux-p
-  ;pass)
+;(when linux-p)
 
 ;; Mac OS X only
 (when macosx-p
-  (setq ns-pop-up-frames nil))
+  (setq ns-pop-up-frames nil)
+  (add-hook 'window-setup-hook 'maximize-frame t))
