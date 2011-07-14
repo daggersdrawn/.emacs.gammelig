@@ -55,15 +55,16 @@
                   "cfg_keybinding"
                   "cfg_maxframe"
                   "cfg_org"
-                  "cfg_pomodoro"
-                  "cfg_pony"
                   "cfg_pyflake"
                   "cfg_python"
-                  "cfg_tea-time"
                   "cfg_tramp"
                   "cfg_twitter"
                   "cfg_uniquify"
                   "cfg_yasnippet"
                   "cfg_zenburn"))
+(require 'pomodoro)
+(require 'pony-mode)
+(require 'redo+)
+(require 'tea-time)
 
 ;;; init.el ends here

@@ -19,6 +19,8 @@
 
 ;; redo+
 (global-set-key (kbd "C-?") 'redo)
+
+;; magit
 (global-set-key (kbd "C-x g") 'magit-status)
 
 ;; pyflakes
