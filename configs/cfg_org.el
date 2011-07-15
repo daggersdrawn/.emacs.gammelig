@@ -11,10 +11,10 @@
 ;; http://thread.gmane.org/gmane.emacs.orgmode/4832/focus=4854
 
 ;; keybindings
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cr" 'org-remember)
-(global-set-key "\C-cg" 'gtd)
+(global-set-key (kbd "C-c l") 'org-store-link)
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c r") 'org-remember)
+(global-set-key (kbd "C-c g") 'gtd)
 
 ;; Files for syncing
 (setq org-agenda-files
