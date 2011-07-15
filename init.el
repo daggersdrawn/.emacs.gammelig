@@ -50,6 +50,7 @@
                   "cfg_buffer-move"
                   "cfg_calfw"
                   "cfg_diredx"
+                  "cfg_hideshow"
                   "cfg_html"
                   "cfg_jshint"
                   "cfg_keybinding"

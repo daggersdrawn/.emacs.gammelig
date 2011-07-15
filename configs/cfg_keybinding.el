@@ -43,3 +43,7 @@
 ;; Margin indent
 (global-set-key (kbd "M-]") 'increase-left-margin)
 (global-set-key (kbd "M-[") 'decrease-left-margin)
+
+;; HideShow
+(global-set-key (kbd "M-+") 'toggle-hiding-all)
+(global-set-key (kbd "M-=") 'toggle-hiding-block)

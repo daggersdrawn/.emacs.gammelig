@@ -1,0 +1,31 @@
+(defun toggle-hiding-block (column)
+  (interactive "P")
+  (if hs-minor-mode
+      (if (condition-case nil
+              (hs-toggle-hiding)
+            (error t))
+          (hs-show-all))
+    (toggle-selective-display column)))
+
+(defvar hs-hide-state nil "Current state of hideshow for toggling all.")
+(defun toggle-hiding-all ()
+  (interactive)
+  (setq hs-hide-state (not hs-hide-state))
+  (if hs-hide-state
+      (hs-hide-all)
+    (hs-show-all)))
+
+(add-hook 'c-mode-common-hook   'hs-minor-mode)
+(add-hook 'c++-mode-common-hook 'hs-minor-mode)
+(add-hook 'css-mode-hook        'hs-minor-mode)
+(add-hook 'emacs-lisp-mode-hook 'hs-minor-mode)
+(add-hook 'html-mode-hook       'hs-minor-mode)
+(add-hook 'java-mode-hook       'hs-minor-mode)
+(add-hook 'javascript-mode-hook 'hs-minor-mode)
+(add-hook 'lisp-mode-hook       'hs-minor-mode)
+(add-hook 'perl-mode-hook       'hs-minor-mode)
+(add-hook 'php-mode-hook        'hs-minor-mode)
+(add-hook 'pony-mode-hook       'hs-minor-mode)
+(add-hook 'python-mode-hook     'hs-minor-mode)
+(add-hook 'ruby-mode-hook       'hs-minor-mode)
+(add-hook 'sh-mode-hook         'hs-minor-mode)
