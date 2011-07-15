@@ -19,28 +19,29 @@
 ;; Files for syncing
 (setq org-agenda-files
     (list "~/org/gtd.org" "~/org/someday.org"))
+
 ;; Set to the name of the file where new notes will be stored
 (setq org-mobile-inbox-for-pull "~/org/flagged.org")
+
 ;; Set to <your Dropbox root directory>/MobileOrg.
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
+
 ;; Custom agenda view
 (setq org-mobile-force-id-on-agenda-items nil)
+
 ;; return activates a link
 (setq org-return-follows-link t)
+
 ;; Set keywords and agenda commands
-(setq org-todo-keywords '((type "TODO" "NEXT" "WAITING" "DONE")))
+(setq org-todo-keywords
+      '((type "TODO" "NEXT" "WAITING" "DONE")))
 (setq org-agenda-custom-commands
     '(("w" todo "WAITING" nil)
       ("n" todo "NEXT" nil)
       ("d" "Agenda + Next Actions" ((agenda) (todo "NEXT"))))
 )
 
-(defun gtd ()
-   (interactive)
-   (find-file "~/org/gtd.org")
- )
-
-;; I use org's tag feature to implement contexts.
+;; Use org's tag feature to implement contexts.
 (setq org-tag-alist '(("STUDIO" . ?s)
                       ("COMPUTER" . ?c)
                       ("MAIL" . ?m)
@@ -49,15 +50,15 @@
                       ("READING" . ?r)
                       ("DVD" . ?d)))
 
-;; I like to color-code task types.
-(setf org-todo-keyword-faces '(("NEXT" . (:foreground "yellow" :background "red" :bold t :weight bold))
-			       ("TODO" . (:foreground "cyan" :background "steelblue" :bold t :weight bold))
-			       ("WAITING" . (:foreground "yellow" :background "magenta2" :bold t :weight bold))
-			       ("DONE" . (:foreground "gray50" :background "gray30"))))
+;; Use color-coded task types.
+(setq org-todo-keyword-faces
+      '(("NEXT" . (:foreground "yellow" :background "red" :bold t :weight bold))
+        ("TODO" . (:foreground "DarkOrange1" :weight bold))
+        ("DONE" . (:foregorund "green" :weight bold))
+        ("CANCEL" . (:foreground "blue" :weight bold))))
 
-;; I put the archive in a separate file, because the gtd file will
+;; Put the archive in a separate file, because the gtd file will
 ;; probably already get pretty big just with current tasks.
-
 (setq org-archive-location "%s_archive::")
 
 ;; Remember support. This creates several files:
@@ -109,5 +110,9 @@
 ;; widen category field a little
 (setq org-agenda-prefix-format "  %-17:c%?-12t% s")
 
+;; provide the gtd function
+(defun gtd ()
+   (interactive)
+   (find-file "~/org/gtd.org"))
 (provide 'org-gtd)
 ;;; org-gtd.el ends here
