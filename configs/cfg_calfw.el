@@ -1,8 +1,8 @@
 (require 'calfw-org)
 
 (setq calendar-weekend-marker 'diary)
-(add-hook 'today-visible-calendar-hook 'calendar-mark-weekend)
-(add-hook 'today-invisible-calendar-hook 'calendar-mark-weekend)
+;(add-hook 'today-visible-calendar-hook 'calendar-mark-weekend)
+;(add-hook 'today-invisible-calendar-hook 'calendar-mark-weekend)
 
 (setq calendar-week-start-day 1
       calendar-day-name-array ["Domingo" "Lunes" "Martes" "Miércoles"
