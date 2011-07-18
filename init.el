@@ -67,5 +67,7 @@
 (require 'pony-mode)
 (require 'redo+)
 (require 'tea-time)
+(require 'google-maps)
+(require 'org-location-google-maps)
 
 ;;; init.el ends here

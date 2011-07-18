@@ -52,3 +52,6 @@
 [submodule "src/calfw"]
 	path = src/calfw
 	url = git://github.com/kiwanami/emacs-calfw.git
+[submodule "src/google-maps"]
+	path = src/google-maps
+	url = git://github.com/emacsmirror/google-maps.git
