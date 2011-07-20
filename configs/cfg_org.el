@@ -18,10 +18,10 @@
 
 ;; Files for syncing
 (setq org-agenda-files
-    (list "~/org/gtd.org" "~/org/someday.org"))
+    (list "~/Dropbox/org/gtd.org" "~/Dropbox/org/someday.org"))
 
 ;; Set to the name of the file where new notes will be stored
-(setq org-mobile-inbox-for-pull "~/org/flagged.org")
+(setq org-mobile-inbox-for-pull "~/Dropbox/org/flagged.org")
 
 ;; Set to <your Dropbox root directory>/MobileOrg.
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
@@ -63,9 +63,9 @@
 
 ;; Remember support. This creates several files:
 ;;
-;;   ~/org/todo.org      Where remembered TODO's are stored.
-;;   ~/org/journal.org   Timestamped journal entries.
-;;   ~/org/remember.org  All other notes
+;;   ~/Dropbox/org/todo.org      Where remembered TODO's are stored.
+;;   ~/Dropbox/org/journal.org   Timestamped journal entries.
+;;   ~/Dropbox/org/remember.org  All other notes
 
 ;; and a keybinding of "C-c r" for making quick notes from any buffer.
 
@@ -76,7 +76,7 @@
 ;; in them.
 
 (setq org-reverse-note-order t)  ;; note at beginning of file by default.
-(setq org-default-notes-file "~/org/remember.org")
+(setq org-default-notes-file "~/Dropbox/org/remember.org")
 (setq remember-annotation-functions '(org-remember-annotation))
 (setq remember-handler-functions '(org-remember-handler))
 (add-hook 'remember-mode-hook 'org-remember-apply-template)
@@ -101,7 +101,7 @@
 (setq org-fontify-emphasized-text t)
 (setq org-fontify-done-headline t)
 (setq org-agenda-include-all-todo nil)
-(setq org-directory "~/org")
+(setq org-directory "~/Dropbox/org")
 (setq org-export-html-style "<link rel=stylesheet href=\"../e/freeshell2.css\" type=\"text/css\">")
 (setq org-export-with-section-numbers nil)
 (setq org-export-with-toc nil)
@@ -113,6 +113,6 @@
 ;; provide the gtd function
 (defun gtd ()
    (interactive)
-   (find-file "~/org/gtd.org"))
+   (find-file "~/Dropbox/org/gtd.org"))
 (provide 'org-gtd)
 ;;; org-gtd.el ends here
