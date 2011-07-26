@@ -63,11 +63,11 @@
                   "cfg_uniquify"
                   "cfg_yasnippet"
                   "cfg_zenburn"))
+(require 'find-file-in-git-repo)
+(require 'google-maps) (require 'org-location-google-maps)
 (require 'pomodoro)
 (require 'pony-mode)
 (require 'redo+)
 (require 'tea-time)
-(require 'google-maps)
-(require 'org-location-google-maps)
 
 ;;; init.el ends here

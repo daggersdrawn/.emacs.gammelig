@@ -36,3 +36,6 @@
 ;; HideShow
 (global-set-key (kbd "M-+") 'toggle-hiding-all)
 (global-set-key (kbd "M-=") 'toggle-hiding-block)
+
+;; Go to file
+(global-set-key (kbd "C-c f") 'find-file-in-git-repo)
