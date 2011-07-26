@@ -86,13 +86,85 @@
         (?j "* %U %?\n\n  %i\n  %a" "~/journal.org")
         (?i "* %^{Title}\n  %i\n  %a" "~/remember.org" "New Ideas")))
 
-;; My preferences. These are less related to GTD, and more to my
+;; Customizations: *work in progress*. The rest is less related to GTD, and more to my
 ;; particular setup. They are included here for completeness, and so
 ;; that new org users can see a complete example org-gtd
 ;; configuration.
 
-(setq org-return-follows-link t)
+;;
+;; CUSTOM AGENDAS
+;;
+(setq org-agenda-custom-commands
+      (quote (("P" "Projects" tags "/!PROJECT" ((org-use-tag-inheritance nil)))
+              ("s" "Started Tasks" todo "STARTED" ((org-agenda-todo-ignore-with-date nil)))
+              ("w" "Tasks waiting on something" tags "WAITING" ((org-use-tag-inheritance nil)))
+              ("r" "Refile New Notes and Tasks" tags "REFILE" ((org-agenda-todo-ignore-with-date nil)))
+              ("n" "Notes" tags "NOTES" nil))))
+
+ ; Tags with fast selection keys
+(setq org-tag-alist (quote ((:startgroup)
+                            ("@Errand" . ?e)
+                            ("@Work" . ?w)
+                            ("@Home" . ?h)
+                            ("@Phone" . ?p)
+                            ("@Mind" . ?m)
+                            ("@Studio" . ?s)
+                            (:endgroup)
+                            ("NEXT" . ?N)
+                            ("PROJECT" . ?P)
+                            ("WAITING" . ?W)
+                            ("HOME" . ?H)
+                            ("ORG" . ?O)
+                            ("PLAY" . ?p)
+                            ("R&D" . ?r)
+                            ("MIND" . ?m)
+                            ("STUDIO" . ?S)
+                            ("CANCELLED" . ?C))))
+
+; For tag searches ignore tasks with scheduled and deadline dates
+(setq org-agenda-tags-todo-honor-ignore-options t)
+
+; Erase all reminders and rebuilt reminders for today from the agenda
+(defun my-org-agenda-to-appt ()
+  (interactive)
+  (setq appt-time-msg-list nil)
+  (org-agenda-to-appt))
+
+; Rebuild the reminders everytime the agenda is displayed
+(add-hook 'org-finalize-agenda-hook 'my-org-agenda-to-appt)
+
+; If we leave Emacs running overnight - reset the appointments one minute after midnight
+(run-at-time "24:01" nil 'my-org-agenda-to-appt)
+
+;; save all org files every minute
+(run-at-time "00:59" 3600 'org-save-all-org-buffers)
+
+;; hide the initial stars. they're distracting
 (setq org-hide-leading-stars t)
+
+(setq org-return-follows-link t)
+
+;;
+;; Remove Tasks With Dates From The Global Todo Lists
+;;
+;; Keep tasks with dates off the global todo lists
+(setq org-agenda-todo-ignore-with-date t)
+
+;; Remove completed deadline tasks from the agenda view
+(setq org-agenda-skip-deadline-if-done t)
+
+;; Remove completed scheduled tasks from the agenda view
+(setq org-agenda-skip-scheduled-if-done t)
+
+;; ask me for a note when I mark something as done
+(setq org-log-done 'note)
+
+;; The abbrev list allows me to insert links like
+;; [[foo:google]]
+;; which will google for "foo"
+(setq org-link-abbrev-alist
+      '(("google" . "http://www.google.com/search?q=")))
+
 (setf org-tags-column -65)
 (setf org-special-ctrl-a/e t)
 
