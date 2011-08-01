@@ -1,14 +1,3 @@
-;; Fonts
-(set-face-attribute 'default nil
-                    :family "Inconsolata" :height 100)
-
-;(set-face-attribute 'font-lock-comment-face nil
-;                    :family "Optima" :height 140 :slant 'italic
-;                    :foreground "#000000" :background "ddddee")
-;(set-face-attribute 'font-lock-string-face nil
-;                    :family "Anonymous Pro" :height 130 :weight 'bold
-;                    :foreground "black" :background 'unspecified)
-
 ;; Disable backup files.
 (setq make-backup-files nil)
 ;; Enable versioning with default values (keep five last versions, I think!)
@@ -78,7 +67,9 @@
 (defvar linux-p (string-match "gnu/linux" (symbol-name system-type)))
 
 ;; GNU/Linux systems only
-;(when linux-p)
+(when linux-p
+  ;; Set font
+  (set-face-attribute 'default nil :family "Inconsolata" :height 100))
 
 ;; Mac OS X only
 (when macosx-p
