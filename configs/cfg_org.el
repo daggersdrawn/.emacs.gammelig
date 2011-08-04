@@ -18,7 +18,7 @@
 
 ;; Files for syncing
 (setq org-agenda-files
-    (list "~/Dropbox/org/gtd.org" "~/Dropbox/org/someday.org"))
+    (list "~/Dropbox/org/gtd.org" "~/Dropbox/org/someday.org" "~/Dropbox/org/journal.org"))
 
 ;; Set to the name of the file where new notes will be stored
 (setq org-mobile-inbox-for-pull "~/Dropbox/org/flagged.org")
@@ -63,7 +63,7 @@
 
 ;; Remember support. This creates several files:
 ;;
-;;   ~/Dropbox/org/todo.org      Where remembered TODO's are stored.
+;;   ~/Dropbox/org/gtd.org       Where remembered TODO's are stored.
 ;;   ~/Dropbox/org/journal.org   Timestamped journal entries.
 ;;   ~/Dropbox/org/remember.org  All other notes
 
@@ -82,9 +82,9 @@
 (add-hook 'remember-mode-hook 'org-remember-apply-template)
 
 (setq org-remember-templates
-      '((?t "* TODO %?\n  %i\n  %a" "~/todo.org")
-        (?j "* %U %?\n\n  %i\n  %a" "~/journal.org")
-        (?i "* %^{Title}\n  %i\n  %a" "~/remember.org" "New Ideas")))
+      '(("TODO" ?t "* TODO %?\n  %i\n  %a" "~/org/gtd.org")
+        ("Journal" ?j "* %U %?\n\n  %i\n  %a" "~/org/journal.org")
+        ("Someday" ?s "* %^{Title}\n  %i\n  %a" "~/org/someday.org" "New Ideas")))
 
 ;; Customizations: *work in progress*. The rest is less related to GTD, and more to my
 ;; particular setup. They are included here for completeness, and so
