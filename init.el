@@ -65,6 +65,7 @@
                   "cfg_zenburn"))
 (require 'find-file-in-git-repo)
 (require 'google-maps) (require 'org-location-google-maps)
+(require 'linum-off)
 (require 'pomodoro)
 (require 'pony-mode)
 (require 'redo+)
