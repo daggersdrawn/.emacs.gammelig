@@ -66,9 +66,8 @@
 (require 'find-file-in-git-repo)
 (require 'google-maps) (require 'org-location-google-maps)
 (require 'linum-off)
+(require 'pivotal-tracker)
 (require 'pomodoro)
 (require 'pony-mode)
 (require 'redo+)
 (require 'tea-time)
-
-;;; init.el ends here

@@ -55,3 +55,6 @@
 [submodule "src/google-maps"]
 	path = src/google-maps
 	url = git://github.com/emacsmirror/google-maps.git
+[submodule "src/pivotal-tracker"]
+	path = src/pivotal-tracker
+	url = git://github.com/emacsmirror/pivotal-tracker.git
