@@ -39,3 +39,6 @@
 
 ;; Go to file
 (global-set-key (kbd "C-c f") 'find-file-in-git-repo)
+
+;; editing
+(global-set-key (kbd "M-?") 'comment-or-uncomment-region)
