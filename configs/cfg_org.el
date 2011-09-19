@@ -13,15 +13,18 @@
 ;; keybindings
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
-(global-set-key (kbd "C-c r") 'org-remember)
+(global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c g") 'gtd)
+
+;; capture
+(setq org-default-notes-file (concat org-directory "/notes.org"))
 
 ;; Files for syncing
 (setq org-agenda-files
-    (list "~/Dropbox/org/gtd.org" "~/Dropbox/org/someday.org" "~/Dropbox/org/journal.org"))
+    (list (concat org-directory "/gtd.org") (concat org-directory "/someday.org")  (concat org-directory "/journal.org")))
 
 ;; Set to the name of the file where new notes will be stored
-(setq org-mobile-inbox-for-pull "~/Dropbox/org/flagged.org")
+(setq org-mobile-inbox-for-pull (concat org-directory "/flagged.org"))
 
 ;; Set to <your Dropbox root directory>/MobileOrg.
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
@@ -61,13 +64,13 @@
 ;; probably already get pretty big just with current tasks.
 (setq org-archive-location "%s_archive::")
 
-;; Remember support. This creates several files:
+;; Creates several files:
 ;;
-;;   ~/Dropbox/org/gtd.org       Where remembered TODO's are stored.
-;;   ~/Dropbox/org/journal.org   Timestamped journal entries.
-;;   ~/Dropbox/org/remember.org  All other notes
+;;   (concat org-directory "/gtd.org")       Where remembered TODO's are stored.
+;;   (concat org-directory "/journal.org")   Timestamped journal entries.
+;;   (concat org-directory "/remember.org")  All other notes
 
-;; and a keybinding of "C-c r" for making quick notes from any buffer.
+;; Use a keybinding of "C-c c" for making quick notes from any buffer.
 
 ;; These bits of Remembered information must eventually be reviewed
 ;; and filed somewhere (perhaps in gtd.org, or in a project-specific
@@ -76,15 +79,20 @@
 ;; in them.
 
 (setq org-reverse-note-order t)  ;; note at beginning of file by default.
-(setq org-default-notes-file "~/Dropbox/org/remember.org")
+(setq org-default-notes-file (concat org-directory "/remember.org"))
 (setq remember-annotation-functions '(org-remember-annotation))
 (setq remember-handler-functions '(org-remember-handler))
 (add-hook 'remember-mode-hook 'org-remember-apply-template)
 
-(setq org-remember-templates
-      '(("TODO" ?t "* TODO %?\n  %i\n  %a" "~/org/gtd.org")
-        ("Journal" ?j "* %U %?\n\n  %i\n  %a" "~/org/journal.org")
-        ("Someday" ?s "* %^{Title}\n  %i\n  %a" "~/org/someday.org" "New Ideas")))
+     (setq org-capture-templates
+      '(("t" "todo" entry (file+headline (concat org-directory "/gtd.org") "Tasks")
+             "* TODO %?\n  %i\n  %a")
+        ("n" "note" entry (file+headline (concat org-directory "/notes.org") "Notes to review")
+         "* %^{Title}\n  %i\n  %a")
+        ("s" "someday" entry (file+headline (concat org-directory "/someday.org") "Ideas")
+         "* %^{Title}\n  %i\n  %a")
+        ("j" "journal" entry (file+datetree (concat org-directory "/journal.org"))
+         "* %?\nEntered on %U\n  %i\n  %a")))
 
 ;; Customizations: *work in progress*. The rest is less related to GTD, and more to my
 ;; particular setup. They are included here for completeness, and so
@@ -185,6 +193,6 @@
 ;; provide the gtd function
 (defun gtd ()
    (interactive)
-   (find-file "~/Dropbox/org/gtd.org"))
+   (find-file (concat org-directory "/gtd.org")))
 (provide 'org-gtd)
 ;;; org-gtd.el ends here
