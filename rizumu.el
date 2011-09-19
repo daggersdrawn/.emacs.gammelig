@@ -62,6 +62,9 @@
 ;;    ftp://ibiblio.org/pub/docs/books/gutenberg/etext02/mthes10.zip
 (require 'synonyms)
 
+;; follow symlinks and don't ask
+(setq vc-follow-symlinks t)
+
 ;; Check to see if running on Mac OS X or some GNU/Linux distro
 (defvar macosx-p (string-match "darwin" (symbol-name system-type)))
 (defvar linux-p (string-match "gnu/linux" (symbol-name system-type)))
