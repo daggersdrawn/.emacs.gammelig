@@ -15,6 +15,9 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c g") 'gtd)
+(global-set-key (kbd "C-c r") 'reference)
+(global-set-key (kbd "C-c s") 'someday)
+(global-set-key (kbd "C-c k") 'keybindings)
 
 ;; capture
 (setq org-default-notes-file (concat org-directory "/notes.org"))
@@ -190,9 +193,23 @@
 ;; widen category field a little
 (setq org-agenda-prefix-format "  %-17:c%?-12t% s")
 
-;; provide the gtd function
+;; provide the custom functions
 (defun gtd ()
    (interactive)
    (find-file (concat org-directory "/gtd.org")))
 (provide 'org-gtd)
-;;; org-gtd.el ends here
+
+(defun reference ()
+   (interactive)
+   (find-file (concat org-directory "/reference.org")))
+(provide 'org-reference)
+
+(defun someday ()
+   (interactive)
+   (find-file (concat org-directory "/someday.org")))
+(provide 'org-someday)
+
+(defun keybindings ()
+   (interactive)
+   (find-file (concat org-directory "/keybindings.org")))
+(provide 'org-keybindings)
