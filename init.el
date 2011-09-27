@@ -64,8 +64,10 @@
                   "cfg_yasnippet"
                   "cfg_zenburn"))
 (require 'find-file-in-git-repo)
+(require 'google-contacts)
 (require 'google-maps) (require 'org-location-google-maps)
 (require 'linum-off)
+(require 'oauth2)
 (require 'pivotal-tracker)
 (require 'pomodoro)
 (require 'pony-mode)

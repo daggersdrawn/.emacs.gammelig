@@ -58,3 +58,6 @@
 [submodule "src/pivotal-tracker"]
 	path = src/pivotal-tracker
 	url = git://github.com/emacsmirror/pivotal-tracker.git
+[submodule "src/google-contacts"]
+	path = src/google-contacts
+	url = git://git.naquadah.org/google-contacts.el.git
