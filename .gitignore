@@ -6,6 +6,7 @@ starter-kit-2.0/*el
 auto-save-list
 anything-c-adaptive-history
 backups/*
+eshell/history
 url/*
 oauth2.plstore
 places
