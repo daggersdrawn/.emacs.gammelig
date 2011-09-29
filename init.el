@@ -36,6 +36,82 @@
 
 (add-dirs-to-loadpath "~/.emacs.d/src/")
 
+;; check marmalade for packages and install
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+(defvar my-packages '(
+    anything
+    anything-complete
+    anything-config
+    anything-ipython
+    anything-match-plugin
+    auctex
+    auto-complete
+    auto-indent-mode
+    autopair
+    buffer-move
+    clojure-mode
+    clojure-test-mode
+    color-theme
+    color-theme-zenburn
+    csv-mode
+    descbinds-anything
+    dictionary
+    dired-isearch
+    dired-single
+    find-file-in-git-repo
+    find-file-in-project
+    flymake-cursor
+    furl
+    gist
+    haml-mode
+    haskell-mode
+    highlight-parentheses
+    htmlize
+    idle-highlight
+    iresize
+    javascript
+    keywiz
+    kill-ring-search
+    linum-off
+    lua-mode
+    lusty-explorer
+    magit
+    markdown-mode
+    marmalade
+    nav
+    oddmuse
+    org
+    paredit
+    project
+    python
+    rainbow-mode
+    redo+
+    sass-mode
+    scpaste
+    slime
+    smart-tab
+    smex
+    starter-kit
+    starter-kit-bindings
+    starter-kit-lisp
+    starter-kit-eshell
+    starter-kit-js
+    starter-kit-lisp
+    starter-kit-ruby
+    tuareg
+    synonyms
+    worklog
+    wtf
+    yaml-mode
+    yasnippet-bundle
+))
+
+(dolist (p my-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+
 ;; Load up configuration files:
 (defun load-cfg-files (filelist)
   (dolist (file filelist)

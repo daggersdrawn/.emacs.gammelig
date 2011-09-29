@@ -1,12 +1,9 @@
-*elc
 .DS_Store
-starter-kit-2.0/*el
-*.tar
-
-auto-save-list
+abbrev_defs
+auto-save-list/*
 anything-c-adaptive-history
 backups/*
-eshell/history
+eshell/*
 url/*
 oauth2.plstore
 places
