@@ -41,9 +41,6 @@
     (global-set-key (kbd "C-x C-c") 'ask-before-closing)
     (global-set-key (kbd "C-z") 'ask-before-closing))
 
-;; Set flyspell binary
-(setq-default ispell-program-name "/usr/bin/aspell")
-
 ;; Turns on flymake for all files which have a flymake mode
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 
@@ -71,10 +68,15 @@
 
 ;; GNU/Linux systems only
 (when linux-p
+  ;; Set flyspell binary
+  (setq-default ispell-program-name "/usr/bin/aspell")
   ;; Set font
   (set-face-attribute 'default nil :family "Inconsolata" :height 100))
 
 ;; Mac OS X only
 (when macosx-p
+  ;; Set flyspell binary
+  (setq-default ispell-program-name "/usr/local/bin/aspell")
+  ;; Set window sizes
   (setq ns-pop-up-frames nil)
   (add-hook 'window-setup-hook 'maximize-frame t))
