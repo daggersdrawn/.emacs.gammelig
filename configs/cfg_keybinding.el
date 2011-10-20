@@ -2,6 +2,11 @@
 (global-set-key (kbd "C-x C-f") 'lusty-file-explorer)
 (global-set-key (kbd "C-x b") 'lusty-buffer-explorer)
 
+;; Copy-Cut-Paste from clipboard with Super-C Super-X Super-V
+(global-set-key (kbd "s-x") 'clipboard-kill-region) ;;cut
+(global-set-key (kbd "s-c") 'clipboard-kill-ring-save) ;;copy
+(global-set-key (kbd "s-v") 'clipboard-yank) ;;paste
+
 ;; Move between buffers
 (global-set-key [C-right] 'next-buffer)
 (global-set-key [C-left] 'previous-buffer)
