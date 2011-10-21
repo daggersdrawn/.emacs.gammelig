@@ -22,6 +22,9 @@
 ;; capture
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 
+;; Follow links on enter
+(setq org-return-follows-link t)
+
 ;; Files for syncing
 (setq org-agenda-files
     (list (concat org-directory "/gtd.org") (concat org-directory "/someday.org")  (concat org-directory "/journal.org")))
