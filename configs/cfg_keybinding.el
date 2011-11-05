@@ -28,6 +28,9 @@
 ;; buffer-move
 (global-set-key (kbd "C-x 4") 'win-swap)
 
+;; kill all other buffers
+(global-set-key (kbd "C-x C-k") 'kill-other-buffers)
+
 ;; iresize
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
