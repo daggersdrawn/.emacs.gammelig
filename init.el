@@ -126,6 +126,7 @@
                   "cfg_buffer-move"
                   "cfg_calfw"
                   "cfg_diredx"
+                  "cfg_gnus"
                   "cfg_hideshow"
                   "cfg_html"
                   "cfg_jsbeautify"
