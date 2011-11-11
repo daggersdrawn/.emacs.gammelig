@@ -128,6 +128,7 @@
                   "cfg_diredx"
                   "cfg_hideshow"
                   "cfg_html"
+                  "cfg_jsbeautify"
                   "cfg_jshint"
                   "cfg_keybinding"
                   "cfg_maxframe"

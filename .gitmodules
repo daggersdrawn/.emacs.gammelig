@@ -58,3 +58,6 @@
 [submodule "src/google-contacts"]
 	path = src/google-contacts
 	url = git://git.naquadah.org/google-contacts.el.git
+[submodule "src/js-beautify"]
+	path = src/js-beautify
+	url = http://github.com/einars/js-beautify.git
