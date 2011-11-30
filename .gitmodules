@@ -46,9 +46,6 @@
 [submodule "src/jshint-mode"]
 	path = src/jshint-mode
 	url = git://github.com/daleharvey/jshint-mode.git
-[submodule "src/flymake-python"]
-	path = src/flymake-python
-	url = git://github.com/akaihola/flymake-python.git
 [submodule "src/calfw"]
 	path = src/calfw
 	url = git://github.com/kiwanami/emacs-calfw.git
@@ -61,3 +58,6 @@
 [submodule "src/js-beautify"]
 	path = src/js-beautify
 	url = http://github.com/einars/js-beautify.git
+[submodule "src/flymake-python"]
+	path = src/flymake-python
+	url = http://github.com/rassie/flymake-python.git
