@@ -136,6 +136,7 @@
                   "cfg_org"
                   "cfg_pyflake"
                   "cfg_python"
+                  "cfg_rst"
                   "cfg_tramp"
                   "cfg_twitter"
                   "cfg_uniquify"
