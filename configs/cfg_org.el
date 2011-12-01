@@ -19,6 +19,9 @@
 (global-set-key (kbd "C-c s") 'someday)
 (global-set-key (kbd "C-c k") 'keybindings)
 
+;; org folder
+(setq org-directory "~/Dropbox/org")
+
 ;; capture
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 
@@ -187,7 +190,6 @@
 (setq org-fontify-emphasized-text t)
 (setq org-fontify-done-headline t)
 (setq org-agenda-include-all-todo nil)
-(setq org-directory "~/Dropbox/org")
 (setq org-export-html-style "<link rel=stylesheet href=\"../e/freeshell2.css\" type=\"text/css\">")
 (setq org-export-with-section-numbers nil)
 (setq org-export-with-toc nil)

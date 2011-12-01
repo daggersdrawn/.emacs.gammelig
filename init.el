@@ -51,6 +51,7 @@
     auto-indent-mode
     autopair
     buffer-move
+    calfw-gcal
     clojure-mode
     clojure-test-mode
     color-theme
@@ -58,18 +59,28 @@
     csv-mode
     descbinds-anything
     dictionary
+    dired-details
+    dired-details+
     dired-isearch
     dired-single
     find-file-in-git-repo
     find-file-in-project
+    flymake-coffee
     flymake-cursor
+    flymake-haml
+    flymake-jshint
+    flymake-sass
+    flymake-shell
     furl
+    ghc
     gist
+    grin
     haml-mode
     haskell-mode
     highlight-parentheses
     htmlize
     idle-highlight
+    ipython
     iresize
     javascript
     keywiz
@@ -80,10 +91,14 @@
     magit
     markdown-mode
     marmalade
+    maxframe
     nav
+    nose
     oddmuse
+    oauth2
     org
     paredit
+    pony-mode
     project
     python
     rainbow-mode
@@ -100,8 +115,9 @@
     starter-kit-js
     starter-kit-lisp
     starter-kit-ruby
-    tuareg
     synonyms
+    tuareg
+    virtualenv
     worklog
     wtf
     yaml-mode
@@ -124,7 +140,6 @@
 
 (load-cfg-files '("cfg_autopair"
                   "cfg_buffer-move"
-                  "cfg_calfw"
                   "cfg_diredx"
                   "cfg_flymake-python"
                   "cfg_gnus"
@@ -146,9 +161,6 @@
 (require 'google-contacts)
 (require 'google-maps) (require 'org-location-google-maps)
 (require 'linum-off)
-(require 'maxframe)
-(require 'oauth2)
 (require 'pomodoro)
-(require 'pony-mode)
 (require 'redo+)
 (require 'tea-time)

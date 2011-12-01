@@ -1,5 +1,6 @@
 ;; configure flymake-python
-;; https://github.com/rassie/flymake-python/tree/04acbed4291595742363169ad2e34747119b40f3
+;; https://github.com/rassie/flymake-python/tree/
+
 (require 'flymake-cursor)
 
 (when (load "flymake" t)
@@ -9,7 +10,7 @@
            (local-file (file-relative-name
                         temp-file
                         (file-name-directory buffer-file-name))))
-      (list "pycheckers.sh" (list local-file))))
+      (list "~/.emacs.d/src/flymake-python/pyflymake.py" (list local-file))))
 
   (add-to-list 'flymake-allowed-file-name-masks
                '("\\.py\\'" flymake-pylint-init)))
