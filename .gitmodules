@@ -40,6 +40,3 @@
 [submodule "src/js-beautify"]
 	path = src/js-beautify
 	url = http://github.com/einars/js-beautify.git
-[submodule "src/flymake-python"]
-	path = src/flymake-python
-	url = http://github.com/rassie/flymake-python.git
