@@ -4,9 +4,6 @@
 [submodule "src/python-extras"]
 	path = src/python-extras
 	url = git://github.com/emacsmirror/python-extras.git
-[submodule "src/haddoc"]
-	path = src/haddoc
-	url = git://github.com/emacsmirror/haddoc.git
 [submodule "src/dpastede"]
 	path = src/dpastede
 	url = git://github.com/emacsmirror/dpastede.git
