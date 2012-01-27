@@ -43,3 +43,6 @@
 [submodule "src/flymake-python"]
 	path = src/flymake-python
 	url = http://github.com/akaihola/flymake-python.git
+[submodule "src/auto-complete"]
+	path = src/auto-complete
+	url = http://github.com/m2ym/auto-complete.git

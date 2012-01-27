@@ -47,7 +47,7 @@
     anything-ipython
     anything-match-plugin
     auctex
-    auto-complete
+    ;;auto-complete
     auto-indent-mode
     autopair
     buffer-move
@@ -157,6 +157,7 @@
                   "cfg_uniquify"
                   "cfg_yasnippet"
                   "cfg_zenburn"))
+(require 'auto-complete)
 (require 'find-file-in-git-repo)
 (require 'google-contacts)
 (require 'google-maps) (require 'org-location-google-maps)
