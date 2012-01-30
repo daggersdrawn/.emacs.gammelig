@@ -9,124 +9,205 @@
 ;; and brighter; it simply makes everything else vanish."
 ;; -Neal Stephenson, "In the Beginning was the Command Line"
 
-;; Load up ELPA, the package manager:
+
+(require 'cl) ; common lisp goodies, loop
+
 (require 'package)
-(dolist (source '(("technomancy" . "http://repo.technomancy.us/emacs/")
-                  ("marmalade" . "http://marmalade-repo.org/packages/")
-                  ("elpa" . "http://tromey.com/elpa/")))
-  (add-to-list 'package-archives source t))
+(setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
+                         ("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")))
 (package-initialize)
 
-;; Load up src packages:
-(defun get-subdirs (directory)
-  "Get a list of subdirectories under a given directory"
-  (apply 'nconc (mapcar (lambda (fa)
-                        (and
-                         (eq (cadr fa) t)
-                         (not (equal (car fa) "."))
-                         (not (equal (car fa) ".."))
-                         (list (car fa))))
-                        (directory-files-and-attributes directory))))
 
-(defun add-dirs-to-loadpath (dir-name)
-  "add subdirs of your src directory to the load path"
-  (dolist (subdir (get-subdirs dir-name))
-    (setq load-path (cons (concat dir-name subdir) load-path))
-    (message "Added %s to load path" subdir)))
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+(unless (require 'el-get nil t)
+  (url-retrieve
+   "https://github.com/dimitri/el-get/raw/master/el-get-install.el"
+   (lambda (s)
+     (let (el-get-master-branch)
+       (end-of-buffer)
+       (eval-print-last-sexp)))))
 
-(add-dirs-to-loadpath "~/.emacs.d/src/")
 
-;; check marmalade for packages and install
-(when (not package-archive-contents)
-  (package-refresh-contents))
-
-(defvar my-packages '(
-    anything
-    anything-complete
-    anything-config
-    anything-ipython
-    anything-match-plugin
-    auctex
-    ;;auto-complete
-    auto-indent-mode
-    autopair
-    buffer-move
-    calfw-gcal
-    clojure-mode
-    clojure-test-mode
-    color-theme
-    color-theme-zenburn
-    csv-mode
-    descbinds-anything
-    dictionary
-    dired-details
-    dired-details+
-    dired-isearch
-    dired-single
-    find-file-in-git-repo
-    find-file-in-project
-    flymake-coffee
-    flymake-cursor
-    flymake-haml
-    flymake-jshint
-    flymake-sass
-    flymake-shell
-    furl
-    ghc
-    gist
-    grin
-    haml-mode
-    haskell-mode
-    highlight-parentheses
-    htmlize
-    idle-highlight
-    ipython
-    iresize
-    javascript
-    keywiz
-    kill-ring-search
-    linum-off
-    lua-mode
-    lusty-explorer
-    magit
-    markdown-mode
-    marmalade
-    maxframe
-    nav
-    nose
-    oddmuse
-    oauth2
-    org
-    paredit
-    pony-mode
-    project
-    python
-    rainbow-mode
-    redo+
-    sass-mode
-    scpaste
-    slime
-    smart-tab
-    smex
-    starter-kit
-    starter-kit-bindings
-    starter-kit-lisp
-    starter-kit-eshell
-    starter-kit-js
-    starter-kit-lisp
-    starter-kit-ruby
-    synonyms
-    tuareg
-    virtualenv
-    worklog
-    wtf
-    yaml-mode
-    yasnippet-bundle
+;; local sources
+(setq el-get-sources
+      '((:name anything-complete          :type elpa)
+        (:name anything-config            :type elpa)
+        (:name anything-dired-history
+	       :type git
+	       :url "git://github.com/emacsmirror/anything-dired-history.git")
+        (:name anything-ipython           :type elpa)
+        (:name anything-match-plugin      :type elpa)
+        (:name auctex                     :type elpa)
+        (:name auto-indent-mode           :type elpa)
+        (:name buffer-move                :type elpa)
+        (:name calfw-gcal                 :type elpa)
+        (:name color-dired
+	       :type git
+	       :url "git://github.com/emacsmirror/color-dired.git")
+        (:name clojure-test-moden         :type elpa)
+        (:name descbinds-anything         :type elpa)
+        (:name diredful
+	       :type git
+	       :url "git://github.com/emacsmirror/diredful.git")
+        (:name dired-details+             :type elpa)
+        (:name dired-isearch              :type elpa)
+        (:name dpastede
+	       :type git
+	       :url "git://github.com/emacsmirror/dpastede.git")
+        (:name find-file-in-git-repo      :type elpa)
+        (:name find-file-in-project       :type elpa)
+        (:name flymake-coffee             :type elpa)
+        (:name flymake-cursor             :type elpa)
+        (:name flymake-cursor             :type elpa)
+        (:name flymake-haml               :type elpa)
+        (:name flymake-jshint             :type elpa)
+        (:name flymake-python
+	       :type git
+	       :url "git://github.com/akaihola/flymake-python.git")
+        (:name flymake-sass               :type elpa)
+        (:name flymake-shell              :type elpa)
+        (:name furl                       :type elpa)
+        (:name ghc                        :type elpa)
+        (:name grin                       :type elpa)
+        (:name idle-highlight             :type elpa)
+        (:name ipython                    :type elpa)
+        (:name iresize                    :type elpa)
+        (:name javascript                 :type elpa)
+        (:name js-beautify
+	       :type git
+	       :url "git://github.com/einars/js-beautify.git")
+        (:name jshint-mode
+	       :type git
+	       :url "git://github.com/daleharvey/jshint-mode.git")
+        (:name kill-ring-search           :type elpa)
+        (:name lusty-explorer             :type elpa)
+        (:name markdown-mode              :type elpa)
+        (:name oauth2                     :type elpa)
+        (:name pomodoro.el                :type elpa)
+        (:name project                    :type elpa)
+        (:name python-extras
+           :type git
+           :url "git://github.com/emacsmirror/python-extras.git")
+        (:name redo+                      :type elpa)
+        (:name nose                       :type elpa)
+        (:name smex                       :type elpa)
+        (:name starter-kit                :type elpa)
+        (:name synonyms                   :type elpa)
+        (:name tea-time
+           :type git
+           :url "git://github.com/gabrielsaldana/tea-time.git")
+        (:name tuareg                     :type elpa)
+        (:name twittering-mode            :type elpa)
+        (:name worklog                    :type elpa)
+        (:name wtf                        :type elpa)
+        (:name yasnippet-bundle           :type elpa)
 ))
 
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
+(setq my-packages
+  (append
+    '(el-get
+      anything
+      anything-complete
+      anything-config
+      anything-dired-history
+      anything-ipython
+      anything-match-plugin
+      auctex
+      auto-complete
+      auto-indent-mode
+      autopair
+      buffer-move
+      calfw-gcal
+      clojure-mode
+      clojure-test-mode
+      color-dired
+      coffee-mode
+      color-theme
+      color-theme-zenburn
+      csv-mode
+      descbinds-anything
+      dictionary
+      dired+
+      diredful
+      dired-details
+      dired-details+
+      dired-isearch
+      dired-single
+      dpastede
+      find-file-in-git-repo
+      find-file-in-project
+      flymake-coffee
+      flymake-cursor
+      flymake-haml
+      flymake-jshint
+      flymake-python
+      flymake-sass
+      flymake-shell
+      furl
+      ghc
+      gist
+      google-contacts
+      google-maps
+      google-weather
+      grep+
+      grin
+      haml-mode
+      haskell-mode
+      highlight-parentheses
+      highlight-symbol
+      htmlize
+      icomplete+
+      idle-highlight
+      ipython
+      iresize
+      javascript
+      jshint-mode
+      js-beautify
+      keywiz
+      kill-ring-search
+      linum-off
+      lua-mode
+      lusty-explorer
+      magit
+      magithub
+      markdown-mode
+      maxframe
+      nav
+      nose
+      oauth2
+      org-mode
+      paredit
+      pony-mode
+      pomodoro.el
+      project
+      python
+      python-extras
+      rainbow-mode
+      redo+
+      sass-mode
+      skype
+      slime
+      smart-tab
+      smex
+      starter-kit
+      synonyms
+      tea-time
+      tuareg
+      twittering-mode
+      undo-tree
+      virtualenv
+      worklog
+      wtf
+      yaml-mode
+      yasnippet-bundle
+      zencoding-mode)
+   (mapcar 'el-get-source-name el-get-sources)))
+
+(el-get 'sync my-packages)
+
+(el-get 'sync)
+(el-get 'wait)
 
 ;; Load up configuration files:
 (defun load-cfg-files (filelist)
@@ -157,11 +238,3 @@
                   "cfg_uniquify"
                   "cfg_yasnippet"
                   "cfg_zenburn"))
-(require 'auto-complete)
-(require 'find-file-in-git-repo)
-(require 'google-contacts)
-(require 'google-maps) (require 'org-location-google-maps)
-(require 'linum-off)
-(require 'pomodoro)
-(require 'redo+)
-(require 'tea-time)

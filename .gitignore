@@ -3,10 +3,12 @@ abbrev_defs
 auto-save-list/*
 anything-c-adaptive-history
 backups/*
+el-get/
 eshell/*
 url/*
 oauth2.plstore
 places
+ac-comphist.dat
 tramp
 mthesaur.txt*
 .smex-items

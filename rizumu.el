@@ -23,6 +23,9 @@
 (setq whitespace-style '(empty tabs lines-tail trailing))
 (global-whitespace-mode t)
 
+;; Enable dead-keys. It works with layouts such as: setxkbmap -layout us -variant intl
+(require 'iso-transl)
+
 ;; Automatically re-visiting the file in current buffer when it was
 ;; modified by an external program
 (global-auto-revert-mode 1)
