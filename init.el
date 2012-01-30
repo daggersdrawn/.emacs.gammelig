@@ -115,7 +115,6 @@
     starter-kit-js
     starter-kit-lisp
     starter-kit-ruby
-    synonyms
     tuareg
     virtualenv
     worklog
@@ -164,4 +163,5 @@
 (require 'linum-off)
 (require 'pomodoro)
 (require 'redo+)
+(require 'synonym)
 (require 'tea-time)
