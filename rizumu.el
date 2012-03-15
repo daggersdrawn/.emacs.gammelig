@@ -76,7 +76,7 @@
   (setq-default ispell-program-name "/usr/bin/aspell")
   ;; Set font
   (set-default-font "Inconsolata")
-  (set-face-attribute 'default nil :height 75))
+  (set-face-attribute 'default nil :height 95))
 
 ;; Mac OS X only
 (when macosx-p
