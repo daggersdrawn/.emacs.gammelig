@@ -41,6 +41,7 @@
   (package-refresh-contents))
 
 (defvar my-packages '(
+    ace-jump-mode
     anything
     anything-complete
     anything-config
