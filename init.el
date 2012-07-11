@@ -86,7 +86,7 @@
         (:name redo+                      :type elpa)
         (:name nose                       :type elpa)
         (:name smex                       :type elpa)
-        (:name starter-kit                :type elpa)
+        ;(:name starter-kit                :type elpa)
         (:name synonyms                   :type elpa)
         (:name tea-time
            :type git
@@ -133,7 +133,7 @@
       flymake-shell
       furl
       ghc
-      gist
+      ;gist
       google-contacts
       google-maps
       google-weather
@@ -177,7 +177,7 @@
       slime
       smart-tab
       smex
-      starter-kit
+      ;starter-kit
       synonyms
       tea-time
       tuareg
