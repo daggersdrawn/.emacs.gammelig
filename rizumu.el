@@ -82,7 +82,9 @@
   ;; Set flyspell binary
   (setq-default ispell-program-name "/usr/bin/aspell")
   ;; Set font
-  (set-face-attribute 'default nil :family "Inconsolata" :height 100))
+  (set-face-attribute 'default nil :family "Monospace" :height 100))
+  ;(set-face-attribute 'default nil :family "Inconsolata" :height 100))
+
 
 ;; Mac OS X only
 (when macosx-p
