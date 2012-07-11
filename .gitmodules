@@ -16,12 +16,6 @@
 [submodule "src/pomodoro.el"]
 	path = src/pomodoro.el
 	url = git://github.com/vderyagin/pomodoro.el.git
-[submodule "src/zencoding"]
-	path = src/zencoding
-	url = git://github.com/emacsmirror/zencoding.git
-[submodule "src/twittering-mode"]
-	path = src/twittering-mode
-	url = git://github.com/emacsmirror/twittering-mode.git
 [submodule "src/diredful"]
 	path = src/diredful
 	url = git://github.com/emacsmirror/diredful.git
@@ -40,9 +34,6 @@
 [submodule "src/flymake-python"]
 	path = src/flymake-python
 	url = http://github.com/akaihola/flymake-python.git
-[submodule "src/auto-complete"]
-	path = src/auto-complete
-	url = http://github.com/m2ym/auto-complete.git
 [submodule "src/Synonym.el"]
 	path = src/Synonym.el
 	url = http://github.com/alexhenning/Synonym.el.git

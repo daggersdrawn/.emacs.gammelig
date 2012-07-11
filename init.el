@@ -48,7 +48,7 @@
     anything-ipython
     anything-match-plugin
     auctex
-    ;;auto-complete
+    auto-complete
     auto-indent-mode
     autopair
     buffer-move
@@ -75,6 +75,7 @@
     furl
     ghc
     gist
+    google-translate
     grin
     haml-mode
     haskell-mode
@@ -117,11 +118,13 @@
     starter-kit-lisp
     starter-kit-ruby
     tuareg
+    twittering-mode
     virtualenv
     worklog
     wtf
     yaml-mode
     yasnippet-bundle
+    zencoding-mode
 ))
 
 (dolist (p my-packages)
