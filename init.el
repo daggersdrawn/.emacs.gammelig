@@ -91,6 +91,9 @@
         (:name tea-time
            :type git
            :url "git://github.com/gabrielsaldana/tea-time.git")
+        (:name zenburn
+           :type git
+           :url "git://github.com/bbatsov/zenburn-emacs.git")
         (:name tuareg                     :type elpa)
         (:name twittering-mode            :type elpa)
         (:name worklog                    :type elpa)
@@ -110,8 +113,6 @@
       clojure-test-mode
       color-dired
       coffee-mode
-      color-theme
-      color-theme-zenburn
       csv-mode
       dictionary
       dired+
@@ -188,6 +189,7 @@
       wtf
       yaml-mode
       yasnippet
+      zenburn
       zencoding-mode)
    (mapcar 'el-get-as-symbol (mapcar 'el-get-source-name el-get-sources))))
 
