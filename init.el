@@ -1,9 +1,5 @@
 ;;; init.el --- Where all the magic begins
 ;;
-;; Part of the Emacs Starter Kit
-;;
-;; This is the first thing to get loaded.
-;;
 ;; "Emacs outshines all other editing software in approximately the
 ;; same way that the noonday sun does the stars. It is not just bigger
 ;; and brighter; it simply makes everything else vanish."
@@ -11,6 +7,10 @@
 
 
 (require 'cl) ; common lisp goodies, loop
+
+;; Turn off mouse interface early in startup to avoid momentary display
+(dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
+  (when (fboundp mode) (funcall mode -1)))
 
 (require 'package)
 (setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
@@ -86,7 +86,6 @@
         (:name redo+                      :type elpa)
         (:name nose                       :type elpa)
         (:name smex                       :type elpa)
-        ;(:name starter-kit                :type elpa)
         (:name synonyms                   :type elpa)
         (:name tea-time
            :type git
@@ -102,8 +101,7 @@
 
 (setq my-packages
   (append
-    '(;el-get
-      ;auctex
+    '(;auctex
       auto-complete
       auto-indent-mode
       autopair
@@ -178,7 +176,6 @@
       slime
       smart-tab
       smex
-      ;starter-kit
       synonyms
       tea-time
       tuareg
@@ -227,3 +224,11 @@
                   "cfg_uniquify"
                   "cfg_yasnippet"
                   "cfg_zenburn"))
+
+(setq system-config (concat user-emacs-directory system-name ".el"))
+(setq user-config (concat user-emacs-directory user-login-name ".el"))
+(setq user-dir (concat user-emacs-directory user-login-name))
+
+(when (file-exists-p user-config) (load user-config))
+(when (file-exists-p system-config) (load system-config))
+(when (file-exists-p user-dir) (mapc 'load (directory-files user-dir t "^[^#].*el$")))
