@@ -22,7 +22,7 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (unless (require 'el-get nil t)
   (url-retrieve
-   "https://github.com/dimitri/el-get/raw/master/el-get-install.el"
+   "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
    (lambda (s)
      (let (el-get-master-branch)
        (end-of-buffer)
@@ -31,22 +31,14 @@
 
 ;; local sources
 (setq el-get-sources
-      '((:name anything-complete          :type elpa)
-        (:name anything-config            :type elpa)
-        (:name anything-dired-history
-	       :type git
-	       :url "git://github.com/emacsmirror/anything-dired-history.git")
-        (:name anything-ipython           :type elpa)
-        (:name anything-match-plugin      :type elpa)
-        (:name auctex                     :type elpa)
+      '(;(:name auctex                     :type elpa)
         (:name auto-indent-mode           :type elpa)
         (:name buffer-move                :type elpa)
         (:name calfw-gcal                 :type elpa)
         (:name color-dired
 	       :type git
 	       :url "git://github.com/emacsmirror/color-dired.git")
-        (:name clojure-test-moden         :type elpa)
-        (:name descbinds-anything         :type elpa)
+        (:name clojure-test-mode          :type elpa)
         (:name diredful
 	       :type git
 	       :url "git://github.com/emacsmirror/diredful.git")
@@ -84,7 +76,9 @@
         (:name lusty-explorer             :type elpa)
         (:name markdown-mode              :type elpa)
         (:name oauth2                     :type elpa)
-        (:name pomodoro.el                :type elpa)
+        (:name pomodoro.el
+           :type git
+           :url "git://github.com/docgnome/pomodoro.el.git")
         (:name project                    :type elpa)
         (:name python-extras
            :type git
@@ -106,14 +100,8 @@
 
 (setq my-packages
   (append
-    '(el-get
-      anything
-      anything-complete
-      anything-config
-      anything-dired-history
-      anything-ipython
-      anything-match-plugin
-      auctex
+    '(;el-get
+      ;auctex
       auto-complete
       auto-indent-mode
       autopair
@@ -126,7 +114,6 @@
       color-theme
       color-theme-zenburn
       csv-mode
-      descbinds-anything
       dictionary
       dired+
       diredful
@@ -202,7 +189,7 @@
       yaml-mode
       yasnippet-bundle
       zencoding-mode)
-   (mapcar 'el-get-source-name el-get-sources)))
+   (mapcar 'el-get-as-symbol (mapcar 'el-get-source-name el-get-sources))))
 
 (el-get 'sync my-packages)
 
