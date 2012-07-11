@@ -8,6 +8,7 @@ eshell/*
 url/*
 oauth2.plstore
 places
+synonym.cache
 ac-comphist.dat
 tramp
 mthesaur.txt*
