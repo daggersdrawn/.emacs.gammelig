@@ -170,6 +170,7 @@
       project
       python
       python-extras
+      rainbow-delimiters
       rainbow-mode
       redo+
       sass-mode
