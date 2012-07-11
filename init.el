@@ -95,7 +95,6 @@
         (:name twittering-mode            :type elpa)
         (:name worklog                    :type elpa)
         (:name wtf                        :type elpa)
-        (:name yasnippet-bundle           :type elpa)
 ))
 
 (setq my-packages
@@ -188,7 +187,7 @@
       worklog
       wtf
       yaml-mode
-      yasnippet-bundle
+      yasnippet
       zencoding-mode)
    (mapcar 'el-get-as-symbol (mapcar 'el-get-source-name el-get-sources))))
 
