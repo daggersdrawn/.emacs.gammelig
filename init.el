@@ -32,50 +32,36 @@
 ;; local sources
 (setq el-get-sources
       '(;(:name auctex                     :type elpa)
-        (:name auto-indent-mode           :type elpa)
-        (:name buffer-move                :type elpa)
         (:name calfw-gcal                 :type elpa)
         (:name color-dired
-	       :type git
-	       :url "git://github.com/emacsmirror/color-dired.git")
+           :type git
+           :url "git://github.com/emacsmirror/color-dired.git")
         (:name clojure-test-mode          :type elpa)
-        (:name diredful
-	       :type git
-	       :url "git://github.com/emacsmirror/diredful.git")
-        (:name dired-details+             :type elpa)
-        (:name dired-isearch              :type elpa)
         (:name dpastede
-	       :type git
-	       :url "git://github.com/emacsmirror/dpastede.git")
+           :type git
+           :url "git://github.com/emacsmirror/dpastede.git")
         (:name find-file-in-git-repo      :type elpa)
-        (:name find-file-in-project       :type elpa)
         (:name flymake-coffee             :type elpa)
-        (:name flymake-cursor             :type elpa)
-        (:name flymake-cursor             :type elpa)
         (:name flymake-haml               :type elpa)
         (:name flymake-jshint             :type elpa)
         (:name flymake-python
-	       :type git
-	       :url "git://github.com/akaihola/flymake-python.git")
+           :type git
+           :url "git://github.com/akaihola/flymake-python.git")
         (:name flymake-sass               :type elpa)
         (:name flymake-shell              :type elpa)
         (:name furl                       :type elpa)
         (:name ghc                        :type elpa)
         (:name grin                       :type elpa)
         (:name idle-highlight             :type elpa)
-        (:name ipython                    :type elpa)
         (:name iresize                    :type elpa)
         (:name javascript                 :type elpa)
         (:name js-beautify
-	       :type git
-	       :url "git://github.com/einars/js-beautify.git")
+           :type git
+           :url "git://github.com/einars/js-beautify.git")
         (:name jshint-mode
-	       :type git
-	       :url "git://github.com/daleharvey/jshint-mode.git")
+           :type git
+           :url "git://github.com/daleharvey/jshint-mode.git")
         (:name kill-ring-search           :type elpa)
-        (:name lusty-explorer             :type elpa)
-        (:name markdown-mode              :type elpa)
-        (:name oauth2                     :type elpa)
         (:name pomodoro.el
            :type git
            :url "git://github.com/docgnome/pomodoro.el.git")
@@ -83,10 +69,7 @@
         (:name python-extras
            :type git
            :url "git://github.com/emacsmirror/python-extras.git")
-        (:name redo+                      :type elpa)
         (:name nose                       :type elpa)
-        (:name smex                       :type elpa)
-        (:name synonyms                   :type elpa)
         (:name tea-time
            :type git
            :url "git://github.com/gabrielsaldana/tea-time.git")
@@ -94,8 +77,6 @@
            :type git
            :url "git://github.com/bbatsov/zenburn-emacs.git")
         (:name tuareg                     :type elpa)
-        (:name twittering-mode            :type elpa)
-        (:name worklog                    :type elpa)
         (:name wtf                        :type elpa)
 ))
 
@@ -191,7 +172,6 @@
    (mapcar 'el-get-as-symbol (mapcar 'el-get-source-name el-get-sources))))
 
 (el-get 'sync my-packages)
-
 (el-get 'sync)
 (el-get 'wait)
 
@@ -225,10 +205,10 @@
                   "cfg_yasnippet"
                   "cfg_zenburn"))
 
+;; Load up personalization files:
 (setq system-config (concat user-emacs-directory system-name ".el"))
 (setq user-config (concat user-emacs-directory user-login-name ".el"))
 (setq user-dir (concat user-emacs-directory user-login-name))
-
 (when (file-exists-p user-config) (load user-config))
 (when (file-exists-p system-config) (load system-config))
 (when (file-exists-p user-dir) (mapc 'load (directory-files user-dir t "^[^#].*el$")))
