@@ -1,6 +1,7 @@
 ;; lusty
-(global-set-key (kbd "C-x C-f") 'lusty-file-explorer)
-(global-set-key (kbd "C-x b") 'lusty-buffer-explorer)
+
+;(global-set-key (kbd "C-x C-f") 'lusty-file-explorer)
+;(global-set-key (kbd "C-x b") 'lusty-buffer-explorer)
 
 ;; Copy-Cut-Paste from clipboard with Super-C Super-X Super-V
 (global-set-key (kbd "s-x") 'clipboard-kill-region) ;;cut
@@ -22,8 +23,9 @@
 (global-set-key (kbd "M-p") 'flymake-goto-prev-error)
 (global-set-key (kbd "M-n") 'flymake-goto-next-error)
 
-;; anything
-;(global-set-key (kbd "M-SPC") 'anything)
+;; helm
+(helm-mode 1)
+(global-set-key (kbd "M-SPC") 'helm-mini)
 
 ;; buffer-move
 (global-set-key (kbd "C-x 4") 'win-swap)
