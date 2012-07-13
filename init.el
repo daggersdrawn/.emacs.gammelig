@@ -12,13 +12,6 @@
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
   (when (fboundp mode) (funcall mode -1)))
 
-(require 'package)
-(setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
-                         ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")))
-(package-initialize)
-
-
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (unless (require 'el-get nil t)
   (url-retrieve
@@ -27,7 +20,6 @@
      (let (el-get-master-branch)
        (end-of-buffer)
        (eval-print-last-sexp)))))
-
 
 ;; local sources
 (setq el-get-sources
@@ -61,7 +53,12 @@
         (:name furl
            :type git
            :url "git://github.com/jaalto/emacs-epackage--lib-furl.git")
-        ;(:name grin                       :type elpa)
+        (:name grin
+           :type hg
+           :url "https://bitbucket.org/dariusp686/emacs-grin")
+        (:name helm-ipython
+            :type git
+            :url  "git://github.com/emacs-helm/helm-ipython.git")
         (:name idle-highlight-mode
             :type git
             :url  "git://github.com/nonsequitur/idle-highlight-mode.git")
@@ -132,15 +129,17 @@
       google-maps
       google-weather
       grep+
-      ;; grin
+      grin
       haml-mode
       haskell-mode
       helm
+      helm-ipython
       highlight-parentheses
       highlight-symbol
       htmlize
       icomplete+
       idle-highlight-mode
+      ido-ubiquitous
       ipython
       iresize
       js-beautify
@@ -227,3 +226,5 @@
 (when (file-exists-p user-config) (load user-config))
 (when (file-exists-p system-config) (load system-config))
 (when (file-exists-p user-dir) (mapc 'load (directory-files user-dir t "^[^#].*el$")))
+(when (file-exists-p "~/.emacs.d/starter-kit-defuns.el") (load "~/.emacs.d/starter-kit-defuns.el"))
+(when (file-exists-p "~/.emacs.d/starter-kit-misc.el") (load "~/.emacs.d/starter-kit-misc.el"))
