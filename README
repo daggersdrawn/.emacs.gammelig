@@ -1,11 +1,22 @@
-Install a few python libraies in your system and/or virtualenv::
+install a few python libraies in your system and/or virtualenv::
 
     $ pip install pylint pep8 pyflakes nose nose_machineout
 
-Clone::
+clone::
+
     $ git clone git://github.com/rizumu/rizumu-emacs.git ~/.emacs.d
 
-Takeoff::
+el-get is automatically installed on first launch::
+
+    $ emacs
+
+all el-get packages are installed on second launch::
+
+    # agree to the prompt to store abbrevs in ~/.emacs.d/abbrev_defs
+    $ emacs
+
+takeoff::
+
     $ emacs takeoff.py
 
     .              _   _                       .
