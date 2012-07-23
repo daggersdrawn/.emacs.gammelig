@@ -57,14 +57,14 @@
            :type hg
            :url "https://bitbucket.org/dariusp686/emacs-grin")
         (:name helm-ipython
-            :type git
-            :url  "git://github.com/emacs-helm/helm-ipython.git")
+           :type git
+           :url  "git://github.com/emacs-helm/helm-ipython.git")
         (:name idle-highlight-mode
-            :type git
-            :url  "git://github.com/nonsequitur/idle-highlight-mode.git")
+           :type git
+           :url  "git://github.com/nonsequitur/idle-highlight-mode.git")
         (:name iresize
-            :type git
-            :url  "git://github.com/emacsattic/iresize.git")
+           :type git
+           :url  "git://github.com/emacsattic/iresize.git")
         (:name js-beautify
            :type git
            :url "git://github.com/einars/js-beautify.git")
