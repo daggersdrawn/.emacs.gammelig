@@ -201,7 +201,7 @@
 
 (load-cfg-files '("cfg_autopair"
                   "cfg_buffer-move"
-                  "cfg_diredx"
+                  "cfg_dired"
                   "cfg_flymake-python"
                   "cfg_gnus"
                   "cfg_hideshow"
