@@ -2,9 +2,8 @@ Install a few python libraies in your system and/or virtualenv::
 
     $ pip install pylint pep8 pyflakes nose nose_machineout
 
-Clone and install the submodules
-    $ git clone git://github.com/rizumu/rizumu-emacs.git && cd rizumu-emacs
-    $ git submodule init && git submodule update
+Clone::
+    $ git clone git://github.com/rizumu/rizumu-emacs.git ~/.emacs.d
 
 Takeoff::
     $ emacs takeoff.py

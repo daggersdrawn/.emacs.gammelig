@@ -1,135 +1,193 @@
-;;; init.el --- Where all the magic begins
-;;
-;; Part of the Emacs Starter Kit
-;;
-;; This is the first thing to get loaded.
+;; init.el --- Where all the magic begins
 ;;
 ;; "Emacs outshines all other editing software in approximately the
 ;; same way that the noonday sun does the stars. It is not just bigger
 ;; and brighter; it simply makes everything else vanish."
 ;; -Neal Stephenson, "In the Beginning was the Command Line"
 
-;; Load up ELPA, the package manager:
-(require 'package)
-(dolist (source '(("technomancy" . "http://repo.technomancy.us/emacs/")
-                  ("marmalade" . "http://marmalade-repo.org/packages/")
-                  ("elpa" . "http://tromey.com/elpa/")))
-  (add-to-list 'package-archives source t))
-(package-initialize)
 
-;; Load up src packages:
-(defun get-subdirs (directory)
-  "Get a list of subdirectories under a given directory"
-  (apply 'nconc (mapcar (lambda (fa)
-                        (and
-                         (eq (cadr fa) t)
-                         (not (equal (car fa) "."))
-                         (not (equal (car fa) ".."))
-                         (list (car fa))))
-                        (directory-files-and-attributes directory))))
+(require 'cl) ; common lisp goodies, loop
 
-(defun add-dirs-to-loadpath (dir-name)
-  "add subdirs of your src directory to the load path"
-  (dolist (subdir (get-subdirs dir-name))
-    (setq load-path (cons (concat dir-name subdir) load-path))
-    (message "Added %s to load path" subdir)))
+;; Turn off mouse interface early in startup to avoid momentary display
+(dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
+  (when (fboundp mode) (funcall mode -1)))
 
-(add-dirs-to-loadpath "~/.emacs.d/src/")
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+(unless (require 'el-get nil t)
+  (url-retrieve
+   "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
+   (lambda (s)
+     (let (el-get-master-branch)
+       (end-of-buffer)
+       (eval-print-last-sexp)))))
 
-;; check marmalade for packages and install
-(when (not package-archive-contents)
-  (package-refresh-contents))
+;; local sources
+(setq el-get-sources
+      '((:name calfw-gcal
+           :type git
+           :url "git://github.com/myuhe/calfw-gcal.el.git")
+        (:name color-dired
+           :type git
+           :url "git://github.com/emacsmirror/color-dired.git")
+        (:name dpastede
+           :type git
+           :url "git://github.com/emacsmirror/dpastede.git")
+        (:name find-file-in-git-repo
+           :type git
+           :url "git://github.com/re5et/find-file-in-git-repo.git")
+        (:name flymake-coffee
+           :type git
+           :url "git://github.com/purcell/flymake-coffee.git")
+        (:name flymake-haml
+           :type git
+           :url "git://github.com/purcell/flymake-haml.git")
+        (:name flymake-python
+           :type git
+           :url "git://github.com/akaihola/flymake-python.git")
+        (:name flymake-sass
+           :type git
+           :url "git://github.com/purcell/flymake-sass.git")
+        (:name flymake-shell
+           :type git
+           :url "git://github.com/purcell/flymake-shell.git")
+        (:name furl
+           :type git
+           :url "git://github.com/jaalto/emacs-epackage--lib-furl.git")
+        (:name grin
+           :type hg
+           :url "https://bitbucket.org/dariusp686/emacs-grin")
+        (:name helm-ipython
+           :type git
+           :url  "git://github.com/emacs-helm/helm-ipython.git")
+        (:name idle-highlight-mode
+           :type git
+           :url  "git://github.com/nonsequitur/idle-highlight-mode.git")
+        (:name iresize
+           :type git
+           :url  "git://github.com/emacsattic/iresize.git")
+        (:name js-beautify
+           :type git
+           :url "git://github.com/einars/js-beautify.git")
+        (:name jshint-mode
+           :type git
+           :url "git://github.com/daleharvey/jshint-mode.git")
+        (:name kill-ring-search.el
+           :type git
+           :url "git://github.com/nschum/kill-ring-search.el.git")
+        (:name nose
+           :type git
+           :url "git://github.com/emacsmirror/nose.git")
+        (:name pomodoro.el
+           :type git
+           :url "git://github.com/docgnome/pomodoro.el.git")
+        ;(:name project                    :type elpa)
+        (:name python-extras
+           :type git
+           :url "git://github.com/emacsmirror/python-extras.git")
+        (:name tea-time
+           :type git
+           :url "git://github.com/gabrielsaldana/tea-time.git")
+        (:name tuareg                     :type elpa)
+        (:name wtf                        :type elpa)
+        (:name zenburn
+           :type git
+           :url "git://github.com/bbatsov/zenburn-emacs.git")
+))
 
-(defvar my-packages '(
-    ace-jump-mode
-    anything
-    anything-complete
-    anything-config
-    anything-ipython
-    anything-match-plugin
-    auctex
+(setq my-packages
+  (append
+    '(;auctex
     auto-complete
     auto-indent-mode
     autopair
     buffer-move
     calfw-gcal
     clojure-mode
-    clojure-test-mode
-    color-theme
-    color-theme-zenburn
+      color-dired
+      coffee-mode
     csv-mode
-    descbinds-anything
     dictionary
+      dired+
+      diredful
     dired-details
     dired-details+
     dired-isearch
     dired-single
+      dpastede
     find-file-in-git-repo
     find-file-in-project
     flymake-coffee
     flymake-cursor
     flymake-haml
-    flymake-jshint
+      flymake-python
     flymake-sass
     flymake-shell
     furl
-    ghc
-    gist
-    google-translate
+      ghc-mod
+      ;; gist
+      google-contacts
+      google-maps
+      google-weather
+      grep+
     grin
     haml-mode
     haskell-mode
+      helm
+      helm-ipython
     highlight-parentheses
+      highlight-symbol
     htmlize
-    idle-highlight
+      icomplete+
+      idle-highlight-mode
+      ido-ubiquitous
     ipython
     iresize
-    javascript
+      js-beautify
+      jshint-mode
     keywiz
-    kill-ring-search
+      kill-ring-search.el
     linum-off
     lua-mode
     lusty-explorer
     magit
+      magithub
     markdown-mode
-    marmalade
     maxframe
     nav
     nose
-    oddmuse
     oauth2
-    org
+      org-mode
     paredit
     pony-mode
-    project
+      pomodoro.el
+      ;; project
     python
+      python-extras
+      rainbow-delimiters
     rainbow-mode
     redo+
     sass-mode
-    scpaste
+      skype
     slime
     smart-tab
-    smex
-    starter-kit
-    starter-kit-bindings
-    starter-kit-lisp
-    starter-kit-eshell
-    starter-kit-js
-    starter-kit-lisp
-    starter-kit-ruby
+      ;; smex
+      synonyms
+      tea-time
     tuareg
     twittering-mode
+      undo-tree
     virtualenv
     worklog
     wtf
     yaml-mode
-    yasnippet-bundle
-    zencoding-mode
-))
+      yasnippet
+      zenburn
+      zencoding-mode)
+   (mapcar 'el-get-as-symbol (mapcar 'el-get-source-name el-get-sources))))
 
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
+(el-get 'sync my-packages)
+(el-get 'sync)
+(el-get 'wait)
 
 ;; Load up configuration files:
 (defun load-cfg-files (filelist)
@@ -143,7 +201,7 @@
 
 (load-cfg-files '("cfg_autopair"
                   "cfg_buffer-move"
-                  "cfg_diredx"
+                  "cfg_dired"
                   "cfg_flymake-python"
                   "cfg_gnus"
                   "cfg_hideshow"
@@ -160,12 +218,13 @@
                   "cfg_uniquify"
                   "cfg_yasnippet"
                   "cfg_zenburn"))
-(require 'auto-complete)
-(require 'find-file-in-git-repo)
-(require 'google-contacts)
-(require 'google-maps) (require 'org-location-google-maps)
-(require 'linum-off)
-(require 'pomodoro)
-(require 'redo+)
-(require 'synonym)
-(require 'tea-time)
+
+;; Load up personalization files:
+(setq system-config (concat user-emacs-directory system-name ".el"))
+(setq user-config (concat user-emacs-directory user-login-name ".el"))
+(setq user-dir (concat user-emacs-directory user-login-name))
+(when (file-exists-p user-config) (load user-config))
+(when (file-exists-p system-config) (load system-config))
+(when (file-exists-p user-dir) (mapc 'load (directory-files user-dir t "^[^#].*el$")))
+(when (file-exists-p "~/.emacs.d/starter-kit-defuns.el") (load "~/.emacs.d/starter-kit-defuns.el"))
+(when (file-exists-p "~/.emacs.d/starter-kit-misc.el") (load "~/.emacs.d/starter-kit-misc.el"))

@@ -23,6 +23,9 @@
 (setq whitespace-style '(empty tabs lines-tail trailing))
 (global-whitespace-mode t)
 
+;; Enable dead-keys. It works with layouts such as: setxkbmap -layout us -variant intl
+(require 'iso-transl)
+
 ;; Automatically re-visiting the file in current buffer when it was
 ;; modified by an external program
 (global-auto-revert-mode 1)
@@ -75,8 +78,12 @@
   ;; Set flyspell binary
   (setq-default ispell-program-name "/usr/bin/aspell")
   ;; Set font
+  (set-face-attribute 'default nil :family "Inconsolata" :height 100))
   (set-default-font "Inconsolata")
   (set-face-attribute 'default nil :height 95))
+  (set-face-attribute 'default nil :family "Monospace" :height 100))
+  ;(set-face-attribute 'default nil :family "Inconsolata" :height 100))
+
 
 ;; Mac OS X only
 (when macosx-p
