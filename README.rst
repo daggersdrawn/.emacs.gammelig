@@ -11,7 +11,7 @@ get an api key for http://words.bighugelabs.com/ and export the in your .bashrc:
     export BIGHUGETHESAURUS="apikey"
 
 copy my user file to one of your own. must be the same as your system
-username, see https://github.com/rizumu/rizumu-emacs/blob/master/init.el#L222 ::
+username or hostname, see https://github.com/rizumu/rizumu-emacs/blob/master/init.el#L222 ::
 
     $ cp ~/.emacs.d/rizumu.el ~/.emacs.d/user.el
 
