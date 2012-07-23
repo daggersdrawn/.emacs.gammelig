@@ -1,10 +1,19 @@
+clone::
+
+    $ git clone git://github.com/rizumu/rizumu-emacs.git ~/.emacs.d
+
 install a few python libraies in your system and/or virtualenv::
 
     $ pip install pylint pep8 pyflakes nose nose_machineout
 
-clone::
+get an api key for http://words.bighugelabs.com/ and export the in your .bashrc::
 
-    $ git clone git://github.com/rizumu/rizumu-emacs.git ~/.emacs.d
+    export BIGHUGETHESAURUS="apikey"
+
+copy my user file to one of your own. must be the same as your system
+username, see https://github.com/rizumu/rizumu-emacs/blob/master/init.el#L222::
+
+    $ cp ~/.emacs.d/rizumu.el ~/.emacs.d/user.el
 
 el-get is automatically installed on first launch::
 
