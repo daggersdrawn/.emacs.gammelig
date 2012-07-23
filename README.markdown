@@ -1,42 +1,43 @@
-### clone
+clone:
 
 ```bash
-    $ git clone git://github.com/rizumu/rizumu-emacs.git ~/.emacs.d
+    $ git clone https://github.com/rizumu/rizumu-emacs.git ~/.emacs.d
 ```
 
-### install a few python libraies in your system and/or virtualenv
+install a few python libraies in your system and/or virtualenv:
 
 ```bash
     $ pip install pylint pep8 pyflakes nose nose_machineout
 ```
 
-### get an api key for http://words.bighugelabs.com/ and export the in your .bashrc
+get an api key for http://words.bighugelabs.com/ and export the
+`BIGHUGETHESAURUS` variable in your `~/.bashrc`:
 
 ```bash
     export BIGHUGETHESAURUS="apikey"
 ```
 
-### copy my user file to one of your own. must be the same as your
-    username or hostname, see https://github.com/rizumu/rizumu-emacs/blob/master/init.el#L222
+copy my user file to one of your own. must be the same as the
+username or hostname of your system, see https://github.com/rizumu/rizumu-emacs/blob/master/init.el#L222 :
 
 ```bash
     $ cp ~/.emacs.d/rizumu.el ~/.emacs.d/user.el
 ```
 
-### el-get is automatically installed on first launch::
+el-get is automatically installed on first launch:
 
 ```bash
     $ emacs
 ```
 
-### all el-get packages are installed on second launch
+all el-get packages are installed on second launch:
 
 ```bash
     # agree to the prompt to store abbrevs in ~/.emacs.d/abbrev_defs
     $ emacs
 ```
 
-### takeoff
+takeoff:
 
 ```bash
     $ emacs takeoff.py
