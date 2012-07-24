@@ -97,89 +97,89 @@
 (setq my-packages
   (append
     '(;auctex
-    auto-complete
-    auto-indent-mode
-    autopair
-    buffer-move
-    calfw-gcal
-    clojure-mode
+      auto-complete
+      auto-indent-mode
+      autopair
+      buffer-move
+      calfw-gcal
+      clojure-mode
       color-dired
       coffee-mode
-    csv-mode
-    dictionary
+      csv-mode
+      dictionary
       dired+
       diredful
-    dired-details
-    dired-details+
-    dired-isearch
-    dired-single
+      dired-details
+      dired-details+
+      dired-isearch
+      dired-single
       dpastede
-    find-file-in-git-repo
-    find-file-in-project
-    flymake-coffee
-    flymake-cursor
-    flymake-haml
+      find-file-in-git-repo
+      find-file-in-project
+      flymake-coffee
+      flymake-cursor
+      flymake-haml
       flymake-python
-    flymake-sass
-    flymake-shell
-    furl
+      flymake-sass
+      flymake-shell
+      furl
       ghc-mod
       ;; gist
       google-contacts
       google-maps
       google-weather
       grep+
-    grin
-    haml-mode
-    haskell-mode
+      grin
+      haml-mode
+      haskell-mode
       helm
       helm-ipython
-    highlight-parentheses
+      highlight-parentheses
       highlight-symbol
-    htmlize
+      htmlize
       icomplete+
       idle-highlight-mode
       ido-ubiquitous
-    ipython
-    iresize
+      ipython
+      iresize
       js-beautify
       jshint-mode
-    keywiz
+      keywiz
       kill-ring-search.el
-    linum-off
-    lua-mode
-    lusty-explorer
-    magit
+      linum-off
+      lua-mode
+      lusty-explorer
+      magit
       magithub
-    markdown-mode
-    maxframe
-    nav
-    nose
-    oauth2
+      markdown-mode
+      maxframe
+      nav
+      nose
+      oauth2
       org-mode
-    paredit
-    pony-mode
+      paredit
+      pony-mode
       pomodoro.el
       ;; project
-    python
+      python
       python-extras
       rainbow-delimiters
-    rainbow-mode
-    redo+
-    sass-mode
+      rainbow-mode
+      redo+
+      sass-mode
       skype
-    slime
-    smart-tab
+      slime
+      smart-tab
       ;; smex
       synonyms
       tea-time
-    tuareg
-    twittering-mode
+      tuareg
+      twittering-mode
       undo-tree
-    virtualenv
-    worklog
-    wtf
-    yaml-mode
+      virtualenv
+      worklog
+      wtf
+      yaml-mode
       yasnippet
       zenburn
       zencoding-mode)
