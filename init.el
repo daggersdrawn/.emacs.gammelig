@@ -113,6 +113,7 @@
       dired-details+
       dired-isearch
       dired-single
+      django-mode
       dpastede
       find-file-in-git-repo
       find-file-in-project
@@ -202,6 +203,7 @@
 (load-cfg-files '("cfg_autopair"
                   "cfg_buffer-move"
                   "cfg_dired"
+                  "cfg_django"
                   "cfg_flymake-python"
                   "cfg_gnus"
                   "cfg_hideshow"
@@ -211,12 +213,14 @@
                   "cfg_keybinding"
                   "cfg_maxframe"
                   "cfg_org"
+                  "cfg_pony"
                   "cfg_python"
                   "cfg_rst"
                   "cfg_tramp"
                   "cfg_twitter"
                   "cfg_uniquify"
                   "cfg_yasnippet"
+                  "cfg_yaml"
                   "cfg_zenburn"))
 
 ;; Load up personalization files:

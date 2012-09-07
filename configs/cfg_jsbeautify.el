@@ -8,7 +8,7 @@
   :type '(string)
   :group 'js-beautify)
 
-(defcustom js-beautify-path "~/.emacs.d/src/js-beautify/python/js-beautify"
+(defcustom js-beautify-path "~/.emacs.d/el-get/js-beautify/python/js-beautify"
   "Path to jsbeautifier python file"
   :type '(string)
   :group 'js-beautify)

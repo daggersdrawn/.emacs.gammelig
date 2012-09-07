@@ -1,3 +1,5 @@
+(require 'python)
+
 ;;; indentation
 (setq-default py-indent-offset 4)
 
