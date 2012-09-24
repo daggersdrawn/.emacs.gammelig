@@ -48,9 +48,9 @@
   (make-local-variable 'column-number-mode)
   (column-number-mode t))
 
-(defun esk-local-comment-auto-fill ()
-  (set (make-local-variable 'comment-auto-fill-only-comments) t)
-  (auto-fill-mode t))
+;; (defun esk-local-comment-auto-fill ()
+;;   (set (make-local-variable 'comment-auto-fill-only-comments) t)
+;;   (auto-fill-mode t))
 
 (defun esk-turn-on-hl-line-mode ()
   (when (> (display-color-cells) 8)
@@ -73,7 +73,7 @@
           1 font-lock-warning-face t))))
 
 (add-hook 'prog-mode-hook 'esk-local-column-number-mode)
-(add-hook 'prog-mode-hook 'esk-local-comment-auto-fill)
+;; (add-hook 'prog-mode-hook 'esk-local-comment-auto-fill)
 (add-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 (add-hook 'prog-mode-hook 'esk-turn-on-save-place-mode)
 (add-hook 'prog-mode-hook 'esk-pretty-lambdas)
