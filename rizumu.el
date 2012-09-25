@@ -74,19 +74,17 @@
                 (remove-if-not 'buffer-file-name (buffer-list)))))
 
 ;; GNU/Linux systems only
-(when linux-p
+  ;; Set font
+  (set-face-attribute 'default nil
+                      :height 100 :font "Inconsolata")
   ;; Set flyspell binary
   (setq-default ispell-program-name "/usr/bin/aspell")
-  ;; Set font
-  (set-face-attribute 'default nil :family "Inconsolata" :height 100))
-  (set-default-font "Inconsolata")
-  (set-face-attribute 'default nil :height 95))
-  (set-face-attribute 'default nil :family "Monospace" :height 100))
-  ;(set-face-attribute 'default nil :family "Inconsolata" :height 100))
-
 
 ;; Mac OS X only
 (when macosx-p
+  ;; Set font
+  (set-face-attribute 'default nil
+                      :family "Inconsolata" :height 145 :weight 'normal)
   ;; Set flyspell binary
   (setq-default ispell-program-name "/usr/local/bin/aspell")
   ;; Set window sizes
