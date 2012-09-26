@@ -24,163 +24,169 @@
 ;; local sources
 (setq el-get-sources
       '((:name calfw-gcal
-           :type git
-           :url "git://github.com/myuhe/calfw-gcal.el.git")
+           :type github
+           :pkgname "myuhe/calfw-gcal.el")
         (:name color-dired
-           :type git
-           :url "git://github.com/emacsmirror/color-dired.git")
+           :type github
+           :pkgname "emacsmirror/color-dired")
         (:name dpastede
-           :type git
-           :url "git://github.com/emacsmirror/dpastede.git")
+           :type github
+           :pkgname "emacsmirror/dpastede")
         (:name find-file-in-git-repo
-           :type git
-           :url "git://github.com/re5et/find-file-in-git-repo.git")
+           :type github
+           :pkgname "re5et/find-file-in-git-repo")
         (:name flymake-coffee
-           :type git
-           :url "git://github.com/purcell/flymake-coffee.git")
+           :type github
+           :pkgname "purcell/flymake-coffee")
         (:name flymake-haml
-           :type git
-           :url "git://github.com/purcell/flymake-haml.git")
+           :type github
+           :pkgname "purcell/flymake-haml")
         (:name flymake-python
-           :type git
-           :url "git://github.com/akaihola/flymake-python.git")
+           :type github
+           :pkgname "akaihola/flymake-python")
         (:name flymake-sass
-           :type git
-           :url "git://github.com/purcell/flymake-sass.git")
+           :type github
+           :pkgname "purcell/flymake-sass")
         (:name flymake-shell
-           :type git
-           :url "git://github.com/purcell/flymake-shell.git")
+           :type github
+           :pkgname "purcell/flymake-shell")
         (:name furl
-           :type git
-           :url "git://github.com/jaalto/emacs-epackage--lib-furl.git")
+           :type github
+           :pkgname "jaalto/emacs-epackage--lib-furl")
         (:name grin
            :type hg
            :url "https://bitbucket.org/dariusp686/emacs-grin")
         (:name helm-ipython
-           :type git
-           :url  "git://github.com/emacs-helm/helm-ipython.git")
+           :type github
+           :pkgname  "emacs-helm/helm-ipython")
         (:name idle-highlight-mode
-           :type git
-           :url  "git://github.com/nonsequitur/idle-highlight-mode.git")
+           :type github
+           :pkgname  "nonsequitur/idle-highlight-mode")
         (:name iresize
-           :type git
-           :url  "git://github.com/emacsattic/iresize.git")
+           :type github
+           :pkgname  "emacsattic/iresize")
         (:name js-beautify
-           :type git
-           :url "git://github.com/einars/js-beautify.git")
+           :type github
+           :pkgname "ostrovok-team/js-beautify")
         (:name jshint-mode
-           :type git
-           :url "git://github.com/daleharvey/jshint-mode.git")
+           :type github
+           :pkgname "daleharvey/jshint-mode")
         (:name kill-ring-search.el
-           :type git
-           :url "git://github.com/nschum/kill-ring-search.el.git")
+           :type github
+           :pkgname "nschum/kill-ring-search.el")
         (:name nose
-           :type git
-           :url "git://github.com/emacsmirror/nose.git")
+           :type github
+           :pkgname "emacsmirror/nose")
         (:name pomodoro.el
-           :type git
-           :url "git://github.com/docgnome/pomodoro.el.git")
+           :type github
+           :pkgname "docgnome/pomodoro.el")
         ;(:name project                    :type elpa)
         (:name python-extras
-           :type git
-           :url "git://github.com/emacsmirror/python-extras.git")
+           :type github
+           :pkgname "emacsmirror/python-extras")
         (:name tea-time
-           :type git
-           :url "git://github.com/gabrielsaldana/tea-time.git")
+           :type github
+           :pkgname "gabrielsaldana/tea-time")
         (:name tuareg                     :type elpa)
+        (:name undo-tree
+           :type github
+           :pkgname "emacsmirror/undo-tree")
         (:name wtf                        :type elpa)
+        (:name yasnippet
+           :type github
+           :pkgname "capitaomorte/yasnippet")
         (:name zenburn
-           :type git
-           :url "git://github.com/bbatsov/zenburn-emacs.git")
+           :type github
+           :pkgname "bbatsov/zenburn-emacs")
 ))
 
 (setq my-packages
   (append
     '(;auctex
       auto-complete
-    auto-indent-mode
-    autopair
-    buffer-move
-    calfw-gcal
-    clojure-mode
+      auto-indent-mode
+      autopair
+      buffer-move
+      calfw-gcal
+      clojure-mode
       color-dired
       coffee-mode
-    csv-mode
-    dictionary
+      csv-mode
+      dictionary
       dired+
       diredful
-    dired-details
-    dired-details+
-    dired-isearch
-    dired-single
+      dired-details
+      dired-details+
+      dired-isearch
+      dired-single
       django-mode
       dpastede
-    find-file-in-git-repo
-    find-file-in-project
-    flymake-coffee
-    flymake-cursor
-    flymake-haml
+      find-file-in-git-repo
+      find-file-in-project
+      flymake-coffee
+      flymake-cursor
+      flymake-haml
       flymake-python
-    flymake-sass
-    flymake-shell
-    furl
+      flymake-sass
+      flymake-shell
+      furl
       ghc-mod
       ;; gist
       google-contacts
       google-maps
       google-weather
       grep+
-    grin
-    haml-mode
-    haskell-mode
+      grin
+      haml-mode
+      haskell-mode
       helm
       helm-ipython
-    highlight-parentheses
+      highlight-parentheses
       highlight-symbol
-    htmlize
+      htmlize
       icomplete+
       idle-highlight-mode
       ido-ubiquitous
-    ipython
-    iresize
+      ipython
+      iresize
       js-beautify
       jshint-mode
-    keywiz
+      keywiz
       kill-ring-search.el
-    linum-off
-    lua-mode
-    lusty-explorer
-    magit
+      linum-off
+      lua-mode
+      lusty-explorer
+      magit
       magithub
-    markdown-mode
-    maxframe
-    nav
-    nose
-    oauth2
+      markdown-mode
+      maxframe
+      nav
+      nose
+      oauth2
       org-mode
-    paredit
-    pony-mode
+      paredit
+      pony-mode
       pomodoro.el
       ;; project
-    python
+      python
       python-extras
       rainbow-delimiters
-    rainbow-mode
-    redo+
-    sass-mode
+      rainbow-mode
+      redo+
+      sass-mode
       skype
-    slime
-    smart-tab
+      slime
+      smart-tab
       ;; smex
       synonyms
       tea-time
-    tuareg
+      tuareg
       twittering-mode
       undo-tree
-    virtualenv
-    worklog
-    wtf
-    yaml-mode
+      virtualenv
+      worklog
+      wtf
+      yaml-mode
       yasnippet
       zenburn
       zencoding-mode)
