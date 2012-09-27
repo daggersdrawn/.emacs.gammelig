@@ -41,12 +41,18 @@
         (:name flymake-haml
            :type github
            :pkgname "purcell/flymake-haml")
+        (:name flymake-jslint
+           :type github
+           :pkgname "purcell/flymake-jslint")
+        (:name less-css-mode
+           :type github
+           :pkgname "purcell/less-css-mode")
         (:name flymake-python
            :type github
            :pkgname "akaihola/flymake-python")
-        (:name flymake-sass
+        (:name flymake-ruby
            :type github
-           :pkgname "purcell/flymake-sass")
+           :pkgname "purcell/flymake-ruby")
         (:name flymake-shell
            :type github
            :pkgname "purcell/flymake-shell")
@@ -126,8 +132,9 @@
       flymake-coffee
       flymake-cursor
       flymake-haml
+      flymake-jslint
       flymake-python
-      flymake-sass
+      flymake-ruby
       flymake-shell
       furl
       ghc-mod
@@ -152,6 +159,7 @@
       js-beautify
       jshint-mode
       keywiz
+      less-css-mode
       kill-ring-search.el
       linum-off
       lua-mode
