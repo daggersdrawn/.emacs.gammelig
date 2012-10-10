@@ -73,7 +73,7 @@
            :pkgname  "emacsattic/iresize")
         (:name js-beautify
            :type github
-           :pkgname "ostrovok-team/js-beautify")
+           :pkgname "einars/js-beautify")
         (:name jshint-mode
            :type github
            :pkgname "daleharvey/jshint-mode")
@@ -109,6 +109,7 @@
 (setq my-packages
   (append
     '(;auctex
+      ace-jump-mode
       auto-complete
       auto-indent-mode
       autopair
@@ -127,6 +128,7 @@
       dired-single
       django-mode
       dpastede
+      expand-region
       find-file-in-git-repo
       find-file-in-project
       flymake-coffee
@@ -166,8 +168,10 @@
       lusty-explorer
       magit
       magithub
+      mark-multiple
       markdown-mode
       maxframe
+      multiple-cursors
       nav
       nose
       oauth2
@@ -176,16 +180,24 @@
       pony-mode
       pomodoro.el
       ;; project
+      pylookup
+      pymacs
       python
       python-extras
       rainbow-delimiters
       rainbow-mode
       redo+
+      rst-mode
+      rope
+      ropemeacs
+      ropemode
       sass-mode
       skype
       slime
       smart-tab
       ;; smex
+      space-chord
+      swank
       synonyms
       tea-time
       tuareg
