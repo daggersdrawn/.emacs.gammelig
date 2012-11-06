@@ -108,7 +108,7 @@
 
 (setq my-packages
   (append
-    '(;auctex
+    '(auctex
       ace-jump-mode
       auto-complete
       auto-indent-mode
@@ -140,7 +140,7 @@
       flymake-shell
       furl
       ghc-mod
-      ;; gist
+      gist
       google-contacts
       google-maps
       google-weather
@@ -179,7 +179,6 @@
       paredit
       pony-mode
       pomodoro.el
-      ;; project
       pylookup
       pymacs
       python
@@ -189,15 +188,15 @@
       redo+
       rst-mode
       rope
-      ropemeacs
+      ropemacs
       ropemode
       sass-mode
-      skype
+      ;; skype http://blog.mediaonfire.com/?p=60
       slime
       smart-tab
-      ;; smex
+      smex
       space-chord
-      swank
+      swank-clojure
       synonyms
       tea-time
       tuareg
