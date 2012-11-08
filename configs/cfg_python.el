@@ -13,3 +13,10 @@
                (setq autopair-handle-action-fns
                      (list #'autopair-default-handle-action
                            #'autopair-python-triple-quote-action))))
+
+;;; ipython
+(defcustom python-python-command "/usr/bin/ipython2"
+  "Shell command to run Python interpreter."
+  :group 'python
+  :type 'string
+)
