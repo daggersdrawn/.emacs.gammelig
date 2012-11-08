@@ -36,7 +36,7 @@
 (global-set-key (kbd "M-o") 'occur)
 
 ;; imenu
-(global-set-key (kbd "M-i") 'What commands match this string)
+(global-set-key (kbd "M-i") 'imenu)
 
 ;; redo+
 (global-set-key (kbd "C-?") 'redo)
