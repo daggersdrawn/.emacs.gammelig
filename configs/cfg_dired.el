@@ -43,12 +43,3 @@
   (my-dired-init)
   ;; it's not loaded yet, so add our bindings to the load-hook
   (add-hook 'dired-load-hook 'my-dired-init))
-
-(global-set-key (kbd "<f3>") 'joc-dired-magic-buffer)
-(global-set-key (kbd "C-<f3>") (function
-  (lambda nil (interactive)
-  (joc-dired-magic-buffer default-directory))))
-(global-set-key (kbd "S-<f3>") (function
-  (lambda nil (interactive)
-  (message "Current directory is: %s" default-directory))))
-(global-set-key (kbd "S-<f3>") 'joc-dired-toggle-buffer-name)

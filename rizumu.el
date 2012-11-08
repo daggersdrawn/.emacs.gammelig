@@ -23,6 +23,23 @@
 (setq whitespace-style '(empty tabs lines-tail trailing))
 (global-whitespace-mode t)
 
+;; Push the mouse out of the way on cursor approach
+(mouse-avoidance-mode 'jump)
+
+;; Delete selection on a key press
+(delete-selection-mode t)
+
+;; Cursor in same relative row and column during PgUP/DN
+(setq scroll-preserve-screen-position t)
+
+;; Kill all buffers except scratch
+(defun nuke ()
+  "Kill all buffers, leaving *scratch* only."
+  (interactive)
+  (mapcar (lambda (x) (kill-buffer x)) (buffer-list))
+  (delete-other-windows)
+)
+
 ;; Enable dead-keys. It works with layouts such as: setxkbmap -layout us -variant intl
 (require 'iso-transl)
 
@@ -90,3 +107,5 @@
   ;; Set window sizes
   (setq ns-pop-up-frames nil)
   (add-hook 'window-setup-hook 'maximize-frame t))
+
+(setq-default ispell-dictionary "en_US")

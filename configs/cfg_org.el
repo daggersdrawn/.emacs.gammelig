@@ -10,15 +10,6 @@
 ;; See also:
 ;; http://thread.gmane.org/gmane.emacs.orgmode/4832/focus=4854
 
-;; keybindings
-(global-set-key (kbd "C-c l") 'org-store-link)
-(global-set-key (kbd "C-c a") 'org-agenda)
-(global-set-key (kbd "C-c c") 'org-capture)
-(global-set-key (kbd "C-c g") 'gtd)
-(global-set-key (kbd "C-c r") 'reference)
-(global-set-key (kbd "C-c s") 'someday)
-(global-set-key (kbd "C-c k") 'keybindings)
-
 ;; org folder
 (setq org-directory "~/Dropbox/org")
 

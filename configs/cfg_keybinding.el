@@ -1,5 +1,25 @@
-;; lusty
+;; fx keys
+;(global-set-key  [f1]  (lambda () (interactive) (manual-entry (current-word))))
+;(global-set-key  [f2]  (lambda () (interactive) (find-file "~/.org/notes.org")))
+(global-set-key (kbd "<f3>") 'joc-dired-magic-buffer)
+(global-set-key (kbd "C-<f3>") (function
+  (lambda nil (interactive)
+  (joc-dired-magic-buffer default-directory))))
+(global-set-key (kbd "S-<f3>") (function
+  (lambda nil (interactive)
+  (message "Current directory is: %s" default-directory))))
+(global-set-key (kbd "S-<f3>") 'joc-dired-toggle-buffer-name)
 
+;; org-mode
+(global-set-key (kbd "C-c l") 'org-store-link)
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-c g") 'gtd)
+(global-set-key (kbd "C-c r") 'reference)
+(global-set-key (kbd "C-c s") 'someday)
+(global-set-key (kbd "C-c k") 'keybindings)
+
+;; lusty
 ;(global-set-key (kbd "C-x C-f") 'lusty-file-explorer)
 ;(global-set-key (kbd "C-x b") 'lusty-buffer-explorer)
 
@@ -11,6 +31,12 @@
 ;; Move between buffers
 (global-set-key [C-right] 'next-buffer)
 (global-set-key [C-left] 'previous-buffer)
+
+;; occur
+(global-set-key (kbd "M-o") 'occur)
+
+;; imenu
+(global-set-key (kbd "M-i") 'What commands match this string)
 
 ;; redo+
 (global-set-key (kbd "C-?") 'redo)
@@ -43,7 +69,7 @@
 (global-set-key (kbd "M-]") 'increase-left-margin)
 (global-set-key (kbd "M-[") 'decrease-left-margin)
 
-;; HideShow
+;; HideShow code folding
 (global-set-key (kbd "M-+") 'toggle-hiding-all)
 (global-set-key (kbd "M-=") 'toggle-hiding-block)
 
@@ -52,3 +78,16 @@
 
 ;; editing
 (global-set-key (kbd "M-?") 'comment-or-uncomment-region)
+
+;; Toggle soft word wrapping
+(global-set-key "\C-cw" 'toggle-truncate-lines)
+
+;; Jump to the start/end of the document with C-PgUP/DN
+(global-set-key [C-prior] (lambda () (interactive) (goto-char (point-min))))
+(global-set-key [C-next]  (lambda () (interactive) (goto-char (point-max))))
+
+;; Quicker access to go-to line
+(global-set-key (kbd "M-g") 'goto-line)
+
+;; Menu bar toggle, as in my vimperator setup
+(global-set-key (kbd "<M-down>") 'menu-bar-mode)
