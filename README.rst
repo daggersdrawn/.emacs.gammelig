@@ -101,7 +101,7 @@ https://github.com/rizumu/rizumu-emacs/blob/master/init.el#L222  ::
 takeoff
 =======
 
-You need to open emacs twice and handle any prompts that pause the
+you need to open emacs twice and handle any prompts that pause the
 installation process.
 
 
@@ -134,6 +134,31 @@ off to the stars::
    $ exit
 
 
+change theme
+============
+
+if you don't like the zenburn theme installed by default, you can use
+color-theme http://emacswiki.org/emacs/ColorTheme to select an
+alternative. Make your choice permanent by setting load-theme
+https://github.com/rizumu/rizumu-emacs/blob/master/rizumu.el#L3
+
+
+installing packages
+===================
+
+read the el-get basic usage docs to understand how you use it to manage
+your elisp dependencies https://github.com/dimitri/el-get#usage
+
+this repo installs a lot of elisp dependencies by default in the
+~/.emacs.d/init.el and does not provide an easy way for you to remove
+or add new ones without forking. the is true for the configuration
+files found in ~/.emacs.d/configs/cfg_***.el and the yasnippets.
+
+a solution to this is forthcoming which will simply involve a set of
+defaults in init.el with customizations to add/remove dependencies and
+configs specified in your username.el or hostname.el
+
+
 learn keybindings
 =================
 
@@ -144,10 +169,16 @@ emacs shortcut to open ~/.emacs.d/keybindings.org::
 **NOTE**: this is a .org file, so learn that pressing <tab> expands and collapses the nodes in the tree.
 
 
-change theme
-============
+new to emacs?
+=============
 
-if you don't like the zenburn theme installed by default, you can use
-color-theme http://emacswiki.org/emacs/ColorTheme to select an
-alternative. Make your choice permanent by setting load-theme
-https://github.com/rizumu/rizumu-emacs/blob/master/rizumu.el#L3
+* learn the keybindings for what you want to do, many of the most
+  useful ones are documented in ~/.emacs.d/keybindings.org
+
+* the peepcode 'meet emacs' screencast is a great way to start:  https://peepcode.com/products/meet-emacs
+
+* rtfm: http://www.gnu.org/software/emacs/manual/emacs.html
+
+* emacs has builtin help, learn how to use it: http://www.gnu.org/software/emacs/manual/html_node/emacs/Help.html
+
+* emacs keywiz is a key sequence game for improving memory (installed by default): http://www.emacswiki.org/KeyWiz
