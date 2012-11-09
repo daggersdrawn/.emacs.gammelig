@@ -256,9 +256,3 @@
 (when (file-exists-p user-dir) (mapc 'load (directory-files user-dir t "^[^#].*el$")))
 (when (file-exists-p "~/.emacs.d/starter-kit-defuns.el") (load "~/.emacs.d/starter-kit-defuns.el"))
 (when (file-exists-p "~/.emacs.d/starter-kit-misc.el") (load "~/.emacs.d/starter-kit-misc.el"))
-
-;; Load keybindings cheatsheet
-(defun keybindings ()
-   (interactive)
-   (find-file "~/.emacs.d/keybindings.org"))
-(provide 'keybindings)

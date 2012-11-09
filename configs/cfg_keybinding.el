@@ -1,3 +1,8 @@
+;; load keybindings cheatsheet
+(defun keybindings ()
+   (interactive)
+   (find-file "~/.emacs.d/keybindings.org"))
+
 ;; fx keys
 ;(global-set-key  [f1]  (lambda () (interactive) (manual-entry (current-word))))
 ;(global-set-key  [f2]  (lambda () (interactive) (find-file "~/.org/notes.org")))
