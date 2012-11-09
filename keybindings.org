@@ -1,0 +1,778 @@
+* window managers
+*** note: Use `xev` to determine key numbers
+*** Main controls
+|----------------------+---------+-------------|
+| description          | awesome | xmonad      |
+|----------------------+---------+-------------|
+| toggle toolbars      |         | mod y       |
+| quit                 | mod q   | mod shift q |
+| restart              | mod r   | mod q       |
+| hide awful wibox bar | mod b   |             |
+|----------------------+---------+-------------|
+*** Applications
+|--------------------------------------+---------+-----------------|
+| description                          | awesome | xmonad          |
+|--------------------------------------+---------+-----------------|
+| toggle mpd play                      |         | mod backspace   |
+| lock the screen with xscreensaver    |         | mod shift s     |
+| firefox                              | mod w   | mod g           |
+| urxvt scratch at bottom              | alt `   | mod `           |
+| htop                                 |         | mod h           |
+| start a new pomodoro                 |         | mod shift n     |
+| restart the pomodoro                 |         | mod shift n     |
+| exit the pomodoro                    |         | mod ctrl n      |
+| scrot (screenshot)                   |         | printscreen     |
+| scrot and chose window               |         | mod printscreen |
+| midnight commander "scratchpad"      |         | mod f           |
+| npmcpp "scratchpad"                  |         | mod n           |
+| org-mode "scratchpad"                |         | mod o           |
+| rtorrent "scratchpad"                |         | mod b           |
+| alsamixer "scratchpad"               |         | mod a           |
+| htop "scratchpad"                    |         | mod s           |
+| urxvt "scratchpad"                   |         | mod `           |
+| rox                                  | mod r   | mod r           |
+| emacsclient -n -c                    | mod e   |                 |
+| urxvt                                | mod f1  | mod shift enter |
+| alpine                               | mod a   |                 |
+| ncmpcpp (ongaku)                     | mod o   |                 |
+| pidgin / skpye / irssi               | mod i   |                 |
+| emacs --eval '(make-remember-frame)' | mod q   |                 |
+| unknown                              | mod #51 |                 |
+|--------------------------------------+---------+-----------------|
+*** Prompt menus
+|--------------------+-----------+-----------------|
+| description        | awesome   | xmonad          |
+|--------------------+-----------+-----------------|
+| term               | mod enter | mod shift enter |
+| run                | mod space | mod p           |
+| yeganesh           |           | mod p           |
+| gmrun              |           | mod shift p     |
+| web                | mod g     |                 |
+| dictionary         | alt f1    |                 |
+| lua                | alt f2    |                 |
+| on screen keyboard | alt \     |                 |
+|--------------------+-----------+-----------------|
+*** Layout manipulation
+|----------------------------------------+-----------------+--------------------|
+| description                            | awesome         | xmonad             |
+|----------------------------------------+-----------------+--------------------|
+| width grow                             | mod l           | mod l              |
+| width shrink                           | mod shift l     | mod h              |
+| height grow                            | mod h           | mod u              |
+| height shrink                          | mod shift h     | mod i              |
+| change client layout                   | alt space       | mod space          |
+| change clientt layout (reverse dir)    | alt shift space |                    |
+| reset grid                             |                 | mod shift space    |
+| switch to physical screen 1 2 3        |                 | mod w-e-r          |
+| switch client to physical screen 1 2 3 |                 | mod shift w-e-r    |
+| resize window                          |                 | mouse left + drag  |
+| move window                            |                 | mouse right + drag |
+| push window back into tiling           |                 | mod t              |
+| Make current window the master window  |                 | mod enter          |
+| Increase windows in the master area    |                 | mod ,              |
+| Decrease windows in the master area    |                 | mod .              |
+|----------------------------------------+-----------------+--------------------|
+*** Focus controls
+|------------------------------+-------------+-----------------|
+| description                  | awesome     | xmonad          |
+|------------------------------+-------------+-----------------|
+| unknown                      | mod p       |                 |
+| unknown                      | mod s       |                 |
+| unknown                      | mod u       |                 |
+| go forward client            | mod j       | mod j or tab    |
+| relocate client forward      | mod shift j | mod shift j     |
+| go backward client           | mod k       | mod k or sh+tab |
+| relocate client backward     | mod shift k | mod  shift k    |
+| toggle last viewed client    | mod tab     |                 |
+| dropdown menu of all clients | alt escape  |                 |
+| switch to the master window  |             | mod m           |
+|------------------------------+-------------+-----------------|
+*** Client Manipulation
+|---------------------------+-------------+-------------|
+| description               | awesome     | xmonad      |
+|---------------------------+-------------+-------------|
+| kill client               | mod c       | mod shift c |
+| unknown                   | mod d       |             |
+| client full screen toggle | mod f       |             |
+| client maximize toggle    | mod m       |             |
+| client move to screen     | mod o       |             |
+| unknown                   | mod next    |             |
+| unknown                   | mod prior   |             |
+| unknown                   | mod down    |             |
+| unknown                   | mod up      |             |
+| unknown                   | mod left    |             |
+| unknown                   | mod right   |             |
+| redraw                    | mod ctrl  r |             |
+| unknown                   | mod shift 0 |             |
+| unknown                   | mod shift m |             |
+| unknown                   | mod shift c |             |
+| unknown                   | mod shift s |             |
+| client titlebar toggle    | mod shift t |             |
+| unknown                   | mod shift f |             |
+|---------------------------+-------------+-------------|
+*** Tag controls
+|--------------------+------------------+-------------|
+| description        | awesome          | xmonad      |
+|--------------------+------------------+-------------|
+| switch tag         | mod #            | mod #       |
+| move window to tag | mod shift #      | mod shift # |
+|                    | mod ctrl #       |             |
+|                    | mod shift+ctrl # |             |
+|--------------------+------------------+-------------|
+*** Tag browsing
+|------------------------+---------+--------|
+| description            | awesome | xmonad |
+|------------------------+---------+--------|
+| view next tag          | alt n   |        |
+| view previous tag      | alt p   |        |
+| toggle last viewed tag | alt tab |        |
+|------------------------+---------+--------|
+* emacs
+*** Help
+    |-----------+---------------------+----------------------------------------------------------------|
+    | Shortcut  | Command             | Description                                                    |
+    |-----------+---------------------+----------------------------------------------------------------|
+    | C-h m     | describe-mode       | Show all keybindings for the current mode.                     |
+    | C-h k kbd | describe-key        | What command does this keystroke run and what does it do?      |
+    | C-h f kbd | describe-function   | What does this function do?                                    |
+    | C-h a     | command-apropos     | What commands match this string?                               |
+    | C-h c     | describ-key-briefly | Show the function that a key is assigned to in the mini-buffer space |
+    | C-h w     | where-is            | What is the keybinding for this command.                       |
+    | C-h m     | describe-mode       | Tell me about the mode the current buffer is in.               |
+    | C-h v     | describe-variable   | What does this variable mean and what is its value?            |
+    | C-h b     | describe-bindings   | What are the keybindings for this buffer?                      |
+    | C-h i     | info                | Man pages                                                      |
+    | C-h c kbd |                     |                                                                |
+    | C-h ?     |                     |                                                                |
+    | f10       | menu-bar-open       | Open the menu bar                                              |
+    |-----------+---------------------+----------------------------------------------------------------|
+*** Starting, saving, opening
+    |---------------------------+-------------+-------------------------------------------------|
+    | Shortcut                  | Command     | Description                                     |
+    |---------------------------+-------------+-------------------------------------------------|
+    | C-x C-c                   |             | exit emacs                                      |
+    | C-x C-s                   |             | save a file                                     |
+    | C-x s                     |             | save all files                                  |
+    | C-x C-w                   |             | write buffer to a specified file                |
+    | C-x C-v                   |             | replace this file with the file you really want |
+    | C-x f                     |             | visit recent file                               |
+    | C-x C-b                   |             | list all buffers                                |
+    | C-x b                     |             | move to another buffer                          |
+    | C-x (arrow left or right) |             | move buffer                                     |
+    |                           | rename-file | press M-n to insert current file name at prompt |
+    |---------------------------+-------------+-------------------------------------------------|
+*** Movement
+    |----------+---------+-----------------------------------------|
+    | Shortcut | Command | Description                             |
+    |----------+---------+-----------------------------------------|
+    | M-o      | occur   | show matches of regex in current buffer |
+    | M-i      | imenu   | open imenu                              |
+    | C-x C-i  |         | jump to function by isearch             |
+    | C-f      |         | forward one character                   |
+    | C-b      |         | backward one character                  |
+    | M-f      |         | forward one word                        |
+    | M-b      |         | backward one word                       |
+    | M-{      |         | forward one paragraph                   |
+    | M-}      |         | backward one paragraph                  |
+    | C-M-a    |         | forward one function                    |
+    | C-M-e    |         | backward one function                   |
+    | C-n      |         | next line                               |
+    | C-p      |         | previous line                           |
+    | C-x <    |         | scroll left                             |
+    | C-x >    |         | scroll right                            |
+    | M-v      |         | backward one screen (page up)           |
+    | C-v      |         | forward one screen (page down)          |
+    | C-a      |         | beginning of line                       |
+    | C-e      |         | end of line                             |
+    | M-<      |         | Go to beginning of file                 |
+    | M->      |         | Go to end of file                       |
+    | C-x [    |         | Go backward page                        |
+    | C-x ]    |         | End of file                             |
+    | M-g      |         | goto line (remapped from M-g g)         |
+    | C-l      |         | center screen                           |
+    | M-=      |         | toggle code folding of method           |
+    | M-+      |         | toggle code folding of all              |
+    | C-l      |         | center screen                           |
+    |----------+---------+-----------------------------------------|
+*** Editing
+    |----------+-----------------------------+--------------------------------------------------|
+    | Shortcut | Command                     | Description                                      |
+    |----------+-----------------------------+--------------------------------------------------|
+    | C-x h    |                             | select all                                       |
+    | C-x C-q  |                             | toggle readonly status of buffer                 |
+    | C-/      |                             | undo                                             |
+    | C-sh-/   |                             | redo                                             |
+    | C-sh-del |                             | complete delete line                             |
+    | M-/      |                             | text auto-completion                             |
+    | C-x r t  | string-rectangle            | replace a rectangle of text                      |
+    |          | cua-mode                    | column edit                                      |
+    | C-c n    |                             | cleanup whitespace                               |
+    | C-c r    |                             | revert cleanup                                   |
+    | C-x del  |                             | delete sentence backward                         |
+    | M-k      |                             | delete sentence forward                          |
+    | M-z char |                             | kill through next occurrence of char             |
+    | C-M-\    | indent-region               | indent region                                    |
+    | M-?      | comment-or-uncomment-region | Comment or uncomment a region                    |
+    | M-;      |                             | insert EOL comment                               |
+    | C-x i    |                             | insert contents of other buffer into this buffer |
+    | M-$      | ispell-word                 | check spelling of current word                   |
+    |          | ispell-region               | check spelling of current region                 |
+    |          | ispell-buffer               | check spelling of entire buffer                  |
+    |          | revert-buffer               | restore buffer to its original contents          |
+    |----------+-----------------------------+--------------------------------------------------|
+*** Rectangles
+    |----------+------------------+-------------------------------------|
+    | Shortcut | Command          | Description                         |
+    |----------+------------------+-------------------------------------|
+    | C-x r r  |                  | copy rectangle to register          |
+    | C-x r k  |                  | kill rectangle                      |
+    | C-x r y  |                  | yank rectangle                      |
+    | C-x r o  |                  | open rectangle, shifting text right |
+    |          | delete-rectangle | delete rectangular region           |
+    | C-x r c  |                  | blank out rectangle                 |
+    | C-x r t  |                  | preface each line with a string     |
+    |----------+------------------+-------------------------------------|
+*** Case change
+    |----------+---------+---------------------------------|
+    | Shortcut | Command | Description                     |
+    |----------+---------+---------------------------------|
+    | M-u      |         | uppercase word                  |
+    | M-l      |         | lowercase word                  |
+    | M-c      |         | capitalize first letter of word |
+    | C-x C-u  |         | uppercase region                |
+    | C-x C-l  |         | lowercase region                |
+    |----------+---------+---------------------------------|
+*** Transposing
+    |----------+---------+----------------------|
+    | Shortcut | Command | Description          |
+    |----------+---------+----------------------|
+    | C-t      |         | transpose characters |
+    | M-c      |         | transpose words      |
+    | C-x C-t  |         | transpose lines      |
+    | C-M-t    |         | transponse sexps     |
+    |----------+---------+----------------------|
+*** Cutting and pasting
+    |----------+------------------+-----------------------------------|
+    | Shortcut | Command          | Description                       |
+    |----------+------------------+-----------------------------------|
+    | sh+ins   |                  | insert from X                     |
+    | C-4 C-k  |                  | kill 4 lines                      |
+    | C-s bksp |                  | complete delete line              |
+    | M-d      |                  | delete next word                  |
+    | M-del    |                  | delete previous word              |
+    | del      |                  | delete previous character         |
+    | C-space  |                  | mark beginning or end of a region |
+    | C-x C-p  |                  | mark page                         |
+    | C-x h    |                  | mark entire buffer                |
+    | M-h      |                  | mark paragraph                    |
+    | C-m h    |                  | mark function                     |
+    | C-w      |                  | cut region                        |
+    | M-w      |                  | copy region                       |
+    | C-y      |                  | paste/yank                        |
+    | M-y      |                  | paste/yank previous in kill ring  |
+    | Insert   |                  | toggle overwrite mode             |
+    |----------+------------------+-----------------------------------|
+*** Search and Replace
+    + multiple files
+      http://xahlee.org/emacs/find_replace_inter.html
+
+    + Search and replace across an entire directory from terminal
+        perl -pi -w -e 's/foo/bar/g' *.html
+
+    |------------+-------------------------+--------------------------------------|
+    | Shortcut   | Command                 | Description                          |
+    |------------+-------------------------+--------------------------------------|
+    | C-s        | isearch-forward-regexp  | incremental regexp search forward    |
+    | C-r        | isearch-backward-regexp | incremental regexp search backward   |
+    | C-m s      | isearch-forward         | Search forward                       |
+    | C-m r      | isearch-backward        | Search backward                      |
+    | C-n        |                         | Select next search string            |
+    | C-p        |                         | Search previous search string        |
+    | C-s C-s    |                         | repeat last search                   |
+    | esc        |                         | exit search                          |
+    | C-c n      | replace-string          | search and replace                   |
+    | M-%        | query-replace           | query search and replace             |
+    |            | query-replace-regexp    | query search and replace using regex |
+    | space or y |                         | replace this one, go on to next      |
+    | ,          |                         | replace this one, don't more         |
+    | del or n   |                         | skip to next without replacing       |
+    | ^          |                         | backup to previous match             |
+    | !          |                         | replace all remaining and don't ask  |
+    | return     |                         | exit query-replace                   |
+    |------------+-------------------------+--------------------------------------|
+*** Windows
+    |----------------+---------+-------------------------------------------|
+    | Shortcut       | Command | Description                               |
+    |----------------+---------+-------------------------------------------|
+    | C-x 2          |         | divide current window horizontally        |
+    | C-x 3          |         | divide current window vertically          |
+    | C-x 4          |         | swap windows                              |
+    | C-x o          |         | move to other window                      |
+    | C-x 0          |         | delete the current window                 |
+    | C-x 1          |         | delete all windows except this one        |
+    | C-x 2          |         | show previous minibuffer input            |
+    | C-x 4 f        |         | show previous minibuffer input            |
+    | C-shift arrows |         | grow/shrink windows in direction of arrow |
+    |----------------+---------+-------------------------------------------|
+*** Minibuffer
+    |-------------+---------------------------------|
+    | Shortcut    | Description                     |
+    |-------------+---------------------------------|
+    | C-x esc esc | repeat last complex command     |
+    | tab         | complete as much as possible    |
+    | space       | complete up to one word         |
+    | M-n         | show next minibuffer input      |
+    | M-p         | show previous minibuffer input  |
+    | M-r         | search backward through history |
+    | M-s         | search forward through history  |
+    | ?           | show possible completions       |
+    |-------------+---------------------------------|
+*** Macros
+    |-----------+---------------------+-------------------------------------|
+    | Shortcut  | Command             | Description                         |
+    |-----------+---------------------+-------------------------------------|
+    | C-x (     |                     | start keyboard macro definition     |
+    | C-x )     |                     | end keyboard macro definition       |
+    | C-x e     |                     | execute last defined keyboard macro |
+    | C-u C-x ( |                     | append to last keyboard macro       |
+    |           | name-last-kbd-macro | name last keyboard macro            |
+    |           | insert-kbd-macro    | insert lisp defintion in buffer     |
+    |-----------+---------------------+-------------------------------------|
+*** Tags
+    |----------+--------------------+--------------------------------------------|
+    | Shortcut | Command            | Description                                |
+    |----------+--------------------+--------------------------------------------|
+    | M-.      |                    | find a tag (a definition)                  |
+    | C-u M-.  |                    | find next occurrence of tag                 |
+    |          | visit-tags-table   | specify a new tags file                    |
+    |          | tags-search        | regexp search on all files in tags table   |
+    |          | tags-query-replace | run query-replace on all the files         |
+    | M-,      |                    | continue last tags search or query-replace |
+    |----------+--------------------+--------------------------------------------|
+*** Abbrevs
+    |-----------+---------+------------------------------------------|
+    | Shortcut  | Command | Description                              |
+    |-----------+---------+------------------------------------------|
+    | C-x a g   |         | add global abbrev                        |
+    | C-x a l   |         | add mode-local abbrev                    |
+    | C-x a i g |         | add global expansion for this abbrev     |
+    | C-x a i l |         | add mode-local expansion for this abbrev |
+    | C-x a e   |         | explicitly expand abbrev                 |
+    | M-/       |         | expand previous word dynamically         |
+    |-----------+---------+------------------------------------------|
+*** Registers
+    |-------------+---------+--------------------------------------|
+    | Shortcut    | Command | Description                          |
+    |-------------+---------+--------------------------------------|
+    | C-x r s     |         | save region in register              |
+    | C-x r i     |         | insert register contents into buffer |
+    | C-x r space |         | save value of point in register      |
+    | C-x r j     |         | jump to point saved in register      |
+    |-------------+---------+--------------------------------------|
+*** Shell
+    |------------+---------+--------------------------------------|
+    | Shortcut   | Command | Description                          |
+    |------------+---------+--------------------------------------|
+    | C-x m      | eshell  | open an eshell                       |
+    | M-!        |         | execute a shell command              |
+    | M-pipe     |         | run a shell command on the region    |
+    | C-u M-pipe |         | filters region through shell command |
+    |------------+---------+--------------------------------------|
+
+*** Entering modes
+    |----------+-----------------+-----------------|
+    | Shortcut | Command         | Description     |
+    |----------+-----------------+-----------------|
+    | C-c g    | magit-mode      | Git mode        |
+    |          | whitespace-mode |                 |
+    |          | follow-mode     |                 |
+    |          | gnus            | gnus newsreader |
+    |          | telnet      | open telnet connection |
+    |----------+-----------------+-----------------|
+*** whitespace-mode
+*** follow-mode
+*** Lisp
+    |----------+-----------------+-------------------------------------|
+    | Shortcut | Command         | Description                         |
+    |----------+-----------------+-------------------------------------|
+    | C-x C-e  | eval-last-sexp  | evaluate line before point          |
+    | C-M-x    | eval-defun      | evaluate current defun              |
+    |          | eval-region     | evaluate current region             |
+    | C-c v    | eval-buffer     | evaluate buffer                     |
+    | M-:      | eval-expression | read and eval from minibuffer       |
+    |          | load-library    | load from standard system directory |
+    |----------+-----------------+-------------------------------------|
+*** Magit
+    Git:master (changed)
+    Git-master (unchanged)
+    |-----------+---------+---------------------------------------------------------|
+    | Shortcut  | Command | Description                                             |
+    |-----------+---------+---------------------------------------------------------|
+    | C-x g     |         | Open magit status                                       |
+    | C-u C-h i |         | magit.info http://daemianmack.com/magit-cheatsheet.html |
+    | C-x v l   |         | view commit log for file                                |
+    | C-x v i   |         | add to git                                              |
+    | C-x v u   |         | discard changes                                         |
+    | C-x v     |         | view diff against head                                  |
+    |           |         | stage/unstage changes                                   |
+    |-----------+---------+---------------------------------------------------------|
+*** Anything
+*** Dired, gnus, rmail, buffer list, elpa, & w3
+    ALL
+    |----------+---------+--------------------------|
+    | Shortcut | Command | Description              |
+    |----------+---------+--------------------------|
+    | C-s      |         | i-search forward         |
+    | C-r      |         | i-search backward        |
+    | g        |         | refresh buffer           |
+    | n        |         | move to next item        |
+    | p        |         | move to previous item    |
+    | space    |         | scroll text              |
+    | m        |         | mark item                |
+    | k        |         | kill, remove from list   |
+    | d        |         | mark item for deletion   |
+    | u        |         | unmark item for deletion |
+    | t        |         | toggle marks             |
+    | x        |         | delete marked items      |
+    | return   |         | select item              |
+    | q        |         | exit                     |
+    |----------+---------+--------------------------|
+
+    DIRED
+    |----------+-----------------------------+---------------------------------------|
+    | Shortcut | Command                     | Description                           |
+    |----------+-----------------------------+---------------------------------------|
+    | C-x d    |                             | initiate a dired buffer               |
+    | % m      |                             | regexp match against filename         |
+    | % g      |                             | regexp match against file contents    |
+    | v        |                             | view a file (read only)               |
+    | ^        |                             | go up a directory                     |
+    | f        |                             | open a folder (find-file)             |
+    | o        |                             | open a file in other window           |
+    | s        |                             | sort buffer                           |
+    | C        |                             | copy a file                           |
+    | R        |                             | rename a file                         |
+    | Z        |                             | compress/uncompress a file            |
+    | #        |                             | mark all autosave files for  deletion |
+    | ~        |                             | mark all backup files for deletion    |
+    |          | wdired-change-to-wdired-mod | edit file/folder names dinline        |
+    |----------+-----------------------------+---------------------------------------|
+*** Bookmarks
+    |----------+---------------------+-----------------------------|
+    | Shortcut | Command             | Description                 |
+    |----------+---------------------+-----------------------------|
+    | C-x r m  | bookmark-set        | Set bookmark for this file. |
+    | C-x r b  | bookmark-jump       | Jump to a bookmark.         |
+    | C-x r l  | bookmark-bmenu-list | List bookmarks.             |
+    |----------+---------------------+-----------------------------|
+*** Regular expression composition
+    |-----------+-------------------------------------------------|
+    | Character | Description                                     |
+    |-----------+-------------------------------------------------|
+    | ^         | Matches the beginning of a line                 |
+    | $         | Matches the end of a line                       |
+    | .         | Matches any single character                    |
+    | .*        | Matches any group of zero or more characters    |
+    | \<        | Matches the beginning of a word                 |
+    | \>        | Matches the end of a word                       |
+    | [a-z]     | Matches any character specified within brackets |
+    |-----------+-------------------------------------------------|
+* org-mode
+*** Action items
+|--------------------+--------------+--------------------------------|
+| command            | shortcut     | description                    |
+|--------------------+--------------+--------------------------------|
+| org-show-todo-tree | C-c / t      | sparse tree of only TODO items |
+| org-show-todo-tree | C-c / T DONE | sparse tree of only DONE items |
+|--------------------+--------------+--------------------------------|
+*** Tags
+|------------------------+---------------------------|
+| shortcut               | description               |
+|------------------------+---------------------------|
+| C-c C-q or C-c C-c     | insert tag in headline    |
+| C-c a m Richard+URGENT | searching for all matches |
+| C-c a m Richard-URGENT | searching to exclude      |
+|------------------------+---------------------------|
+*** Tables
+|--------------+-----------------------------------------+--------------------------------------|
+| Shortcut     | Command                                 | Description                          |
+|--------------+-----------------------------------------+--------------------------------------|
+|              | org-table-convert-region                | convert a csv region to a org table  |
+| C-c pipe     | org-table-create-or-convert-from-region |                                      |
+| C-u C-c pipe | org-table-create-or-convert-from-region | same as above but force CSV (commas) |
+|--------------+-----------------------------------------+--------------------------------------|
+*** Archive
+* pentadactyl
+    |-------------+--------------------------|
+    | Shortcut    | Description              |
+    |-------------+--------------------------|
+    | c-l         | Jump to address bar      |
+    |             | Jump to search bar       |
+    |             | Search backward          |
+    | firebug,f12 | Toggle firebug           |
+    |             | View source              |
+    | c-s         | search page              |
+    | n           | Go to next search result |
+    | y           | yank url of current page |
+    | c-x k       | kill tab                 |
+    | alt-dwn     | Show toolbars            |
+    | alt-up      | Hide toolbars            |
+    | yubnub      | search                   |
+    |             | buffer                   |
+    | mode,g,i    | insert                   |
+    | up,ctrl,p   | scroll                   |
+    | down,ctrl,n | scroll                   |
+    | c-r or f5   | refresh                  |
+    |-------------+--------------------------|
+* uzbl
+http://uzbl.org/keybindings.php
+Tabbed browsing:
+Here’s how to use it:
+
+gn        = new tab
+gY        = new tab from url in clipboard
+go        = new tab from url typed
+gC        = closes a tab
+gt        = go to next tab
+gT        = go to previous tab
+gi        = go to tab # specified
+g<        = go to first tab
+g>        = go to last tab
+gQ        = close all tabs and start with a new tab
+gZ        = close application
+* urxvt
+    searchable-scrollback
+    Use Meta-s to activate searchable scrollback mode.
+
+    keyboard-select
+    Use Meta-Escape to activate selection mode, then use the following keys:
+    |-------------------------------------+-----------------------------------------------------------------|
+    | Shortcut                            | Description                                                     |
+    |-------------------------------------+-----------------------------------------------------------------|
+    | h/j/k/l                             | Move cursor left/down/up/right (also with arrow keys)           |
+    | g/G/0/^/$/H/M/L/f/F/;/,/w/W/b/B/e/E | More vi-like cursor movement keys                               |
+    | '/'/?                               | Start forward/backward search                                   |
+    | n/N                                 | Repeat last search, N: in reverse direction                     |
+    | Ctrl-f/b                            | Scroll down/up one screen                                       |
+    | Ctrl-d/u                            | Scroll down/up half a screen                                    |
+    | v/V/Ctrl-v                          | Toggle normal/linewise/blockwise selection                      |
+    | y/Return                            | Copy selection to primary buffer, Return: deactivate afterwards |
+    | q/Escape                            | Deactivate keyboard selection mode                              |
+    |-------------------------------------+-----------------------------------------------------------------|
+
+    url-select
+    Use Meta-u to activate URL selection mode, then use the following keys:
+    |----------+-------------------------------------------------------------|
+    | Shortcut | Description                                                 |
+    |----------+-------------------------------------------------------------|
+    | j/k      | Select next downward/upward URL (also with arrow keys)      |
+    | g/G      | Select first/last URL (also with home/end key)              |
+    | o/Return | Open selected URL in browser, Return: deactivate afterwards |
+    | y        | Copy (yank) selected URL and deactivate selection mode      |
+    | q/Escape | Deactivate URL selection mode                               |
+    |----------+-------------------------------------------------------------|
+
+    clipboard
+    |----------+---------------|
+    | Shortcut | Description   |
+    |----------+---------------|
+    | M-c      | copy          |
+    | M-v      | paste         |
+    | M-C-v    | paste_escaped |
+    |----------+---------------|
+* screen
+|-----------+------------+-----------------------------------------------------------------|
+| Shortcut  | Command    | Action                                                          |
+|-----------+------------+-----------------------------------------------------------------|
+| C-a 0     | select 0   | Switch to window 0                                              |
+| C-a 9     | select 9   | Switch to window 9                                              |
+| C-a C-a   | other      | Toggle to the window displayed previously.                      |
+| C-a a     | meta       | Send the command character (C-a) to window. See escape command. |
+| C-a A     | title      | Allow the user to enter a name for the current window.          |
+| C-a c     | screen     | Create a new window with a shell and switch to that window.     |
+| C-a C-c   | screen     | Create a new window with a shell and switch to that window.     |
+| C-a C     | clear      | Clear the screen.                                               |
+| C-a d     | detach     | Detach screen from this terminal.                               |
+| C-a C-d   | detach     | Detach screen from this terminal.                               |
+| C-a D D   | pow_detach | Detach and logout.                                              |
+| C-a k     | kill       | Destroy current window.                                         |
+| C-a C-k   | kill       | Destroy current window.                                         |
+| C-a space | next       | Switch to the next window.                                      |
+| C-a n     | next       | Switch to the next window.                                      |
+| C-a C-n   | next       | Switch to the next window.                                      |
+| C-a x     | lockscreen | Lock this terminal.                                             |
+| C-a C-x   | lockscreen | Lock this terminal.                                             |
+| C-a w     | windows    | Show a list of window.                                          |
+| C-a C-w   | windows    | Show a list of window.                                          |
+| C-a ?     | help       | Show key bindings.                                              |
+|-----------+------------+-----------------------------------------------------------------|
+*** Create new windows inside of screen
+This is done by typing C-a c and as new windows are created, you will
+be automatically switched to them. You can navigate through screen
+windows using C-a #, starting at zero, so Ctrl-a,0 should take you
+back to Irssi.
+*** Launching screen
+You should be at your shell prompt right now, outside of
+screen. Before, you typed screen to run it. Running screen with no
+arguments creates a new screen session. You can have multiple screen
+sessions, but this will not be discussed here. Read the manpage of
+screen for more information. Since you have already created a screen
+session, you do not want to make a new one, you want to reattach to
+the one you already created. To do this, type:
+
+screen -raAd
+
+The arguments "-raAd" tell screen what you want it to do: reattach,
+do some sizing stuff (a,A), and detach before reattaching if
+necessary. These arguments are safe to use in just about every
+case. If your screen session is attached elsewhere, using -raAd will
+detach that session, and reattach it here.
+
+Magically, irssi should have reappeared. This is the point where you
+stand back for a moment and say "Wow, that kicks ass," because now
+you should understand that you can leave Irssi running all the time
+under screen, detach from screen and disconnect from your shell, come
+back later, login and reattach and there Irssi will be. You should
+also see that with screen, you will have the ability to log in from
+anywhere and continue your IRCing (or whatever work you're doing in
+another screen window) just as you left it. Yes, it's good, I know.
+
+Before you disconnect from your shell, make sure you detach from your
+screen using the appropriate detach sequence. This keeps programs like
+irssi from hanging while waiting for input.
+
+*** Killing a Screen Session
+If you end up with multiple screen sessions, you have to specify which
+session when you want to attach. If this is not desired, kill one of
+the sessions by first using screen -list to find the id of the
+session. The id will look something like 8037.tty1.godfather. With the
+id in hand, run:
+
+screen -X -S ID kill
+
+to kill the screen session with id ID.
+
+*** Dealing With Flow Control
+If you accidentally hit Ctrl-s or Ctrl-a s, you may notice some
+general unpleasantry, namely that your screen session (or irssi) stops
+updating. I suggest reading more about flow control and how screen
+handles it. The quick fix is to type Ctrl-q or Ctrl-a q (depending on
+which you used first). I have the following my shell's rc file to turn
+off flow control handling completely, since I like using Ctrl-s for
+some programs:
+
+stty -ixon -ixoff
+* irssi
+*** Main
+|----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Command              | Description                                                                                                                                                                                                   |
+|----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| screen irssi         | Start up in screen                                                                                                                                                                                            |
+| /help <tab complete> | help! /help network  /help levels                                                                                                                                                                             |
+| /upgrade             | when you've installed a newer version of the irssi binary it's not necessary to quit irssi and restart it. Just do /upgrade and the new binary will be loaded maintaining all connections to all irc servers. |
+|----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+*** Networks / servers / channels
+|---------------------------------+----------------------------------------------------------------------------------------------------|
+| Command                         | Description                                                                                        |
+|---------------------------------+----------------------------------------------------------------------------------------------------|
+| /connect irc.quakenet.org       | connect to a server (use this otherwise you'll disconnect from the current network)                |
+| /network                        | Show the pre-configured networks.                                                                  |
+| /network remove SwiftIRC        | Remove a network                                                                                   |
+| /server                         | To view all the servers you are currently connected to                                             |
+| /server list                    | To view all the servers that you added or that are standard available in irssi                     |
+| /server remove irc.swiftirc.net | To remove a server.                                                                                |
+| /channel remove #SwiftIRC       | To remove a channel                                                                                |
+| ctrl + x                        | switch channels                                                                                    |
+| /list                           | lists all the channels on an irc server that are public for to join. (don't use on large networks) |
+| /disconnect                     | leave a network                                                                                    |
+| /exit                           | leave irssi                                                                                        |
+| /rmreconns                      | Means that if a server is not responding you can stop irssi trying to connect to it.               |
+| /set                            | show all settings                                                                                  |
+| /set timestamp                  | show settings for only timestamp                                                                   |
+| /save                           | save settings and configuration                                                                    |
+|---------------------------------+----------------------------------------------------------------------------------------------------|
+*** Rooms
+|-----------------------+----------+------------------------------------------------------------------------------------------------|
+| Command               | Shortcut | Description                                                                                    |
+|-----------------------+----------+------------------------------------------------------------------------------------------------|
+| /window close         | /wc      | leave a room unelegantly                                                                       |
+| /join #<channel name> | /j       | join a channel (some channles can be joined by name only /j gentoo)                            |
+| /part                 | /pa      | leave a room elegantly                                                                         |
+| /part <message>       |          | leave a room with a msg                                                                        |
+| /script load          |          | <script name>                                                                                  |
+| /whois                | /wi      | View information about nickname                                                                |
+| /away <message>       |          | /away sleeping  Set an away message.                                                           |
+| /msg <nick> hello!    | /m       | private message a person with the word "hello"                                                 |
+| /query <nick>         |          | will open a pm (private message) with a person but not send a message                          |
+| /nick <nick>          |          | to change your nick                                                                            |
+| /names                |          | list users in current channel                                                                  |
+| /topic                | /t       | Displays/edits current topic. Tip: use /t[space][tab] to automatically fill in existing topic. |
+|-----------------------+----------+------------------------------------------------------------------------------------------------|
+
+*** Windows
+|-----------------------------+-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------|
+| Command                     | Shortcut  | Description                                                                                                                                                                                                                                                                       |                                                             |
+|-----------------------------+-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------|
+| /win <number>               |           | go to window by number                                                                                                                                                                                                                                                            |                                                             |
+| alt +1-9 or q-p             |           | go to room using alt key                                                                                                                                                                                                                                                          |                                                             |
+| alt + left or right arrow   |           | go to next or previous room                                                                                                                                                                                                                                                       |                                                             |
+| /window move [windownumber] | /wm       | allows you to reposition a window while irssi is running. For example if you have a channel window at position 5 and you want it at position 2 then change to the channel window and type /window move 2.                                                                         |                                                             |
+| /window new                 | /win new  | make a new window                                                                                                                                                                                                                                                                 |                                                             |
+| /window                     | /win      | get information about the window                                                                                                                                                                                                                                                  |                                                             |
+| /window move up             | /win m u  | Move the current channel up                                                                                                                                                                                                                                                       |                                                             |
+| /window move down           | /win m d  | Move the current channel down                                                                                                                                                                                                                                                     |                                                             |
+| /window grow                | /win g 5  | Resize a window larger                                                                                                                                                                                                                                                            |                                                             |
+| /window shrink              | /win s 5  | Resize a window smaller                                                                                                                                                                                                                                                           |                                                             |
+| alt + a                     |           | This allows you to go straight to the highest priority window when more than one is hilighted                                                                                                                                                                                     |                                                             |
+| alt+p and alt+n             | pg up+dwn | scroll up and down.                                                                                                                                                                                                                                                               |                                                             |
+| /scrollback goto [time      | line]     | /sb                                                                                                                                                                                                                                                                               | A lot easier than pressing pageup for 10 seconds.           |
+| /scrollback home            | end       | /sb                                                                                                                                                                                                                                                                               | Also use for skipping to the beginning or the end of a log. |
+| /clear                      | /c        | clear the window                                                                                                                                                                                                                                                                  |                                                             |
+| /clear -all                 | /c -all   | clear all windows                                                                                                                                                                                                                                                                 |                                                             |
+| /lastlog -hilight           |           | this makes searching in the backbuffer of any window very easy. Searching for all the times somebody triggered a hilight is done by /lastlog -hilight and finding all mode changes to a user goes with /lastlog -mode [user]. You can also look for words or regular expressions. |                                                             |
+| /exec program               |           | To execute a command                                                                                                                                                                                                                                                              |                                                             |
+| /exec -o ls /pub/           |           | Add -o to paste the output to the current channel                                                                                                                                                                                                                                 |                                                             |
+|-----------------------------+-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------|
+
+*** Privacy
+|--------------------------------------------+-------------+------------------------------------------------------------------------------------------------------------------------------|
+| Command                                    | Shortcut    | Description                                                                                                                  |
+|--------------------------------------------+-------------+------------------------------------------------------------------------------------------------------------------------------|
+| /ignore ##channelname ALL -PUBLIC -ACTIONS |             | Allows the user to ignore all joins parts and quits etc without ignoring what anyone actually says.                          |
+| /ignore * ALL -PUBLIC -ACTIONS             |             | Or you can ignore them in all channels by using * instead of #channelname.                                                   |
+| /topic [space][tab]                        |             | This autocompletes the channel topic                                                                                         |
+| /ignore [nick] MSG                         |             | This enables you to ignore someone but only in a PM meaning you can still see everything the selected user says in a channel |
+| /ignore -time 3600 <nick>                  |             | Got a troll or someone who’s just having too much fun? You can ignore them for a specific amount of time                     |
+| /ignore -regexp -pattern "FREE" * MSGS"    |             | irssi will ignore all messages to you with "FREE" in them regardless of who sends them.                                      |
+| /ban                                       | /bans or /b | Sets or List bans for a channel                                                                                              |
+| /kick                                      |             | Kicks a user.                                                                                                                |
+| /kickban                                   |             | Kickban a user.                                                                                                              |
+| /unban *                                   | /mub        | Clears the unbanlist (unbans everyone) in a channel                                                                          |
+|--------------------------------------------+-------------+------------------------------------------------------------------------------------------------------------------------------|
+
+*** Aliases
+|-------------------------------------------------+----------+-------------------------------------------------------------------------------------------------------------|
+| Command                                         | Shortcut | Description                                                                                                 |
+|-------------------------------------------------+----------+-------------------------------------------------------------------------------------------------------------|
+| /alias                                          | /al      | View available aliases/shortcuts                                                                            |
+| /alias X                                        | /al X    | Aliases/shortcuts beginning with X                                                                          |
+| /alias linuxfriends /me has a few good friends. |          | Make your own alias "/linuxfriends". OUTPUT: jonny has a few good friends.                                  |
+| /alias hipeople /me waves to $0 $1 $2 **        |          | To make the alias use text (variables) used together with the alias use $X. OUTPUT: /hipeople jon mary jane |
+|-------------------------------------------------+----------+-------------------------------------------------------------------------------------------------------------|
+
+*** Setting up Freenode
+|-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------|
+| Command                                                                           | Description                                                                       |
+|-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------|
+| /msg nickserv register <password> <email>                                         | You’ll need to respond to their email or your registration will be dropped.       |
+| /msg nickserv set hidemail on                                                     | To keep your nick’s email hidden:                                                 |
+| /msg nickserv identify <password>                                                 | When starting freenode you’ll need to login to Freenode so your nick is official. |
+| /network add -autosendcmd "/msg nickserv identify <password> ;wait 2000" Freenode | This though too can be done automatically                                         |
+|-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------|
+*** External scripts
+|----------------+----------------------|
+| Command        | Description          |
+|----------------+----------------------|
+| /irsnot_reload | reload irsnot config |
+|----------------+----------------------|
+

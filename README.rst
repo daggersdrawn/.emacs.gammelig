@@ -45,8 +45,8 @@ get an api key for http://words.bighugelabs.com/ and export the
 extra credit
 ============
 
-start emacs as a daemon on your distro/OS for wicked
-fast startup speeds http://www.emacswiki.org/emacs/EmacsAsDaemon
+launch emacs as a daemon on your distro/OS for wicked
+fast startup speeds: http://www.emacswiki.org/emacs/EmacsAsDaemon
 
 
 clone this repo
@@ -59,7 +59,7 @@ easy mobisi::
 flight plans
 ============
 
-copy my user file to one of your own. must have the same filename as
+copy my user file to one of your own. must be the same filename as
 the username or hostname of your system, see
 https://github.com/rizumu/rizumu-emacs/blob/master/init.el#L222  ::
 

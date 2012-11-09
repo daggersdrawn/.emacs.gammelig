@@ -230,8 +230,3 @@
    (interactive)
    (find-file (concat org-directory "/someday.org")))
 (provide 'org-someday)
-
-(defun keybindings ()
-   (interactive)
-   (find-file (concat org-directory "/keybindings.org")))
-(provide 'org-keybindings)
