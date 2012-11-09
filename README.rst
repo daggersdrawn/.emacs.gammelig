@@ -151,8 +151,9 @@ your elisp dependencies https://github.com/dimitri/el-get#usage
 
 this repo installs a lot of elisp dependencies by default in the
 ~/.emacs.d/init.el and does not provide an easy way for you to remove
-or add new ones without forking. the is true for the configuration
-files found in ~/.emacs.d/configs/cfg_***.el and the yasnippets.
+or add new ones without forking. the same is true for the
+configuration files found in ~/.emacs.d/configs/cfg_something.el and
+the ~/.emacs.d/snippets/ yasnippets.
 
 a solution to this is forthcoming which will simply involve a set of
 defaults in init.el with customizations to add/remove dependencies and
