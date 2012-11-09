@@ -20,10 +20,11 @@ prepare python
 =====================
 
 flymake needs python packages to be installed in your system or
-virtualenv site-packages folder. This of course requires pip
-http://pypi.python.org/pypi/pip::
+virtualenv site-packages folder::
 
     $ pip install pylint pep8 pyflakes nose nose_machineout
+
+**NOTE**: This of course requires pip: http://pypi.python.org/pypi/pip
 
 prepare tex
 ===========
@@ -90,9 +91,9 @@ takeoff::
     o      (,| ^ Milchstrasse |                o
            | |__|GESPERRT!|___|       *
     o ((   | |  |UMLEITUNG|   |   ))           o       o     .   .
-.          | |   ueber M31 -> |           .
+     .     | |   ueber M31    |           .
            | |________________|                               *
-   *       |,'_______________,'
+     *     |,'_______________,'
                    _   _                            *
                    -   - _..------.._
          *             ,'    .__,    `.
@@ -100,7 +101,7 @@ takeoff::
     .           __,'______________________`.__  .         .    *   .
    -o-      ,-'' __    __    _____   __    __ ``'.       -o-      -o-
     '      (    (__)  (__)  |_SSt_| (__)  (__)    )       '        '
-  *         `-..______________________________...'        ,--.
+        *   `-..______________________________...'        ,--.
     .             `.___________________ __,'    .        (    )
    -o-       .        `-.-.--------.-.-'       -o-        `--'
     '             *                             '                *
