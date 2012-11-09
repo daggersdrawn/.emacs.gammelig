@@ -15,15 +15,16 @@ better to future proof your system now. you can learn more about
 el-get here: https://github.com/dimitri/el-get
 
 * git: http://git-scm.com/
-* hg: http://mercurial.selenic.com/
+* hg (mercurial): http://mercurial.selenic.com/
 * cvs: http://www.nongnu.org/cvs/ (for auctex)
-* bzr: http://bazaar.canonical.com/en/
+* bzr (bazaar): http://bazaar.canonical.com/en/
 * fossil: http://fossil-scm.org/
-* svn: http://subversion.apache.org/
+* svn (subversion): http://subversion.apache.org/
 * darcs: http://darcs.net/
 
 **NOTE**: el-get uses gnu/tar regularly and ftp on occasion.
-
+**NOTE**: osx users can find many of these packages in homebrew http://mxcl.github.com/homebrew/
+**NOTE**: darcs may be installed with cabal and likewise mercurial with python
 
 prepare python
 ==============
@@ -47,6 +48,14 @@ prepare tex
 * osx path tip: http://www.tug.org/mactex/faq/index.html#qm03
 
 
+prepare spellchecker
+====================
+
+install gnu/aspell http://aspell.net/
+
+**NOTE**: osx users can find aspell in homebrew http://mxcl.github.com/homebrew/
+
+
 prepare big huge thesaurus
 ==========================
 
@@ -60,7 +69,15 @@ extra credit
 ============
 
 launch emacs as a daemon http://www.emacswiki.org/emacs/EmacsAsDaemon
-on your distro/OS for wicked fast startup speeds.
+on your distro/os for wicked fast startup speeds.
+
+
+prepare font
+============
+
+by default, this config uses the inconsolata font
+http://levien.com/type/myfonts/inconsolata.html for alternative
+choices that work well see http://hivelogic.com/articles/top-10-programming-fonts/
 
 
 clone this repo
@@ -126,3 +143,11 @@ emacs shortcut to open ~/.emacs.d/keybindings.org::
 
 **NOTE**: this is a .org file, so learn that pressing <tab> expands and collapses the nodes in the tree.
 
+
+change theme
+============
+
+if you don't like the zenburn theme installed by default, you can use
+color-theme http://emacswiki.org/emacs/ColorTheme to select an
+alternative. Make your choice permanent by setting load-theme
+https://github.com/rizumu/rizumu-emacs/blob/master/rizumu.el#L3

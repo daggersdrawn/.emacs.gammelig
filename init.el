@@ -245,8 +245,7 @@
                   "cfg_twitter"
                   "cfg_uniquify"
                   "cfg_yasnippet"
-                  "cfg_yaml"
-                  "cfg_zenburn"))
+                  "cfg_yaml"))
 
 ;; Load up personalization files:
 (setq system-config (concat user-emacs-directory system-name ".el"))

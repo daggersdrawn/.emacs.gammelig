@@ -1,3 +1,7 @@
+;; Color Theme
+(add-to-list 'custom-theme-load-path "~/.emacs.d/el-get/zenburn/")
+(load-theme 'zenburn t)
+
 ;; Disable backup files.
 (setq make-backup-files nil)
 ;; Enable versioning with default values (keep five last versions, I think!)
