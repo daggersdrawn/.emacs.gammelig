@@ -241,6 +241,7 @@
                   "cfg_pony"
                   "cfg_python"
                   "cfg_rst"
+                  "cfg_slime"
                   "cfg_tramp"
                   "cfg_twitter"
                   "cfg_uniquify"

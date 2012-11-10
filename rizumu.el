@@ -95,11 +95,12 @@
                 (remove-if-not 'buffer-file-name (buffer-list)))))
 
 ;; GNU/Linux systems only
+(when linux-p
   ;; Set font
   (set-face-attribute 'default nil
                       :height 100 :font "Inconsolata")
   ;; Set flyspell binary
-  (setq-default ispell-program-name "/usr/bin/aspell")
+  (setq-default ispell-program-name "/usr/bin/aspell"))
 
 ;; Mac OS X only
 (when macosx-p
