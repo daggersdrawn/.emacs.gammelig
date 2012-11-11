@@ -237,6 +237,7 @@
                   "cfg_gnus"
                   "cfg_hideshow"
                   "cfg_html"
+                  ;;"cfg_lisp"
                   "cfg_jsbeautify"
                   "cfg_jshint"
                   "cfg_keybinding"
