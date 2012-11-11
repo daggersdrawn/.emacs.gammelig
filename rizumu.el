@@ -82,10 +82,6 @@
 ;; follow symlinks and don't ask
 (setq vc-follow-symlinks t)
 
-;; Check to see if running on Mac OS X or some GNU/Linux distro
-(defvar macosx-p (string-match "darwin" (symbol-name system-type)))
-(defvar linux-p (string-match "gnu/linux" (symbol-name system-type)))
-
 ;; kill all other buffers
 (defun kill-other-buffers ()
     "Kill all other buffers."
@@ -93,6 +89,13 @@
     (mapc 'kill-buffer
           (delq (current-buffer)
                 (remove-if-not 'buffer-file-name (buffer-list)))))
+
+;; Set dictionary
+(setq-default ispell-dictionary "en_US")
+
+;; Check to see if running on Mac OS X or some GNU/Linux distro
+(defvar macosx-p (string-match "darwin" (symbol-name system-type)))
+(defvar linux-p (string-match "gnu/linux" (symbol-name system-type)))
 
 ;; GNU/Linux systems only
 (when linux-p
@@ -102,7 +105,7 @@
   ;; Set flyspell binary
   (setq-default ispell-program-name "/usr/bin/aspell"))
 
-;; Mac OS X only
+;; Mac OSX only
 (when macosx-p
   ;; Set font
   (set-face-attribute 'default nil
@@ -113,4 +116,6 @@
   (setq ns-pop-up-frames nil)
   (add-hook 'window-setup-hook 'maximize-frame t))
 
-(setq-default ispell-dictionary "en_US")
+;; Mac OSX only when running emacs in a GUI on OSX
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))

@@ -1,5 +1,8 @@
-(setq slime-lisp-implementations
-      '((sbcl ("/usr/local/bin/sbcl") :coding-system utf-8-unix)
-        (cmucl ("/usr/local/bin/cmucl") :coding-system iso-latin-1-unix)))
-(load (expand-file-name "~/quicklisp/slime-helper.el"))
-(setq inferior-lisp-program "sbcl")
+(if (executable-find "sbcl")
+  (progn
+  (eval-after-load "slime"
+'(progn (slime-setup '(slime-repl))))
+  (require 'slime)
+  (load (expand-file-name "~/quicklisp/slime-helper.el"))
+  (setq inferior-lisp-program (executable-find "sbcl"))
+  (slime-setup)))

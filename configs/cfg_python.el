@@ -15,7 +15,7 @@
                            #'autopair-python-triple-quote-action))))
 
 ;;; ipython
-(defcustom python-python-command "/usr/bin/ipython2"
+(defcustom python-python-command "ipython"
   "Shell command to run Python interpreter."
   :group 'python
   :type 'string

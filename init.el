@@ -32,6 +32,9 @@
         (:name dpastede
            :type github
            :pkgname "emacsmirror/dpastede")
+        (:name exec-path-from-shell
+           :type github
+           :pkgname "purcell/exec-path-from-shell")
         (:name find-file-in-git-repo
            :type github
            :pkgname "re5et/find-file-in-git-repo")
@@ -128,6 +131,7 @@
       dired-single
       django-mode
       dpastede
+      exec-path-from-shell
       expand-region
       find-file-in-git-repo
       find-file-in-project
