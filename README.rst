@@ -16,7 +16,7 @@ el-get here: https://github.com/dimitri/el-get
 
 * git: http://git-scm.com/
 * hg (mercurial): http://mercurial.selenic.com/
-* cvs: http://www.nongnu.org/cvs/ (for auctex)
+* cvs: http://www.nongnu.org/cvs/
 * bzr (bazaar): http://bazaar.canonical.com/en/
 * fossil: http://fossil-scm.org/
 * svn (subversion): http://subversion.apache.org/

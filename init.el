@@ -23,7 +23,10 @@
 
 ;; local sources
 (setq el-get-sources
-      '((:name calfw-gcal
+      '((:name auctex
+           :type github
+           :pkgname "emacsmirror/auctex")
+        (:name calfw-gcal
            :type github
            :pkgname "myuhe/calfw-gcal.el")
         (:name color-dired
