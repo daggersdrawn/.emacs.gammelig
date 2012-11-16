@@ -503,27 +503,69 @@
 |--------------+-----------------------------------------+--------------------------------------|
 *** Archive
 * pentadactyl
-    |-------------+--------------------------|
-    | Shortcut    | Description              |
-    |-------------+--------------------------|
-    | c-l         | Jump to address bar      |
-    |             | Jump to search bar       |
-    |             | Search backward          |
-    | firebug,f12 | Toggle firebug           |
-    |             | View source              |
-    | c-s         | search page              |
-    | n           | Go to next search result |
-    | y           | yank url of current page |
-    | c-x k       | kill tab                 |
-    | alt-dwn     | Show toolbars            |
-    | alt-up      | Hide toolbars            |
-    | yubnub      | search                   |
-    |             | buffer                   |
-    | mode,g,i    | insert                   |
-    | up,ctrl,p   | scroll                   |
-    | down,ctrl,n | scroll                   |
-    | c-r or f5   | refresh                  |
-    |-------------+--------------------------|
+    http://5digits.org/help/pentadactyl/index.xhtml
+    |----------------+--------------------------------------------------------------------|
+    | Shortcut       | Description                                                        |
+    |----------------+--------------------------------------------------------------------|
+    | c-h i          | start help                                                         |
+    | o              | go to url in the same tab                                          |
+    | O              | go to url and edit it                                              |
+    | c-j            | go to next tab                                                     |
+    | c-k            | go to previous tab                                                 |
+    | m-m            | move tab to number                                                 |
+    | m-left         | move tab left                                                      |
+    | m-right        | move tab right                                                     |
+    | t              | open a url in a new tab                                            |
+    | t              | open a url and edit it in a new tab                                |
+    | c-x t          | open link in new tab                                               |
+    | c-x l          | open link in current tab                                           |
+    | f, j           | open hint in new tab                                               |
+    | F, J           | open hint in current tab                                           |
+    | m-j            | extended hint mode                                                 |
+    | c-a            | jump to first tab or left of document                              |
+    | c-e            | jump to last tab or right of document                              |
+    | c-x k          | kill tab                                                           |
+    | c-_            | undo closed tab                                                    |
+    | c-r, c-s, /    | search                                                             |
+    | firebug,f12    | toggle firebug                                                     |
+    | c-c g, g-f     | view source                                                        |
+    | c-c G, g-F     | open source in editor                                              |
+    | c-c h, gh      | go to home page                                                    |
+    | c-c u, gu      | go to parent directory                                             |
+    | c-c c-u, gU    | go to root of website                                              |
+    | c-c p          | open picture location                                              |
+    | c-s            | search page                                                        |
+    | c-b, bksp      | backward in history                                                |
+    | c-f            | forward in history                                                 |
+    | c-p            | line up                                                            |
+    | c-n            | line down                                                          |
+    | m-v            | page up                                                            |
+    | c-v            | page down                                                          |
+    | m-<            | go to top                                                          |
+    | m->            | go to bottom                                                       |
+    | c-c m          | open context menu                                                  |
+    | n              | Go to next search result                                           |
+    | y, m-w         | yank url of current page                                           |
+    | Y, c-w         | yank selected text to clipboard                                    |
+    | P, c-y         | psate the current clipboard selection to a new buffer to clipboard |
+    | m-dwn          | show toolbars                                                      |
+    | m-up           | hide toolbars                                                      |
+    | yubnub         | search                                                             |
+    | b 3            | go to buffer 3                                                     |
+    | alt 3          | go to buffer 3                                                     |
+    | c-x k          | kill the buffer                                                    |
+    | c-x b, c-x c-b | buffer lists                                                       |
+    | c-x r m        | jump to mark at cursor                                             |
+    | c-x r b        | jump to mark in the current buffer                                 |
+    | mode,g,i       | insert                                                             |
+    | c-g            | cancel                                                             |
+    | c-~            | open a directory                                                   |
+    | c-f ~          | open home directory                                                |
+    | c-r or f5      | refresh                                                            |
+    | c-x c-f c-l    | open a file                                                        |
+    | c-x c-s        | save                                                               |
+    | c-x c-c        | exit and save session                                              |
+    |----------------+--------------------------------------------------------------------|
 * uzbl
 http://uzbl.org/keybindings.php
 Tabbed browsing:
