@@ -92,6 +92,9 @@
         (:name pomodoro.el
            :type github
            :pkgname "docgnome/pomodoro.el")
+        (:name processing-mode
+           :type github
+           :pkgname "ptrv/processing2-emacs")
         ;(:name project                    :type elpa)
         (:name python-extras
            :type github
@@ -186,6 +189,7 @@
       paredit
       pony-mode
       pomodoro.el
+      processing-mode
       pylookup
       pymacs
       python
@@ -247,6 +251,7 @@
                   "cfg_maxframe"
                   "cfg_org"
                   "cfg_pony"
+                  "cfg_processing"
                   "cfg_python"
                   "cfg_rst"
                   "cfg_slime"
