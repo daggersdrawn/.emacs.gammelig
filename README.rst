@@ -53,7 +53,7 @@ prepare spellchecker
 
 install gnu/aspell http://aspell.net/
 
-**NOTE**: osx users can find aspell in homebrew http://mxcl.github.com/homebrew/
+**NOTE**: osx users can find aspell in homebrew http://mxcl.github.com/homebrew/ and can install with brew install aspell --lang=en
 
 
 prepare big huge thesaurus
@@ -85,7 +85,7 @@ clone this repo
 
 easy mobisi::
 
-    $ git clone https://github.com/rizumu/rizumu-emacs.git ~/.emacs.d
+    $ git clone https://github.com/nillab/.emacs.d.git ~/.emacs.d
 
 
 flight plans
@@ -93,7 +93,7 @@ flight plans
 
 copy my user file to one of your own. must  the same filename as
 the username or hostname of your system, see
-https://github.com/rizumu/rizumu-emacs/blob/master/init.el#L222  ::
+https://github.com/nillab/.emacs.d/blob/master/init.el#L222  ::
 
     $ cp ~/.emacs.d/rizumu.el ~/.emacs.d/user.el
 
@@ -140,7 +140,7 @@ change theme
 if you don't like the zenburn theme installed by default, you can use
 color-theme http://emacswiki.org/emacs/ColorTheme to select an
 alternative. Make your choice permanent by setting load-theme
-https://github.com/rizumu/rizumu-emacs/blob/master/rizumu.el#L3
+https://github.com/nillab/.emacs.d/blob/master/rizumu.el#L3
 
 
 installing packages
