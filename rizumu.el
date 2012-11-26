@@ -77,7 +77,7 @@
 ;(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; http://words.bighugelabs.com/
-;(setq *synonym-api-key* (getenv "BIGHUGETHESAURUS"))
+(setq *synonym-api-key* (getenv "BIGHUGETHESAURUS"))
 
 ;; follow symlinks and don't ask
 (setq vc-follow-symlinks t)
