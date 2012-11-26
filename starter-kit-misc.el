@@ -27,11 +27,11 @@
 ;;
 ;; This program is distributed in the hope that it will be useful,
 ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 ;; GNU General Public License for more details.
 ;;
 ;; You should have received a copy of the GNU General Public License
-;; along with GNU Emacs; see the file COPYING. If not, write to the
+;; along with GNU Emacs; see the file COPYING.  If not, write to the
 ;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 ;; Boston, MA 02110-1301, USA.
 
@@ -72,7 +72,7 @@
 ;; (setq browse-url-browser-function 'browse-default-epiphany)
 ;; (setq browse-url-browser-function 'browse-default-w3m)
 ;; (setq browse-url-browser-function 'browse-url-generic
-;; browse-url-generic-program "~/src/conkeror/conkeror")
+;;       browse-url-generic-program "~/src/conkeror/conkeror")
 
 ;; Highlight matching parentheses when the point is on them.
 (show-paren-mode 1)
@@ -110,7 +110,14 @@ comment as a filename."
 (set-default 'imenu-auto-rescan t)
 
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
-(add-hook 'text-mode-hook 'turn-on-flyspell)
+;; (when (executable-find ispell-program-name)
+;;       (add-hook 'text-mode-hook 'turn-on-flyspell))
+
+(eval-after-load "ispell"
+  '(when (executable-find ispell-program-name)
+   (add-hook 'text-mode-hook 'turn-on-flyspell)))
+
+
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 (defalias 'auto-tail-revert-mode 'tail-mode)
@@ -118,11 +125,13 @@ comment as a filename."
 (random t) ;; Seed the random-number generator
 
 ;; Hippie expand: at times perhaps too hip
-(dolist (f '(try-expand-line try-expand-list try-complete-file-name-partially))
-  (delete f hippie-expand-try-functions-list))
+(eval-after-load 'hippie-exp
+  '(progn
+     (dolist (f '(try-expand-line try-expand-list try-complete-file-name-partially))
+       (delete f hippie-expand-try-functions-list))
 
-;; Add this back in at the end of the list.
-(add-to-list 'hippie-expand-try-functions-list 'try-complete-file-name-partially t)
+     ;; Add this back in at the end of the list.
+     (add-to-list 'hippie-expand-try-functions-list 'try-complete-file-name-partially t)))
 
 (eval-after-load 'grep
   '(when (boundp 'grep-find-ignored-files)
