@@ -266,12 +266,14 @@
                   "cfg_yasnippet"
                   "cfg_yaml"))
 
-;; Load personal files and some starter-kit helpers
+;; Load personal files
 (setq system-config (concat user-emacs-directory system-name ".el"))
 (setq user-config (concat user-emacs-directory user-login-name ".el"))
 (setq user-dir (concat user-emacs-directory user-login-name))
 (when (file-exists-p user-config) (load user-config))
 (when (file-exists-p system-config) (load system-config))
 (when (file-exists-p user-dir) (mapc 'load (directory-files user-dir t "^[^#].*el$")))
+
+;; Load some starter-kit helpers
 (when (file-exists-p "~/.emacs.d/starter-kit-defuns.el") (load "~/.emacs.d/starter-kit-defuns.el"))
 (when (file-exists-p "~/.emacs.d/starter-kit-misc.el") (load "~/.emacs.d/starter-kit-misc.el"))
