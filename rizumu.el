@@ -93,10 +93,6 @@
 ;; Set dictionary
 (setq-default ispell-dictionary "en_US")
 
-;; Check to see if running on Mac OS X or some GNU/Linux distro
-(defvar macosx-p (string-match "darwin" (symbol-name system-type)))
-(defvar linux-p (string-match "gnu/linux" (symbol-name system-type)))
-
 ;; GNU/Linux systems only
 (when linux-p
   ;; Set font

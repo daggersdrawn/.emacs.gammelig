@@ -12,6 +12,7 @@
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
   (when (fboundp mode) (funcall mode -1)))
 
+;; Install el-get on first run
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (unless (require 'el-get nil t)
   (url-retrieve
@@ -21,7 +22,7 @@
        (end-of-buffer)
        (eval-print-last-sexp)))))
 
-;; local sources
+;; Define sources
 (setq el-get-sources
       '((:name auctex
            :type github
@@ -226,7 +227,11 @@
 (el-get 'sync)
 (el-get 'wait)
 
-;; Load up configuration files:
+;; Set a global if running a GNU/Linux distro or Mac OSX
+(defvar macosx-p (string-match "darwin" (symbol-name system-type)))
+(defvar linux-p (string-match "gnu/linux" (symbol-name system-type)))
+
+;; Load configuration files
 (defun load-cfg-files (filelist)
   (dolist (file filelist)
     (let ((filename (expand-file-name (concat "~/.emacs.d/configs/" file ".el"))))
@@ -261,7 +266,7 @@
                   "cfg_yasnippet"
                   "cfg_yaml"))
 
-;; Load up personalization files:
+;; Load personal files and some starter-kit helpers
 (setq system-config (concat user-emacs-directory system-name ".el"))
 (setq user-config (concat user-emacs-directory user-login-name ".el"))
 (setq user-dir (concat user-emacs-directory user-login-name))
