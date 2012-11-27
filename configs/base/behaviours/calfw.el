@@ -1,4 +1,4 @@
-(require 'calfw-org)
+;(require 'calfw-org)
 
 (setq calendar-weekend-marker 'diary)
 ;(add-hook 'today-visible-calendar-hook 'calendar-mark-weekend)
