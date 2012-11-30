@@ -1,8 +1,0 @@
-# This was cloned from a TextMate bundle for yasnippet.
-#name : PHPDoc constant definition
-#key : doc_d
-# --
-/**
- * ${3:undocumented constant}
- **/
-define($1, $2);$0

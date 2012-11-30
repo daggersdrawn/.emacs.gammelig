@@ -1,5 +1,0 @@
-# This was cloned from a TextMate bundle for yasnippet.
-#name : background-attachment: scroll:fixed (background)
-#key : background
-# --
-background-attachment: ${1:scroll/fixed};$0

@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: TestCase
-# key: testcase
-# --
-class Test${1:Component}(TestCase):
-      $0

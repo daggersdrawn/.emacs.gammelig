@@ -1,7 +1,0 @@
-# This was cloned from a TextMate bundle for yasnippet.
-#name : while( )
-#key : while
-# --
-while (${1:$a <= 10}) {
-    $0
-}
