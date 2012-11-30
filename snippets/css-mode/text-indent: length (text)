@@ -1,5 +1,0 @@
-# This was cloned from a TextMate bundle for yasnippet.
-#name : text-indent: length (text)
-#key : text
-# --
-text-indent: ${1:10}px;$0
