@@ -62,10 +62,12 @@
 
 ;; Install packages
 (load-file base-packages)
-(when (file-exists-p system-packages) (load-file system-packages)
-      (el-get 'sync base-packages))
-(when (file-exists-p user-packages) (load-file user-packages)
-      (el-get 'sync my-packages))
+(when (file-exists-p system-packages)
+  (load-file system-packages)
+  (el-get 'sync base-packages))
+(when (file-exists-p user-packages)
+  (load-file user-packages)
+  (el-get 'sync my-packages))
 (el-get 'sync)
 (el-get 'wait)
 
@@ -74,14 +76,17 @@
   (dolist (file filelist)
     (load file)
     (message "Loaded behaviour file: %s" (file-name-nondirectory file))))
-
 (load-behaviours-files base-behaviours-files)
-(if system-behaviours-files (load-behaviours-files system-behaviours-files))
-(if user-behaviours-files (load-behaviours-files user-behaviours-files))
+(if system-behaviours-files
+    (load-behaviours-files system-behaviours-files))
+(if user-behaviours-files
+    (load-behaviours-files user-behaviours-files))
 
 ;; Load some starter-kit helpers
-(when (file-exists-p "~/.emacs.d/starter-kit-defuns.el") (load "~/.emacs.d/starter-kit-defuns.el"))
-(when (file-exists-p "~/.emacs.d/starter-kit-misc.el") (load "~/.emacs.d/starter-kit-misc.el"))
+(when (file-exists-p "~/.emacs.d/starter-kit-defuns.el")
+  (load "~/.emacs.d/starter-kit-defuns.el"))
+(when (file-exists-p "~/.emacs.d/starter-kit-misc.el")
+  (load "~/.emacs.d/starter-kit-misc.el"))
 
 ;; Load keybindings
 (when (file-exists-p base-keybindings)
