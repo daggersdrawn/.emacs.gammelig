@@ -153,7 +153,7 @@
     | C-x C-c                   |             | exit emacs                                      |
     | C-x C-s                   |             | save a file                                     |
     | C-x s                     |             | save all files                                  |
-    | C-x C-w                   |             | write buffer to a specified file                |
+    | C-x C-w                   |             | write buffer to a specified file (save as)      |
     | C-x C-v                   |             | replace this file with the file you really want |
     | C-x f                     |             | visit recent file                               |
     | C-x C-b                   |             | list all buffers                                |
