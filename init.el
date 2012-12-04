@@ -98,11 +98,13 @@
 
 ;; Load snippets
 (require 'yasnippet)
-(defvar yas-snippet-dirs (list user-snippets-dir
-                               system-snippets-dir
-                               base-snippets-dir
-                               bundled-snippets-dir
-))
+(setq snippets-dirs (list bundled-snippets-dir))
+(add-to-list 'snippets-dirs base-snippets-dir)
+(when (file-exists-p system-snippets-dir)
+  (add-to-list 'snippets-dirs system-snippets-dir))
+(when (file-exists-p user-snippets-dir)
+  (add-to-list 'snippets-dirs user-snippets-dir))
+(mapc 'yas-load-directory snippets-dirs)
 (yas-global-mode 1)
 
 ;; Load scratchpads
