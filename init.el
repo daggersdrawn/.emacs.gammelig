@@ -22,91 +22,62 @@
        (end-of-buffer)
        (eval-print-last-sexp)))))
 
-;; Set a global if running a GNU/Linux distro or Mac OSX
+;; Determine if running a GNU/Linux distro or Mac OSX
 (setq macosx-p (string-match "darwin" (symbol-name system-type)))
 (setq linux-p (string-match "gnu/linux" (symbol-name system-type)))
 
 ;; Set locations for base, user and system configuration files and folders
 (setq configs-dir (expand-file-name (concat user-emacs-directory (file-name-as-directory "configs"))))
-(setq bundled-snippets-dir (expand-file-name (concat user-emacs-directory
-                                                       (file-name-as-directory "el-get")
-                                                       (file-name-as-directory "yasnippet")
-                                                       (file-name-as-directory "snippets"))))
-
 (setq base-dir (concat configs-dir (file-name-as-directory "base")))
-(setq base-packages (concat base-dir "packages.el"))
-(setq base-behaviours-dir (concat base-dir (file-name-as-directory "behaviours")))
-(setq base-behaviours-files (directory-files base-behaviours-dir t "\.el$"))
-(setq base-snippets-dir (concat base-dir (file-name-as-directory "snippets")))
-(setq base-keybindings (concat base-dir "keybindings.el"))
-
 (setq system-dir (concat configs-dir (file-name-as-directory system-name)))
-(setq system-packages (concat system-dir "packages.el"))
-(setq system-behaviours-dir (concat system-dir (file-name-as-directory "behaviours")))
-(if (file-exists-p system-behaviours-dir)
-    (setq system-behaviours-files (directory-files system-behaviours-dir t "\.el$"))
-    (setq system-behaviours-files nil))
-(setq system-snippets-dir (concat system-dir (file-name-as-directory "snippets")))
-(setq system-keybindings (concat system-dir "keybindings.el"))
-(setq system-scratchpad (concat system-dir "scratchpad.el"))
-
 (setq user-dir (concat configs-dir (file-name-as-directory user-login-name)))
-(setq user-packages (concat user-dir "packages.el"))
-(setq user-behaviours-dir (concat user-dir (file-name-as-directory "behaviours")))
-(if (file-exists-p user-behaviours-dir)
-    (setq user-behaviours-files (directory-files user-behaviours-dir t "\.el$"))
-    (setq user-behaviours-files nil))
-(setq user-snippets-dir (concat user-dir (file-name-as-directory "snippets")))
-(setq user-keybindings (concat user-dir "keybindings.el"))
-(setq user-scratchpad (concat user-dir "scratchpad.el"))
+
+;; load each file in the list
+(defun file-exists-load (file)
+    (if (file-exists-p file)
+        (load file)))
+
+(defun files-exists-load (filelist)
+  (dolist (file filelist)
+    (file-exists-load file)))
+
+(defun sync-packages (file)
+  (if (file-exists-p file)
+        (el-get 'sync file)))
 
 ;; Install packages
-(load-file base-packages)
-(when (file-exists-p system-packages)
-  (load-file system-packages)
-  (el-get 'sync base-packages))
-(when (file-exists-p user-packages)
-  (load-file user-packages)
-  (el-get 'sync my-packages))
+(loop for dir in (list base-dir system-dir user-dir)
+      do (file-exists-load (concat dir "packages.el")))
 (el-get 'sync)
 (el-get 'wait)
 
 ;; Load behaviours
-(defun load-behaviours-files (filelist)
-  (dolist (file filelist)
-    (load file)
-    (message "Loaded behaviour file: %s" (file-name-nondirectory file))))
-(load-behaviours-files base-behaviours-files)
-(if system-behaviours-files
-    (load-behaviours-files system-behaviours-files))
-(if user-behaviours-files
-    (load-behaviours-files user-behaviours-files))
+(setq behaviourdirs (list (concat base-dir (file-name-as-directory "behaviours"))
+                          (concat system-dir (file-name-as-directory "behaviours"))
+                          (concat user-dir (file-name-as-directory "behaviours"))))
+(dolist (behaviourdir behaviourdirs)
+  (if (file-exists-p behaviourdir)
+      (files-exists-load (directory-files behaviourdir t "^[^#].*el$"))))
 
-;; Load some starter-kit helpers
-(when (file-exists-p "~/.emacs.d/starter-kit-defuns.el")
-  (load "~/.emacs.d/starter-kit-defuns.el"))
-(when (file-exists-p "~/.emacs.d/starter-kit-misc.el")
-  (load "~/.emacs.d/starter-kit-misc.el"))
+;; Load starterkits
+(files-exists-load (list (concat user-emacs-directory "starter-kit-defuns.el")
+                         (concat user-emacs-directory "starter-kit-misc.el")))
 
 ;; Load keybindings
-(when (file-exists-p base-keybindings)
-  (load base-keybindings))
-(when (file-exists-p system-keybindings)
-  (load system-keybindings))
-(when (file-exists-p user-keybindings)
-  (load user-keybindings))
+(loop for dir in (list base-dir system-dir user-dir)
+      do (file-exists-load (concat dir "keybindings.el")))
 
 ;; Load snippets
 (require 'yasnippet)
-(setq snippets-dirs (list bundled-snippets-dir))
-(add-to-list 'snippets-dirs base-snippets-dir)
-(when (file-exists-p system-snippets-dir)
-  (add-to-list 'snippets-dirs system-snippets-dir))
-(when (file-exists-p user-snippets-dir)
-  (add-to-list 'snippets-dirs user-snippets-dir))
-(mapc 'yas-load-directory snippets-dirs)
+(setq snippets (list (concat user-emacs-directory (file-name-as-directory "el-get/yasnippet/snippets"))
+                     (concat base-dir (file-name-as-directory "snippets"))
+                     (concat system-dir (file-name-as-directory "snippets"))
+                     (concat user-dir (file-name-as-directory "snippets"))))
+(dolist (file snippets)
+  (if (file-exists-p file)
+      (yas-load-directory file)))
 (yas-global-mode 1)
 
 ;; Load scratchpads
-(when (file-exists-p system-scratchpad) (load system-scratchpad))
-(when (file-exists-p user-scratchpad) (load user-scratchpad))
+(loop for dir in (list system-dir user-dir)
+      do (file-exists-load (concat dir "scratchpad.el")))
