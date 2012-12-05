@@ -31,41 +31,40 @@
 (setq base-dir (concat configs-dir (file-name-as-directory "base")))
 (setq system-dir (concat configs-dir (file-name-as-directory system-name)))
 (setq user-dir (concat configs-dir (file-name-as-directory user-login-name)))
+(setq directory-structure (list base-dir system-dir user-dir))
 
-;; load each file in the list
-(defun file-exists-load (file)
-    (if (file-exists-p file)
-        (load file)))
+;; verify existence of a file and load it
+(defun check-and-load (file)
+  (if (and (not (listp file)) (not (file-directory-p file)) (file-readable-p file))
+      (load file)))
 
-(defun files-exists-load (filelist)
-  (dolist (file filelist)
-    (file-exists-load file)))
-
-(defun sync-packages (file)
-  (if (file-exists-p file)
-        (el-get 'sync file)))
+;; Loads one file, a list of files or all files in a directory.
+(defun load-files (files)
+  (check-and-load files)
+  (if (listp files)
+      (dolist (file files)
+        (check-and-load file))
+    (if (file-directory-p files)
+        (dolist (file (directory-files files t "^[^#].*el$"))
+          (check-and-load file)))))
 
 ;; Install packages
-(loop for dir in (list base-dir system-dir user-dir)
-      do (file-exists-load (concat dir "packages.el")))
+(loop for dir in directory-structure
+      do (load-files (concat dir "packages.el")))
 (el-get 'sync)
 (el-get 'wait)
 
 ;; Load behaviours
-(setq behaviourdirs (list (concat base-dir (file-name-as-directory "behaviours"))
-                          (concat system-dir (file-name-as-directory "behaviours"))
-                          (concat user-dir (file-name-as-directory "behaviours"))))
-(dolist (behaviourdir behaviourdirs)
-  (if (file-exists-p behaviourdir)
-      (files-exists-load (directory-files behaviourdir t "^[^#].*el$"))))
+(loop for dir in directory-structure
+      do (load-files (concat dir (file-name-as-directory "behaviours"))))
 
 ;; Load starterkits
-(files-exists-load (list (concat user-emacs-directory "starter-kit-defuns.el")
-                         (concat user-emacs-directory "starter-kit-misc.el")))
+(load-files (list (concat user-emacs-directory "starter-kit-defuns.el")
+                  (concat user-emacs-directory "starter-kit-misc.el")))
 
 ;; Load keybindings
-(loop for dir in (list base-dir system-dir user-dir)
-      do (file-exists-load (concat dir "keybindings.el")))
+(loop for dir in directory-structure
+      do (load-files (concat dir "keybindings.el")))
 
 ;; Load snippets
 (require 'yasnippet)
@@ -79,5 +78,5 @@
 (yas-global-mode 1)
 
 ;; Load scratchpads
-(loop for dir in (list system-dir user-dir)
-      do (file-exists-load (concat dir "scratchpad.el")))
+(loop for dir in directory-structure
+      do (load-files (concat dir "scratchpad.el")))
