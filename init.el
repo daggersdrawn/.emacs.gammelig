@@ -5,9 +5,6 @@
 ;; and brighter; it simply makes everything else vanish."
 ;; -Neal Stephenson, "In the Beginning was the Command Line"
 
-
-(require 'cl) ; common lisp goodies, loop
-
 ;; Turn off mouse interface early in startup to avoid momentary display
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
   (when (fboundp mode) (funcall mode -1)))
@@ -26,14 +23,14 @@
 (setq macosx-p (string-match "darwin" (symbol-name system-type)))
 (setq linux-p (string-match "gnu/linux" (symbol-name system-type)))
 
-;; Set locations for base, user and system configuration files and folders
+;; Define the directory structure variables
 (setq configs-dir (expand-file-name (concat user-emacs-directory (file-name-as-directory "configs"))))
 (setq base-dir (concat configs-dir (file-name-as-directory "base")))
 (setq system-dir (concat configs-dir (file-name-as-directory system-name)))
 (setq user-dir (concat configs-dir (file-name-as-directory user-login-name)))
 (setq directory-structure (list base-dir system-dir user-dir))
 
-;; verify existence of a file and load it
+;; Verify existence of a file and load it
 (defun check-and-load (file)
   (if (and (not (listp file)) (not (file-directory-p file)) (file-readable-p file))
       (load file)))
