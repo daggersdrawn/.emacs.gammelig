@@ -195,31 +195,33 @@
     | C-l      |         | center screen                           |
     |----------+---------+-----------------------------------------|
 *** Editing
-    |----------+-----------------------------+--------------------------------------------------|
-    | Shortcut | Command                     | Description                                      |
-    |----------+-----------------------------+--------------------------------------------------|
-    | C-x h    |                             | select all                                       |
-    | C-x C-q  |                             | toggle readonly status of buffer                 |
-    | C-/      |                             | undo                                             |
-    | C-sh-/   |                             | redo                                             |
-    | C-sh-del |                             | complete delete line                             |
-    | M-/      |                             | text auto-completion                             |
-    | C-x r t  | string-rectangle            | replace a rectangle of text                      |
-    |          | cua-mode                    | column edit                                      |
-    | C-c n    |                             | cleanup whitespace                               |
-    | C-c r    |                             | revert cleanup                                   |
-    | C-x del  |                             | delete sentence backward                         |
-    | M-k      |                             | delete sentence forward                          |
-    | M-z char |                             | kill through next occurrence of char             |
-    | C-M-\    | indent-region               | indent region                                    |
-    | M-?      | comment-or-uncomment-region | Comment or uncomment a region                    |
-    | M-;      |                             | insert EOL comment                               |
-    | C-x i    |                             | insert contents of other buffer into this buffer |
-    | M-$      | ispell-word                 | check spelling of current word                   |
-    |          | ispell-region               | check spelling of current region                 |
-    |          | ispell-buffer               | check spelling of entire buffer                  |
-    |          | revert-buffer               | restore buffer to its original contents          |
-    |----------+-----------------------------+--------------------------------------------------|
+    |------------------+-----------------------------+----------------------------------------------------|
+    | Shortcut         | Command                     | Description                                        |
+    |------------------+-----------------------------+----------------------------------------------------|
+    | C-x h            |                             | select all                                         |
+    | C-x C-q          |                             | toggle readonly status of buffer                   |
+    | C-/              |                             | undo                                               |
+    | C-sh-/           |                             | redo                                               |
+    | C-sh-del         |                             | complete delete line                               |
+    | M-/              |                             | text auto-completion                               |
+    | C-x r t          | string-rectangle            | replace a rectangle of text                        |
+    |                  | cua-mode                    | column edit                                        |
+    | C-o              | open-line                   | Insert blank line after cursor                     |
+    | C-x o            | delete-blank-lines          | Delete all but one of many consecutive blank lines |
+    | C-c n            |                             | cleanup whitespace                                 |
+    | C-c r            |                             | revert cleanup                                     |
+    | C-x del, C-0 C-k |                             | delete sentence backward                           |
+    | M-k              |                             | delete sentence forward                            |
+    | M-z char         |                             | kill through next occurrence of char               |
+    | C-M-\            | indent-region               | indent region                                      |
+    | M-?              | comment-or-uncomment-region | Comment or uncomment a region                      |
+    | M-;              |                             | insert EOL comment                                 |
+    | C-x i            |                             | insert contents of other buffer into this buffer   |
+    | M-$              | ispell-word                 | check spelling of current word                     |
+    |                  | ispell-region               | check spelling of current region                   |
+    |                  | ispell-buffer               | check spelling of entire buffer                    |
+    |                  | revert-buffer               | restore buffer to its original contents            |
+    |------------------+-----------------------------+----------------------------------------------------|
 *** Rectangles
     |----------+------------------+-------------------------------------|
     | Shortcut | Command          | Description                         |
