@@ -1,7 +1,8 @@
-;; load keybindings cheatsheet
+;; view keybindings cheatsheet
 (defun keybindings ()
    (interactive)
    (find-file "~/.emacs.d/keybindings.org"))
+(global-set-key (kbd "C-c k") 'keybindings)
 
 ;; fx keys
 ;(global-set-key  [f1]  (lambda () (interactive) (manual-entry (current-word))))
@@ -22,7 +23,6 @@
 (global-set-key (kbd "C-c g") 'gtd)
 (global-set-key (kbd "C-c r") 'reference)
 (global-set-key (kbd "C-c s") 'someday)
-(global-set-key (kbd "C-c k") 'keybindings)
 
 ;; lusty
 ;(global-set-key (kbd "C-x C-f") 'lusty-file-explorer)
@@ -55,7 +55,6 @@
 (global-set-key (kbd "M-n") 'flymake-goto-next-error)
 
 ;; helm
-(helm-mode 1)
 (global-set-key (kbd "M-SPC") 'helm-mini)
 
 ;; buffer-move

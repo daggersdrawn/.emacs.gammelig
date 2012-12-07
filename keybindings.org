@@ -441,24 +441,29 @@
     |----------+---------+--------------------------|
 
     DIRED
-    |----------+-----------------------------+---------------------------------------|
-    | Shortcut | Command                     | Description                           |
-    |----------+-----------------------------+---------------------------------------|
-    | C-x d    |                             | initiate a dired buffer               |
-    | % m      |                             | regexp match against filename         |
-    | % g      |                             | regexp match against file contents    |
-    | v        |                             | view a file (read only)               |
-    | ^        |                             | go up a directory                     |
-    | f        |                             | open a folder (find-file)             |
-    | o        |                             | open a file in other window           |
-    | s        |                             | sort buffer                           |
-    | C        |                             | copy a file                           |
-    | R        |                             | rename a file                         |
-    | Z        |                             | compress/uncompress a file            |
-    | #        |                             | mark all autosave files for  deletion |
-    | ~        |                             | mark all backup files for deletion    |
-    |          | wdired-change-to-wdired-mod | edit file/folder names dinline        |
-    |----------+-----------------------------+---------------------------------------|
+    |----------+-----------------------------+-----------------------------------------------|
+    | Shortcut | Command                     | Description                                   |
+    |----------+-----------------------------+-----------------------------------------------|
+    | C-x d    |                             | initiate a dired buffer                       |
+    | C-x C-j  |                             | opne dired buffer and go to filename          |
+    | C-x C-q  |                             | edit dired buffer (use M-SH-%) for regex edit |
+    | C-c C-c  |                             | save edits of dired buffer                    |
+    | C-c ESC  |                             | abort editing dired buffer                    |
+    | % m      |                             | regexp match against filename                 |
+    | % g      |                             | regexp match against file contents            |
+    | a        |                             | open folder in same window                    |
+    | v        |                             | view a file (read only)                       |
+    | ^        |                             | go up a directory                             |
+    | f        |                             | open a folder (find-file)                     |
+    | o        |                             | open a file in other window                   |
+    | s        |                             | sort buffer                                   |
+    | C        |                             | copy a file                                   |
+    | R        |                             | rename a file                                 |
+    | Z        |                             | compress/uncompress a file                    |
+    | #        |                             | mark all autosave files for  deletion         |
+    | ~        |                             | mark all backup files for deletion            |
+    |          | wdired-change-to-wdired-mod | edit file/folder names dinline                |
+    |----------+-----------------------------+-----------------------------------------------|
 *** Bookmarks
     |----------+---------------------+-----------------------------|
     | Shortcut | Command             | Description                 |
