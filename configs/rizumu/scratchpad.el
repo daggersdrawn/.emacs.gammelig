@@ -36,12 +36,30 @@
 ;; Cursor in same relative row and column during PgUP/DN
 (setq scroll-preserve-screen-position t)
 
+;; Remove all files from recent list
+(defun recentf-nuke ()
+  "Remove all files from `recentf-list'."
+  (interactive)
+  (let ((count (length recentf-list)))
+    (setq recentf-list
+          (delq nil
+                (mapcar (function
+                         (lambda (filename)))
+                        recentf-list)))
+    (setq count (- count (length recentf-list)))
+    (message "%s removed from the list"
+             (cond ((= count 0) "No file")
+                   ((= count 1) "One file")
+                   (t (format "%d files" count)))))
+  (setq recentf-update-menu-p t))
+
 ;; Kill all buffers except scratch
 (defun nuke ()
   "Kill all buffers, leaving *scratch* only."
   (interactive)
   (mapcar (lambda (x) (kill-buffer x)) (buffer-list))
   (delete-other-windows)
+  (recentf-nuke)
 )
 
 ;; Enable dead-keys. It works with layouts such as: setxkbmap -layout us -variant intl
