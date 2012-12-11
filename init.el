@@ -64,10 +64,11 @@
       do (load-files (concat dir "keybindings.el")))
 
 ;; Load snippets
-(setq yas-snippet-dirs (list (concat user-emacs-directory (file-name-as-directory "el-get/yasnippet/snippets"))
-                             (concat base-dir (file-name-as-directory "snippets"))
+(require 'yasnippet)
+(setq yas-snippet-dirs (list (concat user-dir (file-name-as-directory "snippets"))
                              (concat system-dir (file-name-as-directory "snippets"))
-                             (concat user-dir (file-name-as-directory "snippets"))))
+                             (concat base-dir (file-name-as-directory "snippets"))
+                             (concat user-emacs-directory (file-name-as-directory "el-get/yasnippet/snippets"))))
 (yas-global-mode 1)
 
 ;; Load scratchpads
