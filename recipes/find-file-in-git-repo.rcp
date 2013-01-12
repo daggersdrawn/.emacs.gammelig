@@ -1,0 +1,3 @@
+(:name find-file-in-git-repo
+       :type github
+       :pkgname "re5et/find-file-in-git-repo")

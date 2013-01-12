@@ -11,13 +11,13 @@
 
 ;; Install el-get on first run
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(unless (require 'el-get nil t)
-  (url-retrieve
-   "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
-   (lambda (s)
-     (let (el-get-master-branch)
-       (end-of-buffer)
-       (eval-print-last-sexp)))))
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (let (el-get-master-branch)
+      (goto-char (point-max))
+      (eval-print-last-sexp))))
 
 ;; Determine if running a GNU/Linux distro or Mac OSX
 (setq macosx-p (string-match "darwin" (symbol-name system-type)))
@@ -46,10 +46,9 @@
           (check-and-load file)))))
 
 ;; Install packages
+(add-to-list 'el-get-recipe-path "~/.emacs.d/recipes")
 (loop for dir in directory-structure
       do (load-files (concat dir "packages.el")))
-(el-get 'sync)
-(el-get 'wait)
 
 ;; Load behaviours
 (loop for dir in directory-structure

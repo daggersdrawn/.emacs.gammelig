@@ -1,0 +1,3 @@
+(:name python-extras
+       :type github
+       :pkgname "emacsmirror/python-extras")

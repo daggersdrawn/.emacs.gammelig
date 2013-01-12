@@ -1,0 +1,3 @@
+(:name furl
+       :type github
+       :pkgname "jaalto/emacs-epackage--lib-furl")

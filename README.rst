@@ -91,21 +91,17 @@ easy mobisi::
 flight plans
 ============
 
-copy my user file to one of your own. must  the same filename as
-the username or hostname of your system, see
-https://github.com/nillab/.emacs.d/blob/master/init.el#L222  ::
+copy my scratchpad.el to one of your own so that you may add
+customizations. if your username was yulka, you would do the
+following::
 
-    $ cp ~/.emacs.d/rizumu.el ~/.emacs.d/user.el
-
+    $ mkdir ~/.emacs.d/configs/yulka/
+    $ cp ~/.emacs.d/configs/rizumu/scratchpad.el ~/.emacs.d/configs/yulka/
 
 takeoff
 =======
 
-you need to open emacs twice and handle any prompts that pause the
-installation process.
-
-
-el-get is automatically installed on first launch::
+el-get and desired recipes are automatically installed on first launch::
 
     $ emacs -nw
 
@@ -113,7 +109,6 @@ el-get is automatically installed on first launch::
 
 all el-get packages are installed on second launch::
 
-    # agree to the prompt to store abbrevs in ~/.emacs.d/abbrev_defs
     $ emacs -nw
 
 off to the stars::

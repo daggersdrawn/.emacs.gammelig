@@ -1,0 +1,3 @@
+(:name flymake-python
+       :type github
+       :pkgname "akaihola/flymake-python")

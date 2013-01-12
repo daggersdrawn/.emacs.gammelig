@@ -1,0 +1,3 @@
+(:name js-beautify
+       :type github
+       :pkgname "einars/js-beautify")

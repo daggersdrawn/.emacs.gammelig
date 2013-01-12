@@ -1,0 +1,3 @@
+(:name zenburn
+       :type github
+       :pkgname "bbatsov/zenburn-emacs")
