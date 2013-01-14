@@ -23,7 +23,9 @@ el-get here: https://github.com/dimitri/el-get
 * darcs: http://darcs.net/
 
 **NOTE**: el-get uses gnu/tar regularly and ftp on occasion.
+
 **NOTE**: osx users can find many of these packages in homebrew http://mxcl.github.com/homebrew/
+
 **NOTE**: darcs may be installed with cabal and likewise mercurial with python
 
 prepare python
