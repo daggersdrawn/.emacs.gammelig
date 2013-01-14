@@ -37,7 +37,7 @@
 (setq scroll-preserve-screen-position t)
 
 ;; Disable the scroll bar
-(toggle-scroll-bar -1)
+(scroll-bar-mode -1)
 
 ;; Remove all files from recent list
 (defun recentf-nuke ()
