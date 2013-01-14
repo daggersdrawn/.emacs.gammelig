@@ -9,13 +9,6 @@
 ;; See also:
 ;; http://thread.gmane.org/gmane.emacs.orgmode/4832/focus=4854
 
-;; Files for agenda
-(setq org-agenda-files
-      (list (concat org-directory "/gtd.org")
-            (concat org-directory "/reference.org")
-            (concat org-directory "/someday.org")
-            (concat org-directory "/morningpages.org")))
-
 ;; Use org's tag feature to implement contexts.
 (setq org-tag-alist '(("STUDIO" . ?s)
                       ("COMPUTER" . ?c)
@@ -27,24 +20,10 @@
 
 ;; Create several files:
 ;;
-;;   (concat org-directory "/gtd.org")       Where remembered TODO's are stored.
+;;   (concat org-directory "/gtd-life.org")       Where remembered TODO's are stored.
 ;;   (concat org-directory "/morningpages.org")   Timestamped morningpages entries.
-;;   (concat org-directory "/remember.org")  All other notes
+;;   (concat org-directory "/notes.org")  All other notes
 (setq org-reverse-note-order t)  ;; note at beginning of file by default.
-
-;; These bits of captured information must eventually be reviewed and
-;; filed somewhere (perhaps in gtd.org, or in a project-specific org
-;; file.) The out-of-sight, out-of-mind rule applies here---if I don't
-;; review these auxiliary org-files, I'll probably forget what's in them.
-(setq org-capture-templates
-      '(("t" "todo" entry (file+headline (concat org-directory "/gtd.org") "Tasks")
-         "* TODO %?\n  %i\n  %a")
-        ("n" "note" entry (file+headline (concat org-directory "/notes.org") "Notes to review")
-         "* %^{Title}\n  %i\n  %a")
-        ("s" "someday" entry (file+headline (concat org-directory "/someday.org") "Ideas")
-         "* %^{Title}\n  %i\n  %a")
-        ("m" "morningpages" entry (file+datetree (concat org-directory "/morningpages.org"))
-         "* %?\nEntered on %U\n  %i\n  %a")))
 
 ;; Customizations: *work in progress*. The rest is less related to GTD, and more to my
 ;; particular setup. They are included here for completeness, and so
@@ -61,7 +40,7 @@
               ("r" "Refile New Notes and Tasks" tags "REFILE" ((org-agenda-todo-ignore-with-date nil)))
               ("n" "Notes" tags "NOTES" nil))))
 
-                                        ; Tags with fast selection keys
+;; Tags with fast selection keys
 (setq org-tag-alist (quote ((:startgroup)
                             ("@Errand" . ?e)
                             ("@Work" . ?w)
@@ -106,9 +85,6 @@
 
 ;; Remove completed scheduled tasks from the agenda view
 (setq org-agenda-skip-scheduled-if-done t)
-
-;; ask me for a note when I mark something as done
-(setq org-log-done 'note)
 
 (setf org-tags-column -65)
 (setf org-special-ctrl-a/e t)

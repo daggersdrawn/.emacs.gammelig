@@ -16,3 +16,9 @@
 ;; Set keywords and agenda commands
 (setq org-todo-keywords
       '((type "TODO" "NEXT" "WAITING" "DONE")))
+
+;; ask me for a note when I mark something as done
+(setq org-log-done 'note)
+
+;; Files for agenda and syncing?
+(setq org-agenda-files (file-expand-wildcards "~/org/gtd*.org"))
