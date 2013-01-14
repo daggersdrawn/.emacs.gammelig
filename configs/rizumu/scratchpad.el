@@ -36,6 +36,9 @@
 ;; Cursor in same relative row and column during PgUP/DN
 (setq scroll-preserve-screen-position t)
 
+;; Disable the scroll bar
+(toggle-scroll-bar -1)
+
 ;; Remove all files from recent list
 (defun recentf-nuke ()
   "Remove all files from `recentf-list'."
