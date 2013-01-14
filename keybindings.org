@@ -492,6 +492,19 @@
 | org-show-todo-tree | C-c / t      | sparse tree of only TODO items |
 | org-show-todo-tree | C-c / T DONE | sparse tree of only DONE items |
 |--------------------+--------------+--------------------------------|
+*** Capture
+http://orgmode.org/manual/Using-capture.html#Using-capture
+|----------------------+---------------+---------------------------------------------------------------------|
+| command              | shortcut      | description                                                         |
+|----------------------+---------------+---------------------------------------------------------------------|
+| org-capture          | C-c c         | Catpure.                                                            |
+|                      | C-0 C-c c     | Insert the capture at point in an Org buffer                        |
+| org-capture-finalize | C-c C-c       | Return to the window configuration before the capture               |
+| org-capture-refile   | C-c C-w       | Finalize the capture process by refiling note to a different place. |
+| org-capture-kill     | C-c C-k       | Abort the capture process and return to the previous state.         |
+|                      | C-u C-c c     | Visit the target location of a capture template.                    |
+|                      | C-u C-u C-c c | Visit the last stored capture item in its buffer.                   |
+|----------------------+---------------+---------------------------------------------------------------------|
 *** Tags
 |------------------------+---------------------------|
 | shortcut               | description               |

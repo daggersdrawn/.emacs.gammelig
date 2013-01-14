@@ -20,9 +20,6 @@
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
-(global-set-key (kbd "C-c g") 'gtd)
-(global-set-key (kbd "C-c r") 'reference)
-(global-set-key (kbd "C-c s") 'someday)
 
 ;; lusty
 ;(global-set-key (kbd "C-x C-f") 'lusty-file-explorer)

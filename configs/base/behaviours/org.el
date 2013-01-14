@@ -4,7 +4,6 @@
 ;; org folder
 (setq org-directory "~/Dropbox/org")
 
-;; capture
 ;; Use a keybinding of "C-c c" for making quick notes from any buffer.
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 

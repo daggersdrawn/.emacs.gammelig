@@ -11,10 +11,10 @@
 
 ;; Files for agenda
 (setq org-agenda-files
-    (list (concat org-directory "/gtd.org")
-          (concat org-directory "/reference.org")
-          (concat org-directory "/someday.org")
-          (concat org-directory "/morningpages.org")))
+      (list (concat org-directory "/gtd.org")
+            (concat org-directory "/reference.org")
+            (concat org-directory "/someday.org")
+            (concat org-directory "/morningpages.org")))
 
 ;; Use org's tag feature to implement contexts.
 (setq org-tag-alist '(("STUDIO" . ?s)
@@ -30,22 +30,15 @@
 ;;   (concat org-directory "/gtd.org")       Where remembered TODO's are stored.
 ;;   (concat org-directory "/morningpages.org")   Timestamped morningpages entries.
 ;;   (concat org-directory "/remember.org")  All other notes
-
-;; These bits of Remembered information must eventually be reviewed
-;; and filed somewhere (perhaps in gtd.org, or in a project-specific
-;; org file.) The out-of-sight, out-of-mind rule applies here---if I
-;; don't review these auxiliary org-files, I'll probably forget what's
-;; in them.
-
 (setq org-reverse-note-order t)  ;; note at beginning of file by default.
-(setq org-default-notes-file (concat org-directory "/remember.org"))
-(setq remember-annotation-functions '(org-remember-annotation))
-(setq remember-handler-functions '(org-remember-handler))
-(add-hook 'remember-mode-hook 'org-remember-apply-template)
 
-     (setq org-capture-templates
+;; These bits of captured information must eventually be reviewed and
+;; filed somewhere (perhaps in gtd.org, or in a project-specific org
+;; file.) The out-of-sight, out-of-mind rule applies here---if I don't
+;; review these auxiliary org-files, I'll probably forget what's in them.
+(setq org-capture-templates
       '(("t" "todo" entry (file+headline (concat org-directory "/gtd.org") "Tasks")
-             "* TODO %?\n  %i\n  %a")
+         "* TODO %?\n  %i\n  %a")
         ("n" "note" entry (file+headline (concat org-directory "/notes.org") "Notes to review")
          "* %^{Title}\n  %i\n  %a")
         ("s" "someday" entry (file+headline (concat org-directory "/someday.org") "Ideas")
@@ -68,7 +61,7 @@
               ("r" "Refile New Notes and Tasks" tags "REFILE" ((org-agenda-todo-ignore-with-date nil)))
               ("n" "Notes" tags "NOTES" nil))))
 
- ; Tags with fast selection keys
+                                        ; Tags with fast selection keys
 (setq org-tag-alist (quote ((:startgroup)
                             ("@Errand" . ?e)
                             ("@Work" . ?w)
@@ -88,22 +81,21 @@
                             ("STUDIO" . ?S)
                             ("CANCELLED" . ?C))))
 
-; For tag searches ignore tasks with scheduled and deadline dates
+;; For tag searches ignore tasks with scheduled and deadline dates
 (setq org-agenda-tags-todo-honor-ignore-options t)
 
-; Erase all reminders and rebuilt reminders for today from the agenda
+;; Erase all reminders and rebuilt reminders for today from the agenda
 (defun my-org-agenda-to-appt ()
   (interactive)
   (setq appt-time-msg-list nil)
   (org-agenda-to-appt))
 
-; Rebuild the reminders everytime the agenda is displayed
+;; Rebuild the reminders everytime the agenda is displayed
 (add-hook 'org-finalize-agenda-hook 'my-org-agenda-to-appt)
 
-; If we leave Emacs running overnight - reset the appointments one minute after midnight
+;; If we leave Emacs running overnight - reset the appointments one minute after midnight
 (run-at-time "24:01" nil 'my-org-agenda-to-appt)
 
-;;
 ;; Remove Tasks With Dates From The Global Todo Lists
 ;;
 ;; Keep tasks with dates off the global todo lists
@@ -133,19 +125,3 @@
 
 ;; widen category field a little
 (setq org-agenda-prefix-format "  %-17:c%?-12t% s")
-
-;; provide the custom functions
-(defun gtd ()
-   (interactive)
-   (find-file (concat org-directory "/gtd.org")))
-(provide 'org-gtd)
-
-(defun reference ()
-   (interactive)
-   (find-file (concat org-directory "/reference.org")))
-(provide 'org-reference)
-
-(defun someday ()
-   (interactive)
-   (find-file (concat org-directory "/someday.org")))
-(provide 'org-someday)
