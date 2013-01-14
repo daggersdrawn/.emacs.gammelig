@@ -114,8 +114,8 @@
 ;; GNU/Linux systems only
 (when linux-p
   ;; Set font
-  (set-face-attribute 'default nil
-                      :height 100 :font "Inconsolata")
+  (setq default-frame-alist '((font . "Inconsolata-dz-10")))
+
   ;; Set flyspell binary
   (setq-default ispell-program-name "/usr/bin/aspell"))
 
