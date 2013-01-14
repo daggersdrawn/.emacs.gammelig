@@ -1,0 +1,32 @@
+* Alphabet Idea Generator
+Use the letters of the alphabet to prompt your thinking.
+
+Look at each letter in turn and ask "What does this remind me of?"
+
+** A 
+** B 
+** C 
+** D 
+** E 
+** F 
+** G 
+** H 
+** I 
+** J 
+** K 
+** L 
+** M 
+** N 
+** O 
+** P 
+** Q 
+** R 
+** S 
+** T 
+** U 
+** V 
+** W 
+** X 
+** Y 
+** Z 
+
