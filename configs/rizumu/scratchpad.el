@@ -36,9 +36,6 @@
 ;; Cursor in same relative row and column during PgUP/DN
 (setq scroll-preserve-screen-position t)
 
-;; Disable the scroll bar
-(scroll-bar-mode -1)
-
 ;; Remove all files from recent list
 (defun recentf-nuke ()
   "Remove all files from `recentf-list'."
@@ -136,3 +133,6 @@
 ;; Mac OSX only when running emacs in a GUI on OSX
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
+
+;; Disable the scroll bar
+(scroll-bar-mode -1)
