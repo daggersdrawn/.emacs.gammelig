@@ -164,3 +164,9 @@
 
 ;; enable rainbow mode
 (rainbow-mode 1)
+
+;; replace buffer-menu with ibuffer
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
+;; Start proced in a similar manner to dired
+(global-set-key (kbd "C-x p") 'proced)
