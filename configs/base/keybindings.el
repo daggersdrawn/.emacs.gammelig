@@ -22,7 +22,7 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c b") 'org-iswitchb)
 (global-set-key (kbd "C-c v") 'gtd-visions)
-(global-set-key (kbd "C-c p") 'gtd-projects)
+(global-set-key (kbd "C-c g") 'gtd-projects)
 (global-set-key (kbd "C-c i") 'gtd-inbox)
 (global-set-key (kbd "C-c m") 'morningpages)
 

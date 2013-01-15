@@ -19,35 +19,6 @@
               ("r" "Refile New Notes and Tasks" tags "REFILE" ((org-agenda-todo-ignore-with-date nil)))
               ("n" "Notes" tags "NOTES" nil))))
 
-;; Use org's tag feature to implement contexts.
-(setq org-tag-alist '(("STUDIO" . ?s)
-                      ("COMPUTER" . ?c)
-                      ("MAIL" . ?m)
-                      ("HOME" . ?h)
-                      ("FIELD" . ?f)
-                      ("READING" . ?r)
-                      ("DVD" . ?d)))
-
-;; Tags with fast selection keys
-(setq org-tag-alist (quote ((:startgroup)
-                            ("@Errand" . ?e)
-                            ("@Work" . ?w)
-                            ("@Home" . ?h)
-                            ("@Phone" . ?p)
-                            ("@Mind" . ?m)
-                            ("@Studio" . ?s)
-                            (:endgroup)
-                            ("NEXT" . ?N)
-                            ("PROJECT" . ?P)
-                            ("WAITING" . ?W)
-                            ("HOME" . ?H)
-                            ("ORG" . ?O)
-                            ("PLAY" . ?p)
-                            ("R&D" . ?r)
-                            ("MIND" . ?m)
-                            ("STUDIO" . ?S)
-                            ("CANCELLED" . ?C))))
-
 ;; For tag searches ignore tasks with scheduled and deadline dates
 (setq org-agenda-tags-todo-honor-ignore-options t)
 

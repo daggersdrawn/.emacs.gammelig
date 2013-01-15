@@ -4,10 +4,13 @@
 
 ;; Disable backup files.
 (setq make-backup-files nil)
+
 ;; Enable versioning with default values (keep five last versions, I think!)
 ;(setq version-control t)
-;; Save all backlkup file in this directory.
+
+;; Save all backup file in this directory.
 ;(setq backup-directory-alist (quote ((".*" . "~/.emacs_backups/"))))
+
 ;; Delete unnecesary auto-save files (ex. #%*mail*#')
 (setq delete-auto-save-files t)
 
@@ -83,6 +86,7 @@
     (global-set-key (kbd "C-x C-c") 'ask-before-closing)
     (global-set-key (kbd "C-z") 'ask-before-closing))
 
+
 ;; Turns on flymake for all files which have a flymake mode
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 
@@ -116,6 +120,10 @@
   ;; Set font
   (setq default-frame-alist '((font . "Inconsolata-dz-10")))
 
+  ;; Disable graphical fluff
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+
   ;; Set flyspell binary
   (setq-default ispell-program-name "/usr/bin/aspell"))
 
@@ -124,8 +132,15 @@
   ;; Set font
   (set-face-attribute 'default nil
                       :family "Inconsolata" :height 145 :weight 'normal)
+
+  ;; Disable graphical fluff
+  (if (display-graphic-p)
+      (progn (tool-bar-mode -1)
+             (scroll-bar-mode -1)))
+
   ;; Set flyspell binary
   (setq-default ispell-program-name "/usr/local/bin/aspell")
+
   ;; Set window sizes
   (setq ns-pop-up-frames nil)
   (add-hook 'window-setup-hook 'maximize-frame t))
@@ -133,9 +148,3 @@
 ;; Mac OSX only when running emacs in a GUI on OSX
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
-
-;; Disable graphical fluff
-(if (display-graphic-p)
-    (progn
-      (tool-bar-mode -1)
-      (scroll-bar-mode -1)))

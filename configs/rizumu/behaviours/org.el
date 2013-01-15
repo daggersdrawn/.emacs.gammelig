@@ -16,4 +16,18 @@
          (file+datetree (concat org-directory "/morningpages.org")
                         "Morning pages") "* %?\nEntered on %U\n  %i\n  %a")))
 
-;; buy dl read watch
+;; Use org's tag feature to implement contexts.
+(setq org-tag-alist '((:stargroup)
+                      ("@buyonline" . ?b)
+                      ("@dl" . ?d)
+                      ("@errand" . ?e)
+                      ("@home" . ?h)
+                      ("@listen" . ?l)
+                      ("@mail" . ?m)
+                      ("@phone" . ?p)
+                      ("@read" . ?r)
+                      ("@studio" . ?s)
+                      ("@watch" . ?w)
+                      (:endgroup)
+                      ("RESEARCH" . ?R)
+                      ("PROJECT" . ?P)))
