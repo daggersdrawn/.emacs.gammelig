@@ -45,8 +45,6 @@
 ;; Remove completed scheduled tasks from the agenda view
 (setq org-agenda-skip-scheduled-if-done t)
 
-(setq org-log-done t)
-(setq org-deadline-warning-days 14)
 (setq org-fontify-emphasized-text t)
 (setq org-fontify-done-headline t)
 (setq org-agenda-include-all-todo nil)
