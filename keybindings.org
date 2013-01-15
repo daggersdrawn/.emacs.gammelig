@@ -500,6 +500,55 @@
 | org-show-todo-tree | C-c / t      | sparse tree of only TODO items |
 | org-show-todo-tree | C-c / T DONE | sparse tree of only DONE items |
 |--------------------+--------------+--------------------------------|
+*** Agenda
+http://orgmode.org/manual/Agenda-commands.html#Agenda-commands
+|----------+----------------+----------------------------|
+| command  | shortcut       | description                |
+|----------+----------------+----------------------------|
+| org-sort | C-c a          | enter the agenda           |
+|          | C-u 21 C-c a a | show 21 days in the agenda |
+|----------+----------------+----------------------------|
+# Movement
+|--------------------------+----------+---------------|
+| command                  | shortcut | description   |
+|--------------------------+----------+---------------|
+| org-agenda-next-line     | n        | next line     |
+| org-agenda-previous-line | p        | previous line |
+|--------------------------+----------+---------------|
+# Calendar
+|--------------------------+----------+--------------------------------------------------------------------|
+| command                  | shortcut | description                                                        |
+|--------------------------+----------+--------------------------------------------------------------------|
+| org-agenda-goto-calendar | c        | Open the Emacs calendar and move to the date at the agenda cursor. |
+| org-agenda-previous-line | p        | previous line                                                      |
+|--------------------------+----------+--------------------------------------------------------------------|
+# Change display
+|----------------------------------+----------+-------------------------------------------------------------------------------|
+| command                          | shortcut | description                                                                   |
+|----------------------------------+----------+-------------------------------------------------------------------------------|
+|                                  | A        | nteractively select another agenda view and append it to the current view.    |
+|                                  | o        | Delete other windows.                                                         |
+| org-agenda-day-view              | v d or d |                                                                               |
+| org-agenda-week-view             | v w or w |                                                                               |
+| org-agenda-month-view            | v m or m |                                                                               |
+| org-agenda-year-view             | v y or y |                                                                               |
+|                                  | f        | Go forward in time to display the following org-agenda-current-span days.     |
+|                                  | b        | Go backward in time to display earlier dates.                                 |
+|                                  | j        | Prompt for a date and go there.                                               |
+|                                  | J        | Go to the currently clocked-in task in the agenda buffer.                     |
+|                                  | .        |                                                                               |
+| org-agenda-redo                  | r or g   | Recreate the agenda buffer, for example to reflect the changes                |
+|                                  |          | after modification of the timestamps of items with S-<left> and S-<right>.    |
+| org-agenda-filter-by-tag         | /        | Filter the current agenda view with respect to a tag and/or effort estimates. |
+| org-agenda-filter-by-tag-refine  | \        |   |
+|----------------------------------+----------+-------------------------------------------------------------------------------|
+# Remote editing
+|-----------------+----------------+----------------------------------------------------|
+| command         | shortcut       | description                                        |
+|-----------------+----------------+----------------------------------------------------|
+| org-agenda-todo | t              | change the state of a todo item in the agenda view |
+| org-agenda-undo | C-_            | undo a change due to aremote editing command       |
+|-----------------+----------------+----------------------------------------------------|
 *** Capture, refile, archive
 http://orgmode.org/manual/Using-capture.html#Using-capture
 |----------------------+---------------+---------------------------------------------------------------------|
@@ -539,7 +588,6 @@ http://orgmode.org/manual/Structure-editing.html#Structure-editing
 | command  | shortcut | description                                         |
 |----------+----------+-----------------------------------------------------|
 | org-sort | C-c ^    | Sort same-level entries (alphabetically for example |
-|          |          |                                                     |
 |----------+----------+-----------------------------------------------------|
 *** Links
 http://orgmode.org/manual/Hyperlinks.html#Hyperlinks
@@ -564,6 +612,24 @@ http://orgmode.org/manual/Motion.html#Motion
 | org-goto           | C-c C-j | jump around, searchlike           |
 | outline-up-heading | C-c C-u | backward to higher level heading. |
 |--------------------+---------+-----------------------------------|
+*** Scheduling
+http://orgmode.org/manual/Deadlines-and-scheduling.html
+# The ‘SCHEDULED’ and ‘DEADLINE’ dates are inserted on the line right
+# below the headline. Don't put any text between this line and the headline.
+|----------------------------------+-------------+--------------------------------------------------------------------|
+| Shortcut                         | Command     | Description                                                        |
+|----------------------------------+-------------+--------------------------------------------------------------------|
+| org-deadline                     | C-c C-d     | Insert 'DEADLINE' keyword along with a stamp.                      |
+| org-schedule                     | C-c C-s     | Insert 'SCHEDULED' keyword along with a stamp.                     |
+| org-mark-entry-for-agenda-action | C-c C-x C-k | Mark the current entry for agenda action.                          |
+| org-check-deadlines              | C-c / d     | Create a sparse tree with all deadlines that are either past-due,  |
+|                                  |             | or which will become due within org-deadline-warning-days.         |
+|                                  |             | With C-u prefix, show all deadlines in the file.                   |
+|                                  |             | With a numeric prefix, check that many days.                       |
+|                                  |             | For example, C-1 C-c / d shows all deadlines due tomorrow.         |
+| org-check-before-date            | C-c / b     | Sparse tree for deadlines and scheduled items before a given date. |
+| org-check-after-dat              | C-c / a     | Sparse tree for deadlines and scheduled items after a given date.  |
+|----------------------------------+-------------+--------------------------------------------------------------------|
 *** Tags
 |------------------------+---------------------------|
 | shortcut               | description               |

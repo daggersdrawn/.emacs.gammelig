@@ -29,5 +29,24 @@
                       ("@studio" . ?s)
                       ("@watch" . ?w)
                       (:endgroup)
+                      ("DAILY" . ?D)
+                      ("WEEKLY" . ?W)
+                      ("MONTHLY" . ?M)
+                      ("QUARTERLY" . ?Q)
+                      ("YEARLY" . ?Y)
                       ("RESEARCH" . ?R)
                       ("PROJECT" . ?P)))
+
+
+;; Pomodoro time tracking in org
+;; http://orgmode.org/worg/org-gtd-etc.html
+;; http://thread.gmane.org/gmane.emacs.orgmode/29347
+(defun my-after-load-org ()
+	(add-to-list 'org-modules 'org-timer))
+(eval-after-load "org" '(my-after-load-org))
+
+(setq org-timer-default-timer 25)
+
+(add-hook 'org-clock-in-hook
+          '(lambda () (if (not org-timer-current-timer)
+                     (org-timer-set-timer '(16)))))

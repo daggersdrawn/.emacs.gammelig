@@ -42,6 +42,9 @@
 ;; ask me for a note when I mark something as done
 (setq org-log-done 'note)
 
+;;  record a timestamp will each time the item is marked done.
+(setq org-log-repeat "time")
+
 ;; work on the region if the region is active.
 (transient-mark-mode 1)
 
@@ -94,3 +97,21 @@
 
 ;; Manage the global tag list
 (setq org-tag-alist '(("PROJECT" . ?p)))
+
+;; Set the agenda deadline window
+(setq org-deadline-warning-days 14)
+
+;; Enable org-habit
+(defun base-after-load-org ()
+	(add-to-list 'org-modules 'org-habit))
+(eval-after-load "org" '(base-after-load-org))
+
+(setq org-agenda-custom-commands
+      '(("h" "Daily habits"
+         ((agenda ""))
+         ((org-agenda-show-log t)
+          (org-agenda-ndays 7)
+          (org-agenda-log-mode-items '(state))
+          (org-agenda-skip-function '(org-agenda-skip-entry-if 'notregexp ":DAILY:"))))
+        ;; other commands here
+        ))
