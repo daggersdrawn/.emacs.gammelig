@@ -129,23 +129,24 @@
 |------------------------+---------+--------|
 * emacs
 *** Help
-    |-----------+---------------------+----------------------------------------------------------------|
-    | Shortcut  | Command             | Description                                                    |
-    |-----------+---------------------+----------------------------------------------------------------|
-    | C-h m     | describe-mode       | Show all keybindings for the current mode.                     |
-    | C-h k kbd | describe-key        | What command does this keystroke run and what does it do?      |
-    | C-h f kbd | describe-function   | What does this function do?                                    |
-    | C-h a     | command-apropos     | What commands match this string?                               |
-    | C-h c     | describ-key-briefly | Show the function that a key is assigned to in the mini-buffer space |
-    | C-h w     | where-is            | What is the keybinding for this command.                       |
-    | C-h m     | describe-mode       | Tell me about the mode the current buffer is in.               |
-    | C-h v     | describe-variable   | What does this variable mean and what is its value?            |
-    | C-h b     | describe-bindings   | What are the keybindings for this buffer?                      |
-    | C-h i     | info                | Man pages                                                      |
-    | C-h c kbd |                     |                                                                |
-    | C-h ?     |                     |                                                                |
-    | f10       | menu-bar-open       | Open the menu bar                                              |
-    |-----------+---------------------+----------------------------------------------------------------|
+    |-----------+-----------------------+----------------------------------------------------------------------|
+    | Shortcut  | Command               | Description                                                          |
+    |-----------+-----------------------+----------------------------------------------------------------------|
+    |           | psychoanalyze-pinhead | When all else fails                                                  |
+    | C-h m     | describe-mode         | Show all keybindings for the current mode.                           |
+    | C-h k kbd | describe-key          | What command does this keystroke run and what does it do?            |
+    | C-h f kbd | describe-function     | What does this function do?                                          |
+    | C-h a     | command-apropos       | What commands match this string?                                     |
+    | C-h c     | describ-key-briefly   | Show the function that a key is assigned to in the mini-buffer space |
+    | C-h w     | where-is              | What is the keybinding for this command.                             |
+    | C-h m     | describe-mode         | Tell me about the mode the current buffer is in.                     |
+    | C-h v     | describe-variable     | What does this variable mean and what is its value?                  |
+    | C-h b     | describe-bindings     | What are the keybindings for this buffer?                            |
+    | C-h i     | info                  | Man pages                                                            |
+    | C-h c kbd |                       |                                                                      |
+    | C-h ?     |                       |                                                                      |
+    | f10       | menu-bar-open         | Open the menu bar                                                    |
+    |-----------+-----------------------+----------------------------------------------------------------------|
 *** Starting, saving, opening
     |---------------------------+-------------+-------------------------------------------------|
     | Shortcut                  | Command     | Description                                     |
@@ -340,6 +341,13 @@
     |           | name-last-kbd-macro | name last keyboard macro            |
     |           | insert-kbd-macro    | insert lisp defintion in buffer     |
     |-----------+---------------------+-------------------------------------|
+*** Repeating
+|-----------------+----------+------------------------------------------|
+| command         | shortcut | description                              |
+|-----------------+----------+------------------------------------------|
+| command-history |          | See all recent commands.                 |
+|                 | C-x z    | Run last command. Press z to do it again |
+|-----------------+----------+------------------------------------------|
 *** Tags
     |----------+--------------------+--------------------------------------------|
     | Shortcut | Command            | Description                                |
@@ -492,7 +500,7 @@
 | org-show-todo-tree | C-c / t      | sparse tree of only TODO items |
 | org-show-todo-tree | C-c / T DONE | sparse tree of only DONE items |
 |--------------------+--------------+--------------------------------|
-*** Capture
+*** Capture, refile, archive
 http://orgmode.org/manual/Using-capture.html#Using-capture
 |----------------------+---------------+---------------------------------------------------------------------|
 | command              | shortcut      | description                                                         |
@@ -500,11 +508,62 @@ http://orgmode.org/manual/Using-capture.html#Using-capture
 | org-capture          | C-c c         | Catpure.                                                            |
 |                      | C-0 C-c c     | Insert the capture at point in an Org buffer                        |
 | org-capture-finalize | C-c C-c       | Return to the window configuration before the capture               |
-| org-capture-refile   | C-c C-w       | Finalize the capture process by refiling note to a different place. |
 | org-capture-kill     | C-c C-k       | Abort the capture process and return to the previous state.         |
 |                      | C-u C-c c     | Visit the target location of a capture template.                    |
 |                      | C-u C-u C-c c | Visit the last stored capture item in its buffer.                   |
 |----------------------+---------------+---------------------------------------------------------------------|
+http://orgmode.org/guide/Refiling-notes.html#Refiling-notes
+|--------------------+-----------------+---------------------------------------------------------------------|
+| command            | shortcut        | description                                                         |
+|--------------------+-----------------+---------------------------------------------------------------------|
+| org-capture-refile | C-c C-w         | Finalize the capture process by refiling note to a different place. |
+|                    | C-u C-c C-w     | Use the refile interface to jump to a heading.                      |
+|                    | C-u C-u C-c C-w | Jump to the location where org-refile last moved a tree to.         |
+|--------------------+-----------------+---------------------------------------------------------------------|
+http://orgmode.org/guide/Archiving.html
+|---------+----------------------+----------------------------------------------------------------------------------------------------|
+| command | shortcut             | description                                                                                        |
+|---------+----------------------+----------------------------------------------------------------------------------------------------|
+|         | C-c C-x C-a          | Archive the current entry using the command specified in the variable org-archive-default-command. |
+|         | C-c C-x C-s or C-c $ | Archive the subtree starting at the cursor position to the location given by org-archive-location. |
+|---------+----------------------+----------------------------------------------------------------------------------------------------|
+*** Completion
+|-----------------------------+---------+------------------------|
+| Shortcut                    | Command | Description            |
+|-----------------------------+---------+------------------------|
+| org-completion-use-iswitchb | M-<TAB> | complete word at point |
+|-----------------------------+---------+------------------------|
+*** Editing
+http://orgmode.org/manual/Structure-editing.html#Structure-editing
+|----------+----------+-----------------------------------------------------|
+| command  | shortcut | description                                         |
+|----------+----------+-----------------------------------------------------|
+| org-sort | C-c ^    | Sort same-level entries (alphabetically for example |
+|          |          |                                                     |
+|----------+----------+-----------------------------------------------------|
+*** Links
+http://orgmode.org/manual/Hyperlinks.html#Hyperlinks
+|--------------------------+----------------------+----------------------------------------------------------------------------|
+| shortcut                 | description          |                                                                            |
+|--------------------------+----------------------+----------------------------------------------------------------------------|
+| org-store-link           | C-c l                | store link to current location                                             |
+| org-insert-link          | C-c C-l              | insert a link (or edit existing)                                           |
+| C-c a m Richard-URGENT   | searching to exclude |                                                                            |
+|                          | <RET>                | follow link                                                                |
+| org-toggle-inline-images | C-c C-x C-v          | toggle the inline display of linked images.                                |
+| org-mark-ring-push       | C-c %                | push the current position onto the mark ring, to be able to return easily. |
+| org-mark-ring-goto       | C-c &                | Jump back to a recorded position, cyclical                                 |
+| org-next-link            | C-c C-x C-n          | Move forward to the next link in the buffer.                               |
+| org-previous-link        | C-c C-x C-p          | Move backward to the next link in the buffer.                              |
+|--------------------------+----------------------+----------------------------------------------------------------------------|
+*** Movement
+http://orgmode.org/manual/Motion.html#Motion
+|--------------------+---------+-----------------------------------|
+| Shortcut           | Command | Description                       |
+|--------------------+---------+-----------------------------------|
+| org-goto           | C-c C-j | jump around, searchlike           |
+| outline-up-heading | C-c C-u | backward to higher level heading. |
+|--------------------+---------+-----------------------------------|
 *** Tags
 |------------------------+---------------------------|
 | shortcut               | description               |
@@ -513,6 +572,12 @@ http://orgmode.org/manual/Using-capture.html#Using-capture
 | C-c a m Richard+URGENT | searching for all matches |
 | C-c a m Richard-URGENT | searching to exclude      |
 |------------------------+---------------------------|
+*** Todos
+|---------+----------+---------------|
+| command | shortcut | description   |
+|---------+----------+---------------|
+|         | C-c C-t  | todo selector |
+|---------+----------+---------------|
 *** Tables
 |--------------+-----------------------------------------+--------------------------------------|
 | Shortcut     | Command                                 | Description                          |
@@ -521,7 +586,18 @@ http://orgmode.org/manual/Using-capture.html#Using-capture
 | C-c pipe     | org-table-create-or-convert-from-region |                                      |
 | C-u C-c pipe | org-table-create-or-convert-from-region | same as above but force CSV (commas) |
 |--------------+-----------------------------------------+--------------------------------------|
-*** Archive
+*** Visibility
+|-----------------------------+-------------------+-------------------------------------------------------------------------------------------------------------------|
+| Shortcut                    | Command           | Description                                                                                                       |
+|-----------------------------+-------------------+-------------------------------------------------------------------------------------------------------------------|
+| <TAB>                       | org-cycle         | rotate current subtree among the states                                                                           |
+| Sh-<TAB> or C-u<TAB>        | org-global-cycle  | globally rotate current subtree among the states                                                                  |
+| show-children               | C-c <TAB>         | expose all direct children of the subtree. With a numeric prefix argument N, expose all children down to level N. |
+| show-branches               | C-c C-k           | expose all the headings of the subtree, CONTENT view for just one subtree.                                        |
+| show-all                    | C-u C-u C-u <TAB> | show all, including drawers.                                                                                      |
+| org-tree-to-indirect-buffer | C-c C-x b         | show the current subtree in an indirect buffer                                                                    |
+| org-set-startup-visibility  | C-u C-u <TAB>     | switch back to the startup visibility of the buffer                                                               |
+|-----------------------------+-------------------+-------------------------------------------------------------------------------------------------------------------|
 * pentadactyl
     http://5digits.org/help/pentadactyl/index.xhtml
     |----------------+--------------------------------------------------------------------|

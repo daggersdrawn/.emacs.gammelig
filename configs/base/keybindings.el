@@ -6,7 +6,7 @@
 
 ;; fx keys
 ;(global-set-key  [f1]  (lambda () (interactive) (manual-entry (current-word))))
-;(global-set-key  [f2]  (lambda () (interactive) (find-file "~/.org/notes.org")))
+;(global-set-key  [f2]  (lambda () (interactive) (find-file "~/org/notes.org")))
 (global-set-key (kbd "<f3>") 'joc-dired-magic-buffer)
 (global-set-key (kbd "C-<f3>") (function
   (lambda nil (interactive)
@@ -18,9 +18,13 @@
 
 ;; org-mode
 (global-set-key (kbd "C-c l") 'org-store-link)
-(global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
-(global-set-key (kbd "C-c g") 'gtd-life)
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c b") 'org-iswitchb)
+(global-set-key (kbd "C-c v") 'gtd-visions)
+(global-set-key (kbd "C-c p") 'gtd-projects)
+(global-set-key (kbd "C-c i") 'gtd-inbox)
+(global-set-key (kbd "C-c m") 'morningpages)
 
 ;; lusty
 ;(global-set-key (kbd "C-x C-f") 'lusty-file-explorer)

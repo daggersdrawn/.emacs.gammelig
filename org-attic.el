@@ -9,27 +9,6 @@
 ;; See also:
 ;; http://thread.gmane.org/gmane.emacs.orgmode/4832/focus=4854
 
-;; Use org's tag feature to implement contexts.
-(setq org-tag-alist '(("STUDIO" . ?s)
-                      ("COMPUTER" . ?c)
-                      ("MAIL" . ?m)
-                      ("HOME" . ?h)
-                      ("FIELD" . ?f)
-                      ("READING" . ?r)
-                      ("DVD" . ?d)))
-
-;; Create several files:
-;;
-;;   (concat org-directory "/gtd-life.org")       Where remembered TODO's are stored.
-;;   (concat org-directory "/morningpages.org")   Timestamped morningpages entries.
-;;   (concat org-directory "/notes.org")  All other notes
-(setq org-reverse-note-order t)  ;; note at beginning of file by default.
-
-;; Customizations: *work in progress*. The rest is less related to GTD, and more to my
-;; particular setup. They are included here for completeness, and so
-;; that new org users can see a complete example org-gtd
-;; configuration.
-
 ;;
 ;; CUSTOM AGENDAS
 ;;
@@ -39,6 +18,15 @@
               ("w" "Tasks waiting on something" tags "WAITING" ((org-use-tag-inheritance nil)))
               ("r" "Refile New Notes and Tasks" tags "REFILE" ((org-agenda-todo-ignore-with-date nil)))
               ("n" "Notes" tags "NOTES" nil))))
+
+;; Use org's tag feature to implement contexts.
+(setq org-tag-alist '(("STUDIO" . ?s)
+                      ("COMPUTER" . ?c)
+                      ("MAIL" . ?m)
+                      ("HOME" . ?h)
+                      ("FIELD" . ?f)
+                      ("READING" . ?r)
+                      ("DVD" . ?d)))
 
 ;; Tags with fast selection keys
 (setq org-tag-alist (quote ((:startgroup)
@@ -85,9 +73,6 @@
 
 ;; Remove completed scheduled tasks from the agenda view
 (setq org-agenda-skip-scheduled-if-done t)
-
-(setf org-tags-column -65)
-(setf org-special-ctrl-a/e t)
 
 (setq org-log-done t)
 (setq org-deadline-warning-days 14)

@@ -1,8 +1,8 @@
 ;; MobileOrg + Dropbox + org-mode
 ;; Don't forget to create your ~/Dropbox/MobileOrg folder!
 
-;; Set to the name of the file where new notes will be stored
-(setq org-mobile-inbox-for-pull (concat org-directory "/flagged.org"))
+;; Set to the name of the file where unfiled actions will be stored
+(setq org-mobile-inbox-for-pull (concat org-directory "/inbox.org"))
 
 ;; Set to <your Dropbox root directory>/MobileOrg.
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
