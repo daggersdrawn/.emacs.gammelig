@@ -51,11 +51,6 @@
 ;; magit
 (global-set-key (kbd "C-x g") 'magit-status)
 
-;; pyflakes
-(global-set-key (kbd "M-m") 'flymake-display-err-menu-for-current-line)
-(global-set-key (kbd "M-p") 'flymake-goto-prev-error)
-(global-set-key (kbd "M-n") 'flymake-goto-next-error)
-
 ;; helm
 (global-set-key (kbd "M-SPC") 'helm-mini)
 

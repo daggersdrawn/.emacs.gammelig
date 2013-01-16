@@ -83,9 +83,6 @@
     (global-set-key (kbd "C-x C-c") 'ask-before-closing)
     (global-set-key (kbd "C-z") 'ask-before-closing))
 
-;; Turns on flymake for all files which have a flymake mode
-(add-hook 'find-file-hook 'flymake-find-file-hook)
-
 ;; Final newline
 (setq-default require-final-newline t)
 

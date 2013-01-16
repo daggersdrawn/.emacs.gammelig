@@ -12,6 +12,7 @@
    color-dired
    coffee-mode
    csv-mode
+   dash
    dictionary
    dired+
    diredful
@@ -26,14 +27,9 @@
    expand-region
    find-file-in-git-repo
    find-file-in-project
-   ;flymake-coffee
-   flymake-cursor
-   flymake-haml
-   flymake-jslint
-   flymake-python
-   flymake-ruby
-   flymake-shell
    furl
+   flycheck
+   flymake-cursor
    ghc-mod
    gist
    google-contacts
@@ -87,6 +83,7 @@
    rope
    ropemacs
    ropemode
+   s
    sass-mode
    ;; skype http://blog.mediaonfire.com/?p=60
    slime
