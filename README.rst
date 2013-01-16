@@ -33,10 +33,13 @@ prepare python
 
 flymake needs python packages to be installed in your system or
 virtualenv site-packages folder. i've tried both and recommend using
-your distro's package manager (or sudo pip) to install to your system
-site-packages::
+your distro's package manager. On arch that would be::
 
-    $ pip install pylint pep8 pyflakes nose nose_machineout
+    $ yaourt -S --noconfirm flake8 python2-flake8
+
+You can auso use pip (or sudo pip) to install to your system site-packages::
+
+    $ pip install flake8
 
 **NOTE**: if you want to use pip http://pypi.python.org/pypi/pip that requires you to install pip.
 
