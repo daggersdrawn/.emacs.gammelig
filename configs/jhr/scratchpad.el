@@ -106,7 +106,7 @@
                 (remove-if-not 'buffer-file-name (buffer-list)))))
 
 ;; Set dictionary
-(setq-default ispell-dictionary "en_US")
+(setq-default ispell-dictionary "en_GB")
 
 ;; GNU/Linux systems only
 (when linux-p
