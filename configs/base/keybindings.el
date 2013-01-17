@@ -6,7 +6,7 @@
 
 ;; fx keys
 ;(global-set-key  [f1]  (lambda () (interactive) (manual-entry (current-word))))
-;(global-set-key  [f2]  (lambda () (interactive) (find-file "~/org/notes.org")))
+;(global-set-key  [f2]  (lambda () (interactive) (find-file "~/org/gtd-inbox.org")))
 (global-set-key (kbd "<f3>") 'joc-dired-magic-buffer)
 (global-set-key (kbd "C-<f3>") (function
   (lambda nil (interactive)

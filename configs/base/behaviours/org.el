@@ -4,8 +4,8 @@
 ;; org folder
 (setq org-directory "~/Dropbox/org")
 
-;; Use a keybinding of "C-c c" for making quick notes from any buffer.
-(setq org-default-notes-file (concat org-directory "/notes.org"))
+;; Use a keybinding of "C-c c" for making quick inbox entries from any buffer.
+(setq org-default-notes-file (concat org-directory "/gtd-inbox.org"))
 
 ;; note at beginning of file by default.
 (setq org-reverse-note-order t)
