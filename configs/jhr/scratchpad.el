@@ -167,3 +167,16 @@
 
 ;; Start proced in a similar manner to dired
 (global-set-key (kbd "C-x p") 'proced)
+
+;; Steve Yegge Keybindings - https://sites.google.com/site/steveyegge2/effective-emacs
+;; Avoid using meta key as much as possible
+(global-set-key "\C-x\C-m" 'execute-extended-command)
+(global-set-key "\C-c\C-m" 'execute-extended-command)
+
+;; Remap backwards kill word to avoid using backspace which is to far from home-row
+(global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-x\C-k" 'kill-region) ;; we lose edit-kbd-macro with this
+(global-set-key "\C-c\C-k" 'kill-region)
+
+;; Start a shell on startup
+;(shell)

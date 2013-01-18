@@ -684,7 +684,7 @@ http://orgmode.org/manual/Deadlines-and-scheduling.html
 | org-tree-to-indirect-buffer | C-c C-x b         | show the current subtree in an indirect buffer                                                                    |
 | org-set-startup-visibility  | C-u C-u <TAB>     | switch back to the startup visibility of the buffer                                                               |
 |-----------------------------+-------------------+-------------------------------------------------------------------------------------------------------------------|
-* pentadactyl
+* pentadacctyl
     http://5digits.org/help/pentadactyl/index.xhtml
     |----------------+--------------------------------------------------------------------|
     | Shortcut       | Description                                                        |
@@ -748,6 +748,7 @@ http://orgmode.org/manual/Deadlines-and-scheduling.html
     | c-x c-s        | save                                                               |
     | c-x c-c        | exit and save session                                              |
     |----------------+--------------------------------------------------------------------|
+
 * uzbl
 http://uzbl.org/keybindings.php
 Tabbed browsing:
