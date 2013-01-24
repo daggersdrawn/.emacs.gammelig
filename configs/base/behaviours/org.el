@@ -1,8 +1,8 @@
 ;; hide the initial stars. they're distracting
 (setq org-hide-leading-stars t)
 
-;; org folder
-(setq org-directory "~/Dropbox/org")
+;; org folder (if you keep your org files in Dropbox: ln -s ~/Dropbox/org ~/org)
+(setq org-directory "~/org")
 
 ;; Use a keybinding of "C-c c" for making quick inbox entries from any buffer.
 (setq org-default-notes-file (concat org-directory "/gtd-inbox.org"))
