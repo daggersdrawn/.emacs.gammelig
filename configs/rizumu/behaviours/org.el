@@ -14,7 +14,7 @@
                         "Morning pages") "* %?\nEntered on %U\n  %i\n  %a")))
 
 ;; Use org's tag feature to implement contexts.
-(setq org-tag-alist '((:stargroup)
+(setq org-tag-alist '((:startgroup)
                       ("@buyonline" . ?b)
                       ("@dl" . ?d)
                       ("@errand" . ?e)
