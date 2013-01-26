@@ -331,16 +331,17 @@
     | ?           | show possible completions       |
     |-------------+---------------------------------|
 *** Macros
-    |-----------+---------------------+-------------------------------------|
-    | Shortcut  | Command             | Description                         |
-    |-----------+---------------------+-------------------------------------|
-    | C-x (     |                     | start keyboard macro definition     |
-    | C-x )     |                     | end keyboard macro definition       |
-    | C-x e     |                     | execute last defined keyboard macro |
-    | C-u C-x ( |                     | append to last keyboard macro       |
-    |           | name-last-kbd-macro | name last keyboard macro            |
-    |           | insert-kbd-macro    | insert lisp defintion in buffer     |
-    |-----------+---------------------+-------------------------------------|
+    |-----------+---------------------+-----------------------------------------------------|
+    | Shortcut  | Command             | Description                                         |
+    |-----------+---------------------+-----------------------------------------------------|
+    | C-x (     |                     | start keyboard macro definition                     |
+    | C-x )     |                     | end keyboard macro definition                       |
+    | C-x e     |                     | execute last defined keyboard macro                 |
+    | C-u C-x ( |                     | append to last keyboard macro                       |
+    | C-x C-k n | name-last-kbd-macro | name last keyboard macro                            |
+    | C-x C-k b |                     | bind last keyboard macro to a key                   |
+    |           | insert-kbd-macro    | insert macro elsip in buffer to save for future use |
+    |-----------+---------------------+-----------------------------------------------------|
 *** Repeating
 |-----------------+----------+------------------------------------------|
 | command         | shortcut | description                              |
@@ -449,29 +450,49 @@
     |----------+---------+--------------------------|
 
     DIRED
-    |----------+-----------------------------+-----------------------------------------------|
-    | Shortcut | Command                     | Description                                   |
-    |----------+-----------------------------+-----------------------------------------------|
-    | C-x d    |                             | initiate a dired buffer                       |
-    | C-x C-j  |                             | opne dired buffer and go to filename          |
-    | C-x C-q  |                             | edit dired buffer (use M-SH-%) for regex edit |
-    | C-c C-c  |                             | save edits of dired buffer                    |
-    | C-c ESC  |                             | abort editing dired buffer                    |
-    | % m      |                             | regexp match against filename                 |
-    | % g      |                             | regexp match against file contents            |
-    | a        |                             | open folder in same window                    |
-    | v        |                             | view a file (read only)                       |
-    | ^        |                             | go up a directory                             |
-    | f        |                             | open a folder (find-file)                     |
-    | o        |                             | open a file in other window                   |
-    | s        |                             | sort buffer                                   |
-    | C        |                             | copy a file                                   |
-    | R        |                             | rename a file                                 |
-    | Z        |                             | compress/uncompress a file                    |
-    | #        |                             | mark all autosave files for  deletion         |
-    | ~        |                             | mark all backup files for deletion            |
-    |          | wdired-change-to-wdired-mod | edit file/folder names dinline                |
-    |----------+-----------------------------+-----------------------------------------------|
+    The Mark menu has many commands to make marking easy.
+    |-------------+--------------------------------------------------------|
+    | Shortcut    | Description                                            |
+    |-------------+--------------------------------------------------------|
+    | C-x d       | initiate a dired buffer                                |
+    | C-x C-j     | open dired buffer and go to filename                   |
+    | C-x C-q     | edit dired buffer (use M-SH-%) for regex edit          |
+    | C-c C-c     | save edits of dired buffer                             |
+    | C-c ESC     | abort editing dired buffer                             |
+    | % m         | regexp match against filename                          |
+    | % g         | regexp match against file contents                     |
+    | a or return | open folder in same window                             |
+    | v           | view a file (read only)                                |
+    | ^           | go up a directory                                      |
+    | f           | open a folder (find-file)                              |
+    | o           | open a file in other window                            |
+    | s           | sort buffer                                            |
+    | C           | copy a file                                            |
+    | R           | rename a file                                          |
+    | S           | symlink a file                                         |
+    | T           | touch a file                                           |
+    | Z           | compress/uncompress a file                             |
+    | +           | create a new directory                                 |
+    | +           | jump to  up and  new directory                         |
+    | m           | mark a file                                            |
+    | u           | unmark a file                                          |
+    | U           | unmark all files                                       |
+    | d           | mark for deletion                                      |
+    | D           | delete file immediately                                |
+    | x           | execute deletion                                       |
+    | t           | toggle marked directories/files                        |
+    | #           | mark all autosave files for  deletion                  |
+    | */          | mark only directories                                  |
+    | w           | copy current or marked items into the kill ring        |
+    | i           | insert a directory buffer                              |
+    | C-u k       | kill a directory buffer                                |
+    | $           | toggle collapsification of directory in buffer         |
+    | M-$         | toggle collapsification of all directories in buffer   |
+    | C-M-p       | jump to previous directory buffer                      |
+    | C-M-n       | jump to next directory buffer                          |
+    | C-t C-t     | if a file is an image, show a thumbnail in buffer      |
+    | C-t i       | if a file is an image, scale thumbnail to a new buffer |
+    |-------------+--------------------------------------------------------|
 *** Bookmarks
     |----------+---------------------+-----------------------------|
     | Shortcut | Command             | Description                 |
