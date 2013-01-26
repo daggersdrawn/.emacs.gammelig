@@ -30,6 +30,12 @@
 (setq whitespace-style '(empty tabs lines-tail trailing))
 (global-whitespace-mode t)
 
+;; Highlight current line
+(global-hl-line-mode 1)
+
+;; Set cursor color
+(set-cursor-color "#f0dfaf")
+
 ;; Push the mouse out of the way on cursor approach
 (mouse-avoidance-mode 'jump)
 
