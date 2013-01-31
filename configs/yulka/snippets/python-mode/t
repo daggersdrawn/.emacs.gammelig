@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Thomas Schreiber <tom@rizu.mu>
+# name : ipdb
+# key : t
+# --
+import ipdb; ipdb.set_trace()
