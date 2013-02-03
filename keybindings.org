@@ -307,14 +307,13 @@
     |----------------+---------+-------------------------------------------|
     | Shortcut       | Command | Description                               |
     |----------------+---------+-------------------------------------------|
+    | C-x 0          |         | delete the current window                 |
+    | C-x 1          |         | delete all windows except this one        |
     | C-x 2          |         | divide current window horizontally        |
     | C-x 3          |         | divide current window vertically          |
     | C-x 4          |         | swap windows                              |
-    | C-x o          |         | move to other window                      |
-    | C-x 0          |         | delete the current window                 |
-    | C-x 1          |         | delete all windows except this one        |
-    | C-x 2          |         | show previous minibuffer input            |
     | C-x 4 f        |         | show previous minibuffer input            |
+    | C-x o          |         | move to other window                      |
     | C-shift arrows |         | grow/shrink windows in direction of arrow |
     |----------------+---------+-------------------------------------------|
 *** Minibuffer
