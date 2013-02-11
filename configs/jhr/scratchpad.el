@@ -180,3 +180,26 @@
 
 ;; Start a shell on startup
 ;(shell)
+
+(slime-setup '(slime-fancy slime-banner))
+
+;; Steve Yegge's function to rename a file that you're editing along
+;; with its corresponding buffer. TODO: Keybinding
+
+(defun rename-file-and-buffer (new-name)
+  "Renames both current buffer and file it's visiting to NEW-NAME."
+  (interactive "sNew name: ")
+  (let ((name (buffer-name))
+ (filename (buffer-file-name)))
+    (if (not filename)
+ (message "Buffer '%s' is not visiting a file!" name)
+      (if (get-buffer new-name)
+   (message "A buffer named '%s' already exists!" new-name)
+ (progn
+   (rename-file name new-name 1)
+   (rename-buffer new-name)
+   (set-visited-file-name new-name)
+   (set-buffer-modified-p nil))))))
+
+;; Join the following line to the preceding line
+(global-set-key (kbd "M-j") (lambda () (interactive) (join-line -1)))
