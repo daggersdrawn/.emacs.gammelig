@@ -2,6 +2,9 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/el-get/zenburn/")
 (load-theme 'zenburn t)
 
+;; Launch shell on startup
+(ansi-term)
+
 ;; Disable backup files.
 (setq make-backup-files nil)
 ;; Enable versioning with default values (keep five last versions, I think!)
@@ -178,9 +181,7 @@
 (global-set-key "\C-x\C-k" 'kill-region) ;; we lose edit-kbd-macro with this
 (global-set-key "\C-c\C-k" 'kill-region)
 
-;; Start a shell on startup
-;(shell)
-
+;; Slime startup options
 (slime-setup '(slime-fancy slime-banner))
 
 ;; Steve Yegge's function to rename a file that you're editing along
