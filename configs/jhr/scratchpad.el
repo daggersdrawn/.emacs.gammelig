@@ -89,7 +89,7 @@
 ;; Show and delete trailing whitespace (on save)
 (setq-default show-trailing-whitespace t)
 (setq default-indicate-empty-lines t)
-;(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; http://words.bighugelabs.com/
 (setq *synonym-api-key* (getenv "BIGHUGETHESAURUS"))
@@ -202,7 +202,7 @@
 ;; Join the following line to the preceding line
 (global-set-key (kbd "M-j") (lambda () (interactive) (join-line -1)))
 
-;; Ansi-term stuff
+;; Ansi-term launcher function
 (require 'term)
 (defun visit-ansi-term ()
   "If the current buffer is:
