@@ -231,3 +231,9 @@
             (ansi-term term-cmd))
         (ansi-term term-cmd)))))
 (global-set-key (kbd "<f2>") 'visit-ansi-term)
+
+;; Timestamp function
+(defun insertdate ()
+      (interactive)
+      (insert (format-time-string "%Y.%m.%d")))
+(global-set-key (kbd "<f5>") 'insertdate)
