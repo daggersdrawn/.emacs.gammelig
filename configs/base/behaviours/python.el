@@ -20,3 +20,6 @@
   :group 'python
   :type 'string
 )
+
+;;; docstring formatting
+(setq-default python-fill-docstring-style 'django)
