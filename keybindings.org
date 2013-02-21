@@ -690,6 +690,7 @@ http://orgmode.org/manual/Deadlines-and-scheduling.html
     | Shortcut       | Description                                                        |
     |----------------+--------------------------------------------------------------------|
     | c-h i          | start help                                                         |
+    | c-z            | passthrough                                                        |
     | o              | go to url in the same tab                                          |
     | O              | go to url and edit it                                              |
     | c-j            | go to next tab                                                     |
