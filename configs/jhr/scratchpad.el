@@ -168,6 +168,9 @@
 ;; Start proced in a similar manner to dired
 (global-set-key (kbd "C-x p") 'proced)
 
+;; Slime startup options
+(slime-setup '(slime-fancy slime-banner))
+
 ;; Steve Yegge Keybindings - https://sites.google.com/site/steveyegge2/effective-emacs
 ;; Avoid using meta key as much as possible
 (global-set-key "\C-x\C-m" 'execute-extended-command)
@@ -178,15 +181,12 @@
 (global-set-key "\C-x\C-k" 'kill-region) ;; we lose edit-kbd-macro with this
 (global-set-key "\C-c\C-k" 'kill-region)
 
-;; Slime startup options
-(slime-setup '(slime-fancy slime-banner))
-
 ;; Steve Yegge's function to rename a file that you're editing along
 ;; with its corresponding buffer. TODO: Keybinding
 
 (defun rename-file-and-buffer (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME."
-  (interactive "sNew name: ")
+  (interactive "New name: ")
   (let ((name (buffer-name))
  (filename (buffer-file-name)))
     (if (not filename)
@@ -199,7 +199,7 @@
    (set-visited-file-name new-name)
    (set-buffer-modified-p nil))))))
 
-;; Join the following line to the preceding line
+;; Join following line to preceding line function
 (global-set-key (kbd "M-j") (lambda () (interactive) (join-line -1)))
 
 ;; Ansi-term launcher function
