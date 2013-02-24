@@ -149,4 +149,7 @@
 
 ;; Mac OSX only when running emacs in a GUI on OSX
 (when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize))
+  ;; set important environment variables from the user's shell
+  (exec-path-from-shell-initialize)
+  ;; fullscreen
+  (run-with-idle-timer 0.1 nil 'ns-toggle-fullscreen))
