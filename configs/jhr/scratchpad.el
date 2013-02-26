@@ -2,6 +2,9 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/el-get/zenburn/")
 (load-theme 'zenburn t)
 
+;; CL fucntions
+(require 'cl)
+
 ;; Disable backup files.
 (setq make-backup-files nil)
 ;; Enable versioning with default values (keep five last versions, I think!)
@@ -153,14 +156,15 @@
 (setq org-log-done 'note)
 (setq org-log-done t)
 
-;; turn off linum mode for emacs because of slowdown problems
-(defun nolinum ()
-  (global-linum-mode 0))
-
-(add-hook 'org-mode-hook 'nolinum)
+;; Linum-off.el
+(require 'linum-off)
 
 ;; enable rainbow mode
+(require 'rainbow-mode)
 (rainbow-mode 1)
+
+(require 'rainbow-delimiters)
+(global-rainbow-delimiters-mode)
 
 ;; replace buffer-menu with ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -183,7 +187,6 @@
 
 ;; Steve Yegge's function to rename a file that you're editing along
 ;; with its corresponding buffer. TODO: Keybinding
-
 (defun rename-file-and-buffer (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME."
   (interactive "New name: ")
