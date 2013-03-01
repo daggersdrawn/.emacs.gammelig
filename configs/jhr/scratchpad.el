@@ -241,4 +241,9 @@
       (insert (format-time-string "%Y.%m.%d")))
 (global-set-key (kbd "<f5>") 'insertdate)
 
-;; TODO Disable c-x c-f python evaluation, what the hell is going on??!
+;; Disable ffap to avoid abnormal C-x C-f behaviour in python-mode
+(add-hook 'python-mode-hook (lambda ()
+  (setq ffap-alist (remove '(python-mode . py-ffap-module-path) ffap-alist))
+  (setq ffap-alist (remove '(python-mode . py-module-path) ffap-alist))
+  (setq ffap-alist (remove '(inferior-python-mode . py-ffap-module-path) ffap-alist))
+))
