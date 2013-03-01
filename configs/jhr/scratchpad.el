@@ -240,3 +240,5 @@
       (interactive)
       (insert (format-time-string "%Y.%m.%d")))
 (global-set-key (kbd "<f5>") 'insertdate)
+
+;; TODO Disable c-x c-f python evaluation, what the hell is going on??!
