@@ -97,10 +97,10 @@
 ;; http://words.bighugelabs.com/
 (setq *synonym-api-key* (getenv "BIGHUGETHESAURUS"))
 
-;; follow symlinks and don't ask
+;; Follow symlinks and don't ask
 (setq vc-follow-symlinks t)
 
-;; kill all other buffers
+;; Kill all other buffers
 (defun kill-other-buffers ()
     "Kill all other buffers."
     (interactive)
@@ -159,14 +159,14 @@
 ;; Linum-off.el
 (require 'linum-off)
 
-;; enable rainbow mode
+;; Enable rainbow mode
 (require 'rainbow-mode)
 (rainbow-mode 1)
 
 (require 'rainbow-delimiters)
 (global-rainbow-delimiters-mode)
 
-;; replace buffer-menu with ibuffer
+;; Replace buffer-menu with ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; Start proced in a similar manner to dired
