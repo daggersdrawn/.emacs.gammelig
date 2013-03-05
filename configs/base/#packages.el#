@@ -85,8 +85,6 @@
    ropemode
    ruby-mode
    ruby-end
-   inf-ruby
-   ;rvm
    s
    sass-mode
    ;; skype http://blog.mediaonfire.com/?p=60

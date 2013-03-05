@@ -2,7 +2,7 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/el-get/zenburn/")
 (load-theme 'zenburn t)
 
-;; CL fucntions
+;; Common Lisp functions
 (require 'cl)
 
 ;; Disable backup files.
@@ -17,7 +17,7 @@
 ;; Column and line numbers
 (setq-default column-number-mode t)
 (setq-default line-number-mode t)
-(global-linum-mode 1)
+(global-linum-mode)
 
 ;; Tabs
 (setq-default indent-tabs-mode nil)
@@ -166,7 +166,7 @@
 (require 'rainbow-delimiters)
 (global-rainbow-delimiters-mode)
 
-;; Replace buffer-menu with ibuffer
+;; Use ibuffer instead of buffer-menu
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; Start proced in a similar manner to dired
@@ -181,7 +181,7 @@
 (global-set-key "\C-c\C-m" 'execute-extended-command)
 
 ;; Remap backwards kill word to avoid using backspace which is to far from home-row
-(global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-e" 'backward-kill-word) ;; Yegge had C-w but I don't wanna lose kill-region
 (global-set-key "\C-x\C-k" 'kill-region) ;; we lose edit-kbd-macro with this
 (global-set-key "\C-c\C-k" 'kill-region)
 
@@ -233,17 +233,34 @@
             (kill-buffer "*ansi-term*")
             (ansi-term term-cmd))
         (ansi-term term-cmd)))))
-(global-set-key (kbd "<f2>") 'visit-ansi-term)
+(global-set-key (kbd "<f5>") 'visit-ansi-term)
+
+;; Run an interactive ruby session - TODO: replace with irbsh
+(require 'inf-ruby)
+(global-set-key (kbd "<f6>") 'run-ruby)
 
 ;; Timestamp function
 (defun insertdate ()
       (interactive)
       (insert (format-time-string "%Y.%m.%d")))
-(global-set-key (kbd "<f5>") 'insertdate)
+(global-set-key (kbd "<f2>") 'insertdate)
 
 ;; Disable ffap to avoid abnormal C-x C-f behaviour in python-mode
 (add-hook 'python-mode-hook (lambda ()
   (setq ffap-alist (remove '(python-mode . py-ffap-module-path) ffap-alist))
   (setq ffap-alist (remove '(python-mode . py-module-path) ffap-alist))
-  (setq ffap-alist (remove '(inferior-python-mode . py-ffap-module-path) ffap-alist))
-))
+  (setq ffap-alist (remove '(inferior-python-mode . py-ffap-module-path) ffap-alist))))
+
+;; Put a clock in the mode-line
+(defface egoge-display-time
+   '((((type x w32 mac))
+      (:foreground "red" :inherit bold))
+     (((type tty))
+      (:foreground "red")))
+   "Face used to display the time in the mode line.")
+
+;; Display the time using `egoge-display-time-face'
+(setq display-time-string-forms
+      '((propertize (concat " " 24-hours ":" minutes " ")
+ 		   'face 'egoge-display-time)))
+(display-time)
