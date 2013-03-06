@@ -181,7 +181,7 @@
 (global-set-key "\C-c\C-m" 'execute-extended-command)
 
 ;; Remap backwards kill word to avoid using backspace which is to far from home-row
-(global-set-key "\C-e" 'backward-kill-word) ;; Yegge had C-w but I don't wanna lose kill-region
+(global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-x\C-k" 'kill-region) ;; we lose edit-kbd-macro with this
 (global-set-key "\C-c\C-k" 'kill-region)
 
