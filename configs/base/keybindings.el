@@ -92,3 +92,10 @@
 
 ;; Menu bar toggle, as in my vimperator setup
 (global-set-key (kbd "<M-down>") 'menu-bar-mode)
+
+;; Unfill paragraph at or after point.
+(defun unfill-paragraph ()
+  (interactive "*")
+  (let ((fill-column most-positive-fixnum))
+    (fill-paragraph nil (region-active-p))))
+(global-set-key (kbd "M-Q") 'unfill-paragrah)
