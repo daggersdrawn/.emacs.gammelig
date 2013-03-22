@@ -5,6 +5,12 @@
 ;; Common Lisp functions
 (require 'cl)
 
+;; Org-drill
+(require 'org-drill)
+
+;; Empty scratch buffer
+(setq initial-scratch-buffer nil)
+
 ;; Disable backup files.
 (setq make-backup-files nil)
 ;; Enable versioning with default values (keep five last versions, I think!)
@@ -185,54 +191,13 @@
 (global-set-key "\C-x\C-k" 'kill-region) ;; we lose edit-kbd-macro with this
 (global-set-key "\C-c\C-k" 'kill-region)
 
-;; Steve Yegge's function to rename a file that you're editing along
-;; with its corresponding buffer. TODO: Keybinding
-(defun rename-file-and-buffer (new-name)
-  "Renames both current buffer and file it's visiting to NEW-NAME."
-  (interactive "New name: ")
-  (let ((name (buffer-name))
- (filename (buffer-file-name)))
-    (if (not filename)
- (message "Buffer '%s' is not visiting a file!" name)
-      (if (get-buffer new-name)
-   (message "A buffer named '%s' already exists!" new-name)
- (progn
-   (rename-file name new-name 1)
-   (rename-buffer new-name)
-   (set-visited-file-name new-name)
-   (set-buffer-modified-p nil))))))
-
 ;; Join following line to preceding line function
 (global-set-key (kbd "M-j") (lambda () (interactive) (join-line -1)))
 
-;; Ansi-term launcher function
-(require 'term)
-(defun visit-ansi-term ()
-  "If the current buffer is:
-     1) a running ansi-term named *ansi-term*, rename it.
-     2) a stopped ansi-term, kill it and create a new one.
-     3) a non ansi-term, go to an already running ansi-term
-        or start a new one while killing a defunt one"
-  (interactive)
-  (let ((is-term (string= "term-mode" major-mode))
-        (is-running (term-check-proc (buffer-name)))
-        (term-cmd "/bin/bash")
-        (anon-term (get-buffer "*ansi-term*")))
-    (if is-term
-        (if is-running
-            (if (string= "*ansi-term*" (buffer-name))
-                (call-interactively 'rename-buffer)
-              (if anon-term
-                  (switch-to-buffer "*ansi-term*")
-                (ansi-term term-cmd)))
-          (kill-buffer (buffer-name))
-          (ansi-term term-cmd))
-      (if anon-term
-          (if (term-check-proc "*ansi-term*")
-              (switch-to-buffer "*ansi-term*")
-            (kill-buffer "*ansi-term*")
-            (ansi-term term-cmd))
-        (ansi-term term-cmd)))))
+;; Rename buffer keybinding
+(global-set-key (kbd "<f7>") 'yegge-rename)
+
+;; Launch ansi-term
 (global-set-key (kbd "<f5>") 'visit-ansi-term)
 
 ;; Run an interactive ruby session - TODO: replace with irbsh
