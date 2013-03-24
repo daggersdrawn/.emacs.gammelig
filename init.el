@@ -1,9 +1,13 @@
-;; init.el --- Where all the magic begins
+;;; init.el -- Where all the magic begins
+;;
+;;; Commentary:
 ;;
 ;; "Emacs outshines all other editing software in approximately the
-;; same way that the noonday sun does the stars. It is not just bigger
+;; same way that the noonday sun does the stars.  It is not just bigger
 ;; and brighter; it simply makes everything else vanish."
 ;; -Neal Stephenson, "In the Beginning was the Command Line"
+;;
+;;; Code:
 
 ;; Turn off mouse interface early in startup to avoid momentary display
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
@@ -30,13 +34,14 @@
 (setq user-dir (concat configs-dir (file-name-as-directory user-login-name)))
 (setq directory-structure (list base-dir system-dir user-dir))
 
-;; Verify existence of a file and load it
+;; Loader functions
 (defun check-and-load (file)
+  "Verify existence of a FILE and load it."
   (if (and (not (listp file)) (not (file-directory-p file)) (file-readable-p file))
       (load file)))
 
-;; Loads one file, a list of files or all files in a directory.
 (defun load-files (files)
+  "Load one FILE, a list of FILES or all FILES in a directory."
   (check-and-load files)
   (if (listp files)
       (dolist (file files)
@@ -73,3 +78,7 @@
 ;; Load scratchpads
 (loop for dir in directory-structure
       do (load-files (concat dir "scratchpad.el")))
+
+(provide 'init)
+
+;;; init.el ends here

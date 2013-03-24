@@ -1,3 +1,13 @@
+;;; scratchpad.el -- personal config dump
+;;
+;;; Commentary:
+;;
+;; A gateway or dumping ground for capturing, trying out, messing with
+;; etc., configuration settings before they are subsumed into the system
+;; depths in a more organised fashion.
+;;
+;;; Code:
+
 ;; Color Theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/el-get/zenburn/")
 (load-theme 'zenburn t)
@@ -5,11 +15,20 @@
 ;; Common Lisp functions
 (require 'cl)
 
+;; w3m browser
+(require 'w3m-load)
+
 ;; Org-drill
 (require 'org-drill)
 
+;; Supercollider
+(require 'sclang)
+
 ;; Empty scratch buffer
 (setq initial-scratch-buffer nil)
+
+;; Use firefox to open link
+(setq browse-url-browser-function 'browse-url-firefox)
 
 ;; Disable backup files.
 (setq make-backup-files nil)
@@ -80,6 +99,7 @@
 
 ;; Ask whether or not to close, and then close if y was pressed
 (defun ask-before-closing ()
+  "Cofirm - y or n - before quitting EMACS."
   (interactive)
   (if (y-or-n-p (format "Are you sure you want to quit Emacs? "))
       (if (< emacs-major-version 22)
@@ -206,6 +226,7 @@
 
 ;; Timestamp function
 (defun insertdate ()
+  "Insert a timestamp in ISO 8601 format."
       (interactive)
       (insert (format-time-string "%Y.%m.%d")))
 (global-set-key (kbd "<f2>") 'insertdate)
@@ -229,3 +250,7 @@
       '((propertize (concat " " 24-hours ":" minutes " ")
  		   'face 'egoge-display-time)))
 (display-time)
+
+(provide 'scratchpad.el)
+
+;;; scratchpad.el ends here
