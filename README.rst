@@ -82,7 +82,19 @@ prepare font
 
 by default, this config uses the inconsolata font
 http://levien.com/type/myfonts/inconsolata.html for alternative
-choices that work well see http://hivelogic.com/articles/top-10-programming-fonts/
+choices that work well see
+http://hivelogic.com/articles/top-10-programming-fonts/
+
+supercollider
+=============
+
+The elisp files for scel, the emacs mode for the supercollider
+programming language, are included in this repo. So there is no need
+for you to find them yourself. You will, however, need to install
+supercollider on your system, and additionally install w3m to be able
+to browse supercollider's help system. Be aware that since you are
+using emacs 24 you will need to use the cvs trunk release of w3m in
+order to be compatible.
 
 
 clone this repo
