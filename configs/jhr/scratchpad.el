@@ -8,15 +8,6 @@
 ;;
 ;;; Code:
 
-(let ((default-directory "~/.emacs.d/configs/jhr/behaviours/"))
-  (setq load-path
-        (append
-         (let ((load-path (copy-sequence load-path))) ;; Shadow
-           (append
-            (copy-sequence (normal-top-level-add-to-load-path '(".")))
-            (normal-top-level-add-subdirs-to-load-path)))
-         load-path)))
-
 ;; Color Theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/el-get/zenburn/")
 (load-theme 'zenburn t)
