@@ -251,6 +251,13 @@
  		   'face 'egoge-display-time)))
 (display-time)
 
+(require 'auto-complete-config)
+(ac-config-default)
+(add-to-list 'ac-dictionary-directories "~/.emacs/el-get/auto-complete/ac-dict")
+
+
+
+
 (provide 'scratchpad.el)
 
 ;;; scratchpad.el ends here

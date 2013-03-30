@@ -107,6 +107,7 @@
    yaml-mode
    yasnippet
    zenburn
-   zencoding-mode))
+   zencoding-mode
+   auto-complete))
 (el-get 'sync recipes)
 (el-get 'wait)
