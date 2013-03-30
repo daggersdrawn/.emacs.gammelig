@@ -256,8 +256,6 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs/el-get/auto-complete/ac-dict")
 
 
-
-
 (provide 'scratchpad.el)
 
 ;;; scratchpad.el ends here
