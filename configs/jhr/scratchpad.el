@@ -12,8 +12,10 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/el-get/zenburn/")
 (load-theme 'zenburn t)
 
-;; Common Lisp functions
+;; Common Lisp
 (require 'cl)
+(require 'slime)
+(require 'cl-info)
 
 ;; w3m browser
 (require 'w3m-load)
@@ -22,12 +24,51 @@
 (require 'org-drill)
 
 ;; Supercollider
-(require 'sclang)
+;(require 'sclang)
+
+;; Info files
+(require 'info)
+
+;; Add all subdirs in the info folder: TODO Abstract this to be general
+(let ((info-base "~/.emacs.d/info"))
+  (add-to-list 'Info-additional-directory-list info-base)
+  (dolist (f (directory-files info-base))
+    (let ((name (concat info-base "/" f)))
+      (when (and (file-directory-p name)
+                 (not (equal f ".."))
+                 (not (equal f ".")))
+        (add-to-list 'Info-additional-directory-list name)))))
+
+;; Auto-completion
+(require 'auto-complete-config)
+(ac-config-default)
+(add-to-list 'ac-dictionary-directories "~/.emacs/el-get/auto-complete/ac-dict")
+
+;; Enable dead-keys. It works with layouts such as: setxkbmap -layout us -variant intl
+(require 'iso-transl)
+
+;; Linum-off.el
+(require 'linum-off)
+
+;; Enable rainbows
+(require 'rainbow-mode)
+(rainbow-mode 1)
+
+(require 'rainbow-delimiters)
+(global-rainbow-delimiters-mode)
+
+;; Run an interactive ruby session - TODO: replace with irbsh
+(require 'inf-ruby)
+(global-set-key (kbd "<f6>") 'run-ruby)
+
+
+;;; Variable setting
+
 
 ;; Empty scratch buffer
 (setq initial-scratch-buffer nil)
 
-;; Use firefox to open link
+;; Use firefox to open links
 (setq browse-url-browser-function 'browse-url-firefox)
 
 ;; Disable backup files.
@@ -64,35 +105,6 @@
 ;; Cursor in same relative row and column during PgUP/DN
 (setq scroll-preserve-screen-position t)
 
-;; Remove all files from recent list
-(defun recentf-nuke ()
-  "Remove all files from `recentf-list'."
-  (interactive)
-  (let ((count (length recentf-list)))
-    (setq recentf-list
-          (delq nil
-                (mapcar (function
-                         (lambda (filename)))
-                        recentf-list)))
-    (setq count (- count (length recentf-list)))
-    (message "%s removed from the list"
-             (cond ((= count 0) "No file")
-                   ((= count 1) "One file")
-                   (t (format "%d files" count)))))
-  (setq recentf-update-menu-p t))
-
-;; Kill all buffers except scratch
-(defun nuke ()
-  "Kill all buffers, leaving *scratch* only."
-  (interactive)
-  (mapcar (lambda (x) (kill-buffer x)) (buffer-list))
-  (delete-other-windows)
-  (recentf-nuke)
-)
-
-;; Enable dead-keys. It works with layouts such as: setxkbmap -layout us -variant intl
-(require 'iso-transl)
-
 ;; Automatically re-visiting the file in current buffer when it was
 ;; modified by an external program
 (global-auto-revert-mode 1)
@@ -126,13 +138,6 @@
 ;; Follow symlinks and don't ask
 (setq vc-follow-symlinks t)
 
-;; Kill all other buffers
-(defun kill-other-buffers ()
-    "Kill all other buffers."
-    (interactive)
-    (mapc 'kill-buffer
-          (delq (current-buffer)
-                (remove-if-not 'buffer-file-name (buffer-list)))))
 
 ;; Set dictionary
 (setq-default ispell-dictionary "en_GB")
@@ -182,15 +187,15 @@
 (setq org-log-done 'note)
 (setq org-log-done t)
 
-;; Linum-off.el
-(require 'linum-off)
+;; Disable ffap to avoid abnormal C-x C-f behaviour in python-mode
+(add-hook 'python-mode-hook (lambda ()
+  (setq ffap-alist (remove '(python-mode . py-ffap-module-path) ffap-alist))
+  (setq ffap-alist (remove '(python-mode . py-module-path) ffap-alist))
+  (setq ffap-alist (remove '(inferior-python-mode . py-ffap-module-path) ffap-alist))))
 
-;; Enable rainbow mode
-(require 'rainbow-mode)
-(rainbow-mode 1)
 
-(require 'rainbow-delimiters)
-(global-rainbow-delimiters-mode)
+;;; Keybindings
+
 
 ;; Use ibuffer instead of buffer-menu
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -220,40 +225,12 @@
 ;; Launch ansi-term
 (global-set-key (kbd "<f5>") 'visit-ansi-term)
 
-;; Run an interactive ruby session - TODO: replace with irbsh
-(require 'inf-ruby)
-(global-set-key (kbd "<f6>") 'run-ruby)
-
 ;; Timestamp function
 (defun insertdate ()
   "Insert a timestamp in ISO 8601 format."
       (interactive)
       (insert (format-time-string "%Y.%m.%d")))
 (global-set-key (kbd "<f2>") 'insertdate)
-
-;; Disable ffap to avoid abnormal C-x C-f behaviour in python-mode
-(add-hook 'python-mode-hook (lambda ()
-  (setq ffap-alist (remove '(python-mode . py-ffap-module-path) ffap-alist))
-  (setq ffap-alist (remove '(python-mode . py-module-path) ffap-alist))
-  (setq ffap-alist (remove '(inferior-python-mode . py-ffap-module-path) ffap-alist))))
-
-;; Put a clock in the mode-line
-(defface egoge-display-time
-   '((((type x w32 mac))
-      (:foreground "red" :inherit bold))
-     (((type tty))
-      (:foreground "red")))
-   "Face used to display the time in the mode line.")
-
-;; Display the time using `egoge-display-time-face'
-(setq display-time-string-forms
-      '((propertize (concat " " 24-hours ":" minutes " ")
- 		   'face 'egoge-display-time)))
-(display-time)
-
-(require 'auto-complete-config)
-(ac-config-default)
-(add-to-list 'ac-dictionary-directories "~/.emacs/el-get/auto-complete/ac-dict")
 
 
 (provide 'scratchpad.el)
