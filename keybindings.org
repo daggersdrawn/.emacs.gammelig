@@ -709,6 +709,14 @@ http://orgmode.org/manual/Deadlines-and-scheduling.html
     | c-e            | jump to last tab or right of document                              |
     | c-x k          | kill tab                                                           |
     | c-_            | undo closed tab                                                    |
+    | :tabdetach     | Detach current tab to its own window                               |
+    | :tabattach     | Attach the current tab to another window                           |
+    | :tablast       | Switch to the last tab                                             |
+    | :tabrewind     | Switch to the first tab                                            |
+    | :tabnext       | Switch to the next or [count]th tab                                |
+    | :tabmove       | Move the current tab to the position of tab N                      |
+    | :tabduplicate  | Duplicate current tab                                              |
+    | :tabdo         | Execute a command in each tab                                      |
     | c-r, c-s, /    | search                                                             |
     | firebug,f12    | toggle firebug                                                     |
     | c-c g, g-f     | view source                                                        |
