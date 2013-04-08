@@ -28,9 +28,6 @@
 ;; Supercollider
 ;(require 'sclang)
 
-;; Info files
-(require 'info)
-
 ;; Add all subdirs in the info folder: TODO Abstract this to be general
 (let ((info-base "~/.emacs.d/info"))
   (add-to-list 'Info-additional-directory-list info-base)
@@ -40,6 +37,13 @@
                  (not (equal f ".."))
                  (not (equal f ".")))
         (add-to-list 'Info-additional-directory-list name)))))
+
+
+;; Display files paths in frame title
+(setq frame-title-format
+      '((:eval (if (buffer-file-name)
+                   (abbreviate-file-name (buffer-file-name))
+                 "%b"))))
 
 ;; Auto-completion
 (require 'auto-complete-config)

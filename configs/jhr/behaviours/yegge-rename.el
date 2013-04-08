@@ -8,12 +8,14 @@
 ;;
 ;;; Code:
 
+
 (defun unique-name-for-buffer-p (new-name)
-  "Make sure the buffer enjoys a unique NEW-NAME."
+  "Make sure a buffer being renamed enjoys a unique NEW-NAME."
   (let* ((file-name (buffer-file-name))
          (dir-name (file-name-directory buffer-file-name))
          (new-complete-name (concat dir-name new-name)))
     (not (string-equal file-name new-complete-name))))
+
 
 (defun yegge-rename (new-name)
   "Renames both current buffer and the file it's visiting to NEW-NAME."
@@ -28,6 +30,7 @@
            (t (rename-file (file-name-nondirectory filename) new-name 1)
               (kill-buffer)
               (set-buffer (find-file (concat dir-name new-name)))))))
+
 
 (provide 'yegge-rename)
 
