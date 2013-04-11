@@ -239,6 +239,14 @@
 (global-set-key (kbd "<f2>") 'insertdate)
 
 
+(defun smart-kill-whole-line (&optional arg)
+  "A simple wrapper around `kill-whole-line' that respects indentation."
+  (interactive "P")
+  (kill-whole-line arg)
+  (back-to-indentation))
+(global-set-key [remap kill-whole-line] 'smart-kill-whole-line)
+
+
 (provide 'scratchpad.el)
 
 ;;; scratchpad.el ends here
