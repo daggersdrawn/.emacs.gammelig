@@ -6,7 +6,7 @@ a batteries included emacs config which supports emacs24, gnu/linux and osx.
 
 
 prepare el-get
-=============================
+==============
 
 el-get manages the external elisp bits and pieces upon which we
 depend. el-get depends upon version control tools to install packages.
@@ -27,6 +27,7 @@ el-get here: https://github.com/dimitri/el-get
 **NOTE**: osx users can find many of these packages in homebrew http://mxcl.github.com/homebrew/
 
 **NOTE**: darcs may be installed with cabal and likewise mercurial with python
+
 
 prepare python
 ==============

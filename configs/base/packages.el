@@ -58,7 +58,7 @@
    lua-mode
    lusty-explorer
    magit
-   magithub
+   ;; magithub
    mark-multiple
    markdown-mode
    maxframe
