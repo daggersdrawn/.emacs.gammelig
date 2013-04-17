@@ -13,22 +13,16 @@
 (load-theme 'zenburn t)
 
 (require 'info)
-
-;; Common Lisp
 (require 'cl)
 (require 'slime)
 (require 'cl-info)
-
-;; w3m browser
 (require 'w3m-load)
-
-;; Org-drill
 (require 'org-drill)
-
-;; Supercollider
 ;(require 'sclang)
+(require 'iso-transl)
+(require 'linum-off)
 
-;; Add all subdirs in the info folder: TODO Abstract this to be general
+;; Add all subdirs in the info folder
 (let ((info-base "~/.emacs.d/info"))
   (add-to-list 'Info-additional-directory-list info-base)
   (dolist (f (directory-files info-base))
@@ -49,12 +43,6 @@
 (require 'auto-complete-config)
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.emacs/el-get/auto-complete/ac-dict")
-
-;; Enable dead-keys. It works with layouts such as: setxkbmap -layout us -variant intl
-(require 'iso-transl)
-
-;; Linum-off.el
-(require 'linum-off)
 
 ;; Enable rainbows
 (require 'rainbow-mode)
@@ -245,7 +233,6 @@
   (kill-whole-line arg)
   (back-to-indentation))
 (global-set-key [remap kill-whole-line] 'smart-kill-whole-line)
-
 
 (provide 'scratchpad.el)
 

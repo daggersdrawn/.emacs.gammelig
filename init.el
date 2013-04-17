@@ -81,8 +81,8 @@
 (loop for dir in directory-structure
       do (load-files (concat dir "scratchpad.el")))
 
-(setq custom-file "~/.emacs.d/custom.el")
-(load custom-file)
+;; (setq custom-file "~/.emacs.d/custom.el")
+;; (load custom-file)
 
 (provide 'init)
 
