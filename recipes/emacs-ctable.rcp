@@ -1,0 +1,3 @@
+(:name emacs-ctable
+       :type github
+       :pkgname "kiwanami/emacs-ctable")

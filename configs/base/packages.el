@@ -23,6 +23,10 @@
    django-mode
    ;; django-html-mode
    dpastede
+   emacs-ctable
+   emacs-edbi
+   emacs-epc
+   emacs-deferred
    exec-path-from-shell
    expand-region
    find-file-in-git-repo
@@ -79,6 +83,7 @@
    rainbow-delimiters
    rainbow-mode
    redo+
+   regex-tool
    rst-mode
    rope
    ropemacs

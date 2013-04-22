@@ -21,6 +21,7 @@
 ;(require 'sclang)
 (require 'iso-transl)
 (require 'linum-off)
+(require 'edbi)
 
 ;; Add all subdirs in the info folder
 (let ((info-base "~/.emacs.d/info"))
