@@ -220,13 +220,15 @@
 ;; Launch ansi-term
 (global-set-key (kbd "<f5>") 'visit-ansi-term)
 
+;; edbi
+(global-set-key (kbd "<f11>") 'edbi:open-db-viewer)
+
 ;; Timestamp function
 (defun insertdate ()
   "Insert a timestamp in ISO 8601 format."
       (interactive)
       (insert (format-time-string "%Y.%m.%d")))
 (global-set-key (kbd "<f2>") 'insertdate)
-
 
 (defun smart-kill-whole-line (&optional arg)
   "A simple wrapper around `kill-whole-line' that respects indentation."
