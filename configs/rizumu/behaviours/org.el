@@ -2,6 +2,7 @@
 ;; filed somewhere (perhaps in gtd.org, or in a project-specific org
 ;; file.) The out-of-sight, out-of-mind rule applies here---if I don't
 ;; review these auxiliary org-files, I'll probably forget what's in them.
+
 (setq org-capture-templates
       '(("t" "todo" entry
          (file+headline (concat org-directory "/gtd-inbox.org")

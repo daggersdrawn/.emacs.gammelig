@@ -20,6 +20,7 @@
    dired-details+
    dired-isearch
    dired-single
+   disaster
    django-mode
    ;; django-html-mode
    dpastede

@@ -1,0 +1,3 @@
+(:name disaster
+       :type github
+       :pkgname "jart/disaster")

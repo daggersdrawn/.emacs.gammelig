@@ -44,6 +44,9 @@
 (require 'auto-complete-config)
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.emacs/el-get/auto-complete/ac-dict")
+(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+(ac-set-trigger-key "TAB")
+(setq ac-auto-start 4) ;; set to nil to disable pop-up menu
 
 ;; Enable rainbows
 (require 'rainbow-mode)
@@ -188,10 +191,6 @@
   (setq ffap-alist (remove '(python-mode . py-module-path) ffap-alist))
   (setq ffap-alist (remove '(inferior-python-mode . py-ffap-module-path) ffap-alist))))
 
-
-;;; Keybindings
-
-
 ;; Use ibuffer instead of buffer-menu
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
@@ -236,6 +235,22 @@
   (kill-whole-line arg)
   (back-to-indentation))
 (global-set-key [remap kill-whole-line] 'smart-kill-whole-line)
+
+(eval-after-load 'cc-mode
+  '(progn
+     (require 'disaster)
+     (defun my-c-mode-common-hook ()
+       (define-key c-mode-base-map (kbd "C-c C-d") 'disaster)
+       (define-key c-mode-base-map (kbd "C-c C-c") 'compile))
+     (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)))
+
+(defun switch-to-previous-buffer ()
+  "Switch to previously open buffer.
+Repeated invocations toggle between the two most recently open buffers."
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
+(global-set-key (kbd "C-c b") 'switch-to-previous-buffer)
+
 
 (provide 'scratchpad.el)
 
