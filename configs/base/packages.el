@@ -7,12 +7,10 @@
    auto-indent-mode
    autopair
    buffer-move
-   calfw
    clojure-mode
    color-dired
    coffee-mode
    csv-mode
-   dash
    dictionary
    dired+
    diredful
@@ -22,83 +20,53 @@
    dired-single
    django-mode
    ;; django-html-mode
-   dpastede
    exec-path-from-shell
    expand-region
    find-file-in-git-repo
-   find-file-in-project
-   furl
-   flycheck
-   flymake-cursor
+   flycheck dash s
    ghc-mod
    gist
    google-contacts
    google-maps
    google-weather
-   grep+
-   grin
-   haml-mode
    haskell-mode
    helm
-   helm-ipython
    highlight-parentheses
    highlight-symbol
-   htmlize
-   icomplete+
    idle-highlight-mode
    ido-ubiquitous
-   ipython
-   iresize
    js-beautify
    jshint-mode
-   keywiz
    kill-ring-search.el
    less-css-mode
    linum-off
-   lua-mode
-   lusty-explorer
    magit
    ;; magithub
-   mark-multiple
    markdown-mode
    maxframe
    multiple-cursors
    nav
-   nose
-   oauth2
    org-mode
    paredit
    pony-mode
-   pomodoro.el
    processing-mode
    ;; project
    pylookup
-   pymacs
-   python
-   python-extras
    rainbow-delimiters
    rainbow-mode
-   redo+
+   ;; redo+
    rst-mode
-   rope
-   ropemacs
-   ropemode
-   s
-   sass-mode
    ;; skype http://blog.mediaonfire.com/?p=60
-   slime
+   ;; slime
    smart-tab
-   smex
-   space-chord
-   swank-clojure
+   ;; smex
+   ;; space-chord
+   ;; swank-clojure
    synonyms
-   tea-time
-   tuareg-mode
-   twittering-mode
    undo-tree
    virtualenv
    worklog
-   wtf
+   ;; wtf
    yaml-mode
    yasnippet
    zenburn
