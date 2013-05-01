@@ -1,3 +1,6 @@
+;; When several buffers are opened for identically-named files,
+;; give them distinct names.
+
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'reverse)
 (setq uniquify-separator "/")
