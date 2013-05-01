@@ -7,7 +7,7 @@
 ;; fx keys
 ;(global-set-key  [f1]  (lambda () (interactive) (manual-entry (current-word))))
 ;(global-set-key  [f2]  (lambda () (interactive) (find-file "~/org/gtd-inbox.org")))
-(global-set-key (kbd "<f3>") 'joc-dired-magic-buffer)
+;(global-set-key "\M-\C-y" 'kill-ring-search)
 (global-set-key (kbd "C-<f3>") (function
   (lambda nil (interactive)
   (joc-dired-magic-buffer default-directory))))
@@ -60,7 +60,7 @@
 ;; kill all other buffers
 (global-set-key (kbd "C-x C-k") 'kill-other-buffers)
 
-;; iresize
+;; resize windows
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
@@ -81,7 +81,7 @@
 (global-set-key (kbd "M-?") 'comment-or-uncomment-region)
 
 ;; Toggle soft word wrapping
-(global-set-key "\C-cw" 'toggle-truncate-lines)
+(global-set-key (kbd "C-c w") 'toggle-truncate-lines)
 
 ;; Jump to the start/end of the document with C-PgUP/DN
 (global-set-key [C-prior] (lambda () (interactive) (goto-char (point-min))))
@@ -99,3 +99,6 @@
   (let ((fill-column most-positive-fixnum))
     (fill-paragraph nil (region-active-p))))
 (global-set-key (kbd "M-Q") 'unfill-paragrah)
+
+;; kill ring search
+(global-set-key (kbd "C-c y") 'kill-ring-search)

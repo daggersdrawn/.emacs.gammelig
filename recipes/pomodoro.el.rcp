@@ -1,3 +1,0 @@
-(:name pomodoro.el
-       :type github
-       :pkgname "vderyagin/pomodoro.el")
