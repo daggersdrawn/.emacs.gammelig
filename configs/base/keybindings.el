@@ -102,3 +102,10 @@
 
 ;; kill ring search
 (global-set-key (kbd "C-c y") 'kill-ring-search)
+
+;; multiple cursors
+(global-set-key (kbd "C-x r t") 'inline-string-rectangle)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-M-m") 'mc/mark-more-like-this) ; like the other two, but takes an argument (negative is previous)
+(global-set-key (kbd "C-*") 'mc/mark-all-like-this)
