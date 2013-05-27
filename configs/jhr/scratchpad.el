@@ -283,6 +283,8 @@ point reaches the beginning or end of the buffer, stop there."
 (global-set-key [remap move-beginning-of-line]
                 'smarter-move-beginning-of-line)
 
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+
 (provide 'scratchpad.el)
 
 ;;; scratchpad.el ends here
