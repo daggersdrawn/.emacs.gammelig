@@ -223,6 +223,37 @@
     |                  | ispell-buffer               | check spelling of entire buffer                    |
     |                  | revert-buffer               | restore buffer to its original contents            |
     |------------------+-----------------------------+----------------------------------------------------|
+*** Gnus
+http://www.gnus.org/manual/gnus_22.html
+;; Shortcuts
+;; g check for new mails
+;; q quit GNUS
+;; c mark all read in group
+;; l show only group with unread mails
+;; L show all subscribed groups
+;; A A show all groups on servers
+;; m create new mail
+;; t show all headers
+;; ^ show server view
+;; J s synchronize fetch
+;; J S send all mails in queue
+;; J j switch online/offline
+;; u unmark
+;; d mark
+;; Server view
+;; O open connection to server (when marked as denied)
+;; J a add server to agent
+;; J r remove server from agent
+;; mail action
+;; S R reply
+;; S W wide reply
+;; group summary view
+;; / o list all old mails
+;; x list unread mails
+;; s search in current mail
+;; M-s forward search in mails
+;; M-r backward search in mails
+;; : TAB in From header, BBDB completion
 *** Rectangles
     |----------+------------------+-------------------------------------|
     | Shortcut | Command          | Description                         |
