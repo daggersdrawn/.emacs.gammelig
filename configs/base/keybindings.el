@@ -53,6 +53,7 @@
 
 ;; helm
 (global-set-key (kbd "M-SPC") 'helm-mini)
+(global-set-key (kbd "M-S-SPC") 'helm-locate)
 
 ;; buffer-move
 (global-set-key (kbd "C-x 4") 'win-swap)
