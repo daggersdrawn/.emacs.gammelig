@@ -66,6 +66,7 @@
    undo-tree
    virtualenv
    worklog
+   wrap-region
    ;; wtf
    yaml-mode
    yasnippet
