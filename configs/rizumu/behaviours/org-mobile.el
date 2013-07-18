@@ -14,10 +14,6 @@
 (add-hook 'after-init-hook 'org-mobile-pull)
 (add-hook 'kill-emacs-hook 'org-mobile-push)
 
-;; Enable encryption
-(setq org-mobile-use-encryption t)
-(setq org-mobile-encryption-password (getenv "ORG_MOBILE_ENCRYPTION_PASSWORD"))
-
 ;; Push and pull from MobileOrg when away from computer
 (defvar my-org-mobile-sync-timer nil)
 
