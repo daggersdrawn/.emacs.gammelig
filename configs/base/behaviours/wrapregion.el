@@ -1,3 +1,6 @@
 (require 'wrap-region)
 (wrap-region-add-wrappers
- '(("{% trans \"" "\" %}" "e")))
+ '(("{% trans \"" "\" %}" "t")
+   ("{%  %}" "%")
+   ("{{  }}" "v")
+   ("{% url \"" "\" %}" "u")))
