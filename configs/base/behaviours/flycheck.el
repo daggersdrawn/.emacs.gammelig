@@ -1,3 +1,6 @@
+;; enable Flycheck mode in all buffers in which it can be used
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
 ;; Enable Flycheck for all files
 (add-hook 'find-file-hook 'flycheck-mode)
 
