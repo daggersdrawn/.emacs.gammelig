@@ -1,3 +1,0 @@
-(:name nose
-       :type github
-       :pkgname "emacsmirror/nose")

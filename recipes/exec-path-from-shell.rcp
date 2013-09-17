@@ -1,3 +1,0 @@
-(:name exec-path-from-shell
-       :type github
-       :pkgname "purcell/exec-path-from-shell")

@@ -9,6 +9,9 @@
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
   (when (fboundp mode) (funcall mode -1)))
 
+;; Workaround for: https://github.com/dimitri/el-get/issues/1304
+(package-initialize t)
+
 ;; Install el-get on first run
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (unless (require 'el-get nil 'noerror)
@@ -18,6 +21,8 @@
     (let (el-get-master-branch)
       (goto-char (point-max))
       (eval-print-last-sexp))))
+(add-to-list 'el-get-recipe-path "~/.emacs.d/recipes/")
+(el-get 'sync)
 
 ;; Determine if running a GNU/Linux distro or Mac OSX
 (setq macosx-p (string-match "darwin" (symbol-name system-type)))
@@ -46,7 +51,6 @@
           (check-and-load file)))))
 
 ;; Install packages
-(add-to-list 'el-get-recipe-path "~/.emacs.d/recipes")
 (loop for dir in directory-structure
       do (load-files (concat dir "packages.el")))
 
@@ -64,10 +68,10 @@
 
 ;; Load snippets
 (require 'yasnippet)
-(setq yas-snippet-dirs (list (concat user-dir (file-name-as-directory "snippets"))
-                             (concat system-dir (file-name-as-directory "snippets"))
-                             (concat base-dir (file-name-as-directory "snippets"))
-                             (concat user-emacs-directory (file-name-as-directory "el-get/yasnippet/snippets"))))
+(setq yas/root-directory (list (concat user-dir (file-name-as-directory "snippets"))
+                               (concat system-dir (file-name-as-directory "snippets"))
+                               (concat base-dir (file-name-as-directory "snippets"))
+                               (concat user-emacs-directory (file-name-as-directory "el-get/yasnippet/snippets"))))
 (yas-global-mode 1)
 
 ;; Load scratchpads

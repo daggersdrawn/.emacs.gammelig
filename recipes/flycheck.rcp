@@ -1,3 +1,0 @@
-(:name flycheck
-       :type github
-       :pkgname "lunaryorn/flycheck")

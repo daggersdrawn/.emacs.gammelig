@@ -1,3 +1,0 @@
-(:name undo-tree
-       :type github
-       :pkgname "emacsmirror/undo-tree")

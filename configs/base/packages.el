@@ -30,6 +30,7 @@
    google-weather
    haskell-mode
    helm
+   helm-ipython
    highlight-parentheses
    highlight-symbol
    idle-highlight-mode
@@ -40,33 +41,34 @@
    less-css-mode
    linum-off
    magit
-   ;; magithub
+   magithub
    markdown-mode
    maxframe
    multiple-cursors
    nav
+   ;; nose
    org-mode
    paredit
    pony-mode
    processing-mode
-   ;; project
+   project
    pylookup
    rainbow-delimiters
    rainbow-mode
-   ;; redo+
+   redo+
    rst-mode
    ;; skype http://blog.mediaonfire.com/?p=60
    ;; slime
    smart-tab
-   ;; smex
-   ;; space-chord
-   ;; swank-clojure
+   smex
+   swank-clojure
    synonyms
+   tuareg-mode
    undo-tree
    virtualenv
    worklog
    wrap-region
-   ;; wtf
+   wtf
    yaml-mode
    yasnippet
    zenburn
