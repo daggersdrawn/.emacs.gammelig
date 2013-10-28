@@ -152,4 +152,4 @@
   ;; set important environment variables from the user's shell
   (exec-path-from-shell-initialize)
   ;; fullscreen
-  (run-with-idle-timer 0.1 nil 'ns-toggle-fullscreen))
+  (set-frame-parameter nil 'fullscreen 'fullboth))
