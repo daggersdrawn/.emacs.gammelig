@@ -30,7 +30,6 @@
    google-weather
    haskell-mode
    helm
-   helm-ipython
    highlight-parentheses
    highlight-symbol
    idle-highlight-mode
