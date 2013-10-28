@@ -4,6 +4,9 @@ emacs
 
 a batteries included emacs config which supports emacs24, gnu/linux and osx.
 
+**NOTE**: to install emacs on osx::
+    
+    $ brew install emacs --HEAD --use-git-head --cocoa --srgb
 
 prepare el-get
 ==============
