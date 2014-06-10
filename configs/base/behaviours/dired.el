@@ -1,6 +1,7 @@
 ;; DIRED
 (require 'dired-details) ;; hide useless permission info in dired
 (require 'dired-details+)
+(require 'color-dired)
 (setq dired-details-hidden-string "")
 
 (require 'diredful)
