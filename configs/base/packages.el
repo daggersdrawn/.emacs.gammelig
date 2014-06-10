@@ -22,7 +22,7 @@
    exec-path-from-shell
    expand-region
    find-file-in-git-repo
-   flycheck dash s
+   flycheck
    ghc-mod
    gist
    google-contacts

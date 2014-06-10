@@ -35,9 +35,9 @@ el-get here: https://github.com/dimitri/el-get
 prepare python
 ==============
 
-flymake needs python packages to be installed in your system or
+flyc needs python packages to be installed in your system or
 virtualenv site-packages folder. i've tried both and recommend using
-your distro's package manager. On arch that would be::
+your distro's package manager. On Arch that would be::
 
     $ yaourt -S --noconfirm flake8 python2-flake8
 
