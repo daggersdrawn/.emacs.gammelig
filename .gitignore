@@ -4,6 +4,7 @@ auto-save-list/*
 anything-c-adaptive-history
 backups/*
 el-get/
+elpa/*
 eshell/*
 url/*
 oauth2.plstore
