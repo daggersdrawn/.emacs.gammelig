@@ -1,5 +1,9 @@
 (require 'python)
 
+;;; anaconda mode
+(pyenv-mode)
+(add-hook 'python-mode-hook 'anaconda-mode)
+
 ;;; indentation
 (setq-default py-indent-offset 4)
 

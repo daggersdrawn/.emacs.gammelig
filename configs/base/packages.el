@@ -1,6 +1,7 @@
 ;; Define sources
 (setq recipes
  '(el-get  ;; el-get is self-hosting
+   anaconda-mode
    auctex
    ace-jump-mode
    auto-complete
@@ -51,6 +52,7 @@
    pony-mode
    processing-mode
    project
+   pyenv-mode
    pylookup
    rainbow-delimiters
    rainbow-mode
@@ -64,7 +66,6 @@
    synonyms
    tuareg-mode
    undo-tree
-   virtualenv
    worklog
    wrap-region
    wtf
