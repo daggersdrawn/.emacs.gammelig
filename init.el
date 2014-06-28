@@ -77,3 +77,7 @@
 ;; Load scratchpads
 (loop for dir in directory-structure
       do (load-files (concat dir "scratchpad.el")))
+
+;; OSX sepcific
+(when macosx-p
+  (server-start))
