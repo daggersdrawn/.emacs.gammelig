@@ -28,7 +28,6 @@
    gist
    google-contacts
    google-maps
-   google-weather
    haskell-mode
    helm
    highlight-parentheses
