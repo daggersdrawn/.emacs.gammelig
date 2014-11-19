@@ -845,6 +845,13 @@ gZ        = close application
     | M-v      | paste         |
     | M-C-v    | paste_escaped |
     |----------+---------------|
+* tmux
+|----------+----------+---------------|
+| Shortcut | Command  | Action        |
+|----------+----------+---------------|
+| C-o n    | select 9 | New window    |
+| C-o w    | select 0 | Switch window |
+|----------+----------+---------------|
 * screen
 |-----------+------------+-----------------------------------------------------------------|
 | Shortcut  | Command    | Action                                                          |
