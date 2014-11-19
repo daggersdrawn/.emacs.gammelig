@@ -20,6 +20,7 @@
    dired-isearch
    dired-single
    django-mode
+   extraedit
    exec-path-from-shell
    expand-region
    find-file-in-git-repo
