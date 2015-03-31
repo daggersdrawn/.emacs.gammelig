@@ -2,7 +2,7 @@
 (setq recipes
  '(el-get  ;; el-get is self-hosting
    anaconda-mode
-   auctex
+   ;; auctex
    ace-jump-mode
    auto-complete
    auto-indent-mode
