@@ -81,3 +81,6 @@
 ;; OSX sepcific
 (when macosx-p
   (server-start))
+
+;; Disable pinging
+(setq ffap-machine-p-known 'reject)
