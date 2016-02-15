@@ -21,10 +21,15 @@
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c b") 'org-iswitchb)
-(global-set-key (kbd "C-c v") 'gtd-visions)
-(global-set-key (kbd "C-c g") 'gtd-projects)
+
+;; files
 (global-set-key (kbd "C-c i") 'gtd-inbox)
+(global-set-key (kbd "C-c g") 'gtd-projects)
+(global-set-key (kbd "C-c e") 'eldarion)
 (global-set-key (kbd "C-c m") 'morningpages)
+(global-set-key (kbd "C-c r") 'reference)
+(global-set-key (kbd "C-c s") 'studio)
+(global-set-key (kbd "C-c v") 'vinyl)
 
 ;; lusty
 ;(global-set-key (kbd "C-x C-f") 'lusty-file-explorer)

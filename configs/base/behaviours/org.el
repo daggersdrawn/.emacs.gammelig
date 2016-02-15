@@ -55,11 +55,6 @@
 (setf org-special-ctrl-a/e t)
 
 ;; provide the jump-to-file functions
-(defun gtd-visions ()
-  (interactive)
-  (find-file (concat org-directory "/gtd-visions.org")))
-(provide 'org-gtd-visions)
-
 (defun gtd-projects ()
   (interactive)
   (find-file (concat org-directory "/gtd-projects.org")))
@@ -69,6 +64,16 @@
   (interactive)
   (find-file (concat org-directory "/gtd-inbox.org")))
 (provide 'org-gtd-inbox)
+
+(defun studio ()
+  (interactive)
+  (find-file (concat org-directory "/studio.org")))
+(provide 'org-studio)
+
+(defun vinyl ()
+  (interactive)
+  (find-file (concat org-directory "/vinyl.org")))
+(provide 'org-vinyl)
 
 (defun reference ()
   (interactive)
