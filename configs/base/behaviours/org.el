@@ -68,22 +68,27 @@
 (defun studio ()
   (interactive)
   (find-file (concat org-directory "/studio.org")))
-(provide 'org-studio)
+(provide 'studio)
+
+(defun eldarion ()
+  (interactive)
+  (find-file (concat org-directory "/eldarion.org")))
+(provide 'eldarion)
 
 (defun vinyl ()
   (interactive)
   (find-file (concat org-directory "/vinyl.org")))
-(provide 'org-vinyl)
+(provide 'vinyl)
 
 (defun reference ()
   (interactive)
   (find-file (concat org-directory "/reference.org")))
-(provide 'org-reference)
+(provide 'reference)
 
 (defun morningpages ()
   (interactive)
   (find-file (concat org-directory "/morningpages.org")))
-(provide 'org-morningpages)
+(provide 'morningpages)
 
 ;; Speed commands are used when on the * of a given headline. If
 ;; these are forgotten, just press '?' as a speed-command to bring up
