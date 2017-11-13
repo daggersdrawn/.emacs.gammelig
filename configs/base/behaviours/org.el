@@ -11,7 +11,7 @@
 (setq org-reverse-note-order t)
 
 ;; save all org files every minute
-(run-at-time "00:59" 3600 'org-save-all-org-buffers)
+;;(run-at-time "00:59" 3600 'org-save-all-org-buffers)
 
 ;; Follow links on enter
 (setq org-return-follows-link t)
@@ -100,7 +100,7 @@
 ("3" . split-window-horizontally)
 ("h" . hide-other)
 ("R" . org-reveal)
-("s" . org-save-all-org-buffers)
+;;("s" . org-save-all-org-buffers)
 ("z" . org-add-note)
 ("N" . org-narrow-to-subtree)
 ("W" . widen))))
@@ -112,9 +112,9 @@
 (setq org-deadline-warning-days 14)
 
 ;; Enable org-habit
-(defun base-after-load-org ()
-	(add-to-list 'org-modules 'org-habit))
-(eval-after-load "org" '(base-after-load-org))
+;;(defun base-after-load-org ()
+;;	(add-to-list 'org-modules 'org-habit))
+;;(eval-after-load "org" '(base-after-load-org))
 
 (setq org-agenda-custom-commands
       '(("h" "Daily habits"

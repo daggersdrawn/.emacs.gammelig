@@ -14,7 +14,7 @@
    csv-mode
    dictionary
    dired+
-   diredful
+   ;;diredful
    dired-details
    dired-details+
    dired-isearch
@@ -30,11 +30,11 @@
    google-contacts
    google-maps
    haskell-mode
-   helm
+   ;;helm
    highlight-parentheses
    highlight-symbol
    idle-highlight-mode
-   ido-ubiquitous
+   ;;ido-ubiquitous
    js-beautify
    jshint-mode
    kill-ring-search.el
@@ -51,8 +51,8 @@
    paredit
    pony-mode
    processing-mode
-   project
-   pyenv-mode
+   ;;project
+   ;;pyenv-mode
    pylookup
    rainbow-delimiters
    rainbow-mode
@@ -67,7 +67,7 @@
    tuareg-mode
    undo-tree
    worklog
-   wrap-region
+   ;;wrap-region
    wtf
    yaml-mode
    yasnippet

@@ -120,7 +120,7 @@
 ;; GNU/Linux systems only
 (when linux-p
   ;; Set font
-  (setq default-frame-alist '((font . "Inconsolata-dz-10")))
+  (setq default-frame-alist '((font . "Inconsolata-12")))
 
   ;; Disable graphical fluff
   (tool-bar-mode -1)

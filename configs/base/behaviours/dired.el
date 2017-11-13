@@ -4,7 +4,7 @@
 (require 'color-dired)
 (setq dired-details-hidden-string "")
 
-(require 'diredful)
+;;(require 'diredful)
 
 (require 'dired-x)
 (setq dired-omit-files
